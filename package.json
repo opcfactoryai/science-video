@@ -1,0 +1,21 @@
+{
+  "name": "science-video-skill",
+  "version": "1.0.0",
+  "description": "科普视频自动生成 Skill",
+  "scripts": {
+    "start": "npx ts-node scripts/run.ts",
+    "step1": "npx ts-node scripts/01_gen_script.ts",
+    "step2": "npx ts-node scripts/02_gen_assets.ts",
+    "step3": "npx ts-node scripts/03_gen_concat.ts",
+    "step4": "npx ts-node scripts/04_compose_video.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.12"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
