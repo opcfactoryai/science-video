@@ -1,0 +1,1 @@
+Anthropic 发布了 Claude Fable 5，这是首个 Mythos-class 模型。它完成了 Stripe 五千万行代码的迁移，仅用了一天时间。它还自主运行了九个小时，生成了子 Agent，完成了完整的产品方案。

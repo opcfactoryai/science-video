@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Fable 5 发布",
+    "topic": "Claude Fable 5 发布新闻",
+    "style_category": "新闻快讯",
+    "target_duration_seconds": 60,
+    "tone": "快速新闻",
+    "target_audience": "科技爱好者",
+    "version": "2.0",
+    "generated_at": "2026-06-11T10:00:00Z"
+  },
+  "cover": {
+    "title": "Fable 5 发布",
+    "subtitle": "Mythos-class 来了",
+    "visual_concept": "Fable 5 logo",
+    "text_overlay_position": "upper-third",
+    "text_style": "bold white",
+    "image_prompt": "placeholder"
+  },
+  "hook": {
+    "text": "Anthropic 发布了 Fable 5，这是首个 Mythos-class 模型。",
+    "type": "热点绑定",
+    "delivery_note": "正常语速",
+    "visual_effect": "logo 出现"
+  },
+  "full_narration": "Anthropic 发布了 Claude Fable 5，这是首个 Mythos-class 模型。它完成了 Stripe 五千万行代码的迁移，仅用了一天时间。它还自主运行了九个小时，生成了子 Agent，完成了完整的产品方案。",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "cover",
+      "title": "发布公告",
+      "duration_seconds": 10,
+      "narration": "Anthropic 发布了 Claude Fable 5，这是首个 Mythos-class 模型。",
+      "narration_tone": "平稳",
+      "visual_description": "Fable 5 标识展示",
+      "video_prompt": "placeholder",
+      "image_prompt": "placeholder",
+      "transition": "none",
+      "transition_out": "cut",
+      "bgm_suggestion": "",
+      "sfx_suggestion": ""
+    },
+    {
+      "id": "scene-02",
+      "type": "explainer",
+      "title": "Stripe 迁移案例",
+      "duration_seconds": 12,
+      "narration": "它完成了 Stripe 五千万行代码的迁移，仅用了一天时间。",
+      "narration_tone": "兴奋",
+      "visual_description": "代码迁移动画",
+      "video_prompt": "placeholder",
+      "image_prompt": "placeholder",
+      "transition": "cut",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "",
+      "sfx_suggestion": ""
+    },
+    {
+      "id": "scene-03",
+      "type": "explainer",
+      "title": "自主运行案例",
+      "duration_seconds": 12,
+      "narration": "它还自主运行了九个小时，生成了子 Agent，完成了完整的产品方案。",
+      "narration_tone": "惊叹",
+      "visual_description": "时间轴动画",
+      "video_prompt": "placeholder",
+      "image_prompt": "placeholder",
+      "transition": "dissolve",
+      "transition_out": "none",
+      "bgm_suggestion": "",
+      "sfx_suggestion": ""
+    }
+  ],
+  "outro": {
+    "text": "Fable 5 已经到来。",
+    "duration_seconds": 3,
+    "cta_type": "关注",
+    "cta_text": "关注我们",
+    "visual_description": "结尾卡",
+    "image_prompt": "placeholder"
+  },
+  "production_notes": {
+    "total_duration_check": 34,
+    "narration_word_count": 65,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "fps": 30
+  }
+}

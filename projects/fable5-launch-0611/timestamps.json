@@ -1,0 +1,311 @@
+{
+  "words": [
+    {
+      "text": "Anthropic",
+      "start_ms": 665,
+      "end_ms": 1275
+    },
+    {
+      "text": "发",
+      "start_ms": 1275,
+      "end_ms": 1465
+    },
+    {
+      "text": "布",
+      "start_ms": 1465,
+      "end_ms": 1575
+    },
+    {
+      "text": "了",
+      "start_ms": 1575,
+      "end_ms": 1645
+    },
+    {
+      "text": "Claude",
+      "start_ms": 1645,
+      "end_ms": 2055
+    },
+    {
+      "text": "Fable",
+      "start_ms": 2055,
+      "end_ms": 2675
+    },
+    {
+      "text": "5，",
+      "start_ms": 2855,
+      "end_ms": 2885
+    },
+    {
+      "text": "这",
+      "start_ms": 3225,
+      "end_ms": 3365
+    },
+    {
+      "text": "是",
+      "start_ms": 3365,
+      "end_ms": 3495
+    },
+    {
+      "text": "首",
+      "start_ms": 3495,
+      "end_ms": 3805
+    },
+    {
+      "text": "个",
+      "start_ms": 3805,
+      "end_ms": 4105
+    },
+    {
+      "text": "Mythos-class",
+      "start_ms": 5055,
+      "end_ms": 5085
+    },
+    {
+      "text": "模",
+      "start_ms": 5085,
+      "end_ms": 5245
+    },
+    {
+      "text": "型。",
+      "start_ms": 5245,
+      "end_ms": 5605
+    },
+    {
+      "text": "它",
+      "start_ms": 6125,
+      "end_ms": 6325
+    },
+    {
+      "text": "完",
+      "start_ms": 6325,
+      "end_ms": 6465
+    },
+    {
+      "text": "成",
+      "start_ms": 6465,
+      "end_ms": 6605
+    },
+    {
+      "text": "了",
+      "start_ms": 6605,
+      "end_ms": 6705
+    },
+    {
+      "text": "Stripe",
+      "start_ms": 6705,
+      "end_ms": 7235
+    },
+    {
+      "text": "五",
+      "start_ms": 7335,
+      "end_ms": 7505
+    },
+    {
+      "text": "千",
+      "start_ms": 7505,
+      "end_ms": 7765
+    },
+    {
+      "text": "万",
+      "start_ms": 7765,
+      "end_ms": 7885
+    },
+    {
+      "text": "行",
+      "start_ms": 7885,
+      "end_ms": 8065
+    },
+    {
+      "text": "代",
+      "start_ms": 8065,
+      "end_ms": 8285
+    },
+    {
+      "text": "码",
+      "start_ms": 8285,
+      "end_ms": 8405
+    },
+    {
+      "text": "的",
+      "start_ms": 8405,
+      "end_ms": 8475
+    },
+    {
+      "text": "迁",
+      "start_ms": 8475,
+      "end_ms": 8715
+    },
+    {
+      "text": "移，",
+      "start_ms": 8715,
+      "end_ms": 8995
+    },
+    {
+      "text": "仅",
+      "start_ms": 9185,
+      "end_ms": 9375
+    },
+    {
+      "text": "用",
+      "start_ms": 9375,
+      "end_ms": 9535
+    },
+    {
+      "text": "了",
+      "start_ms": 9535,
+      "end_ms": 9625
+    },
+    {
+      "text": "一",
+      "start_ms": 9625,
+      "end_ms": 9765
+    },
+    {
+      "text": "天",
+      "start_ms": 9765,
+      "end_ms": 9995
+    },
+    {
+      "text": "时",
+      "start_ms": 9995,
+      "end_ms": 10165
+    },
+    {
+      "text": "间。",
+      "start_ms": 10165,
+      "end_ms": 10455
+    },
+    {
+      "text": "它",
+      "start_ms": 10875,
+      "end_ms": 11055
+    },
+    {
+      "text": "还",
+      "start_ms": 11055,
+      "end_ms": 11215
+    },
+    {
+      "text": "自",
+      "start_ms": 11215,
+      "end_ms": 11375
+    },
+    {
+      "text": "主",
+      "start_ms": 11375,
+      "end_ms": 11575
+    },
+    {
+      "text": "运",
+      "start_ms": 11575,
+      "end_ms": 11705
+    },
+    {
+      "text": "行",
+      "start_ms": 11705,
+      "end_ms": 11865
+    },
+    {
+      "text": "了",
+      "start_ms": 11865,
+      "end_ms": 11955
+    },
+    {
+      "text": "九",
+      "start_ms": 11955,
+      "end_ms": 12235
+    },
+    {
+      "text": "个",
+      "start_ms": 12235,
+      "end_ms": 12415
+    },
+    {
+      "text": "小",
+      "start_ms": 12415,
+      "end_ms": 12595
+    },
+    {
+      "text": "时，",
+      "start_ms": 12595,
+      "end_ms": 12985
+    },
+    {
+      "text": "生",
+      "start_ms": 13095,
+      "end_ms": 13375
+    },
+    {
+      "text": "成",
+      "start_ms": 13375,
+      "end_ms": 13525
+    },
+    {
+      "text": "了",
+      "start_ms": 13525,
+      "end_ms": 13605
+    },
+    {
+      "text": "子",
+      "start_ms": 13605,
+      "end_ms": 13855
+    },
+    {
+      "text": "Agent，",
+      "start_ms": 13855,
+      "end_ms": 14395
+    },
+    {
+      "text": "完",
+      "start_ms": 14705,
+      "end_ms": 14835
+    },
+    {
+      "text": "成",
+      "start_ms": 14835,
+      "end_ms": 14965
+    },
+    {
+      "text": "了",
+      "start_ms": 14965,
+      "end_ms": 15095
+    },
+    {
+      "text": "完",
+      "start_ms": 15095,
+      "end_ms": 15335
+    },
+    {
+      "text": "整",
+      "start_ms": 15335,
+      "end_ms": 15485
+    },
+    {
+      "text": "的",
+      "start_ms": 15485,
+      "end_ms": 15575
+    },
+    {
+      "text": "产",
+      "start_ms": 15575,
+      "end_ms": 15785
+    },
+    {
+      "text": "品",
+      "start_ms": 15785,
+      "end_ms": 15975
+    },
+    {
+      "text": "方",
+      "start_ms": 15975,
+      "end_ms": 16195
+    },
+    {
+      "text": "案。",
+      "start_ms": 16195,
+      "end_ms": 16435
+    }
+  ],
+  "total_duration_ms": 16435,
+  "voice_type": "zh_male_yizhipiannan_uranus_bigtts"
+}

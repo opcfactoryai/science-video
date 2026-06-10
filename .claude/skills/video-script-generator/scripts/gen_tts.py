@@ -80,6 +80,7 @@ async def main():
         else:
             sentences = args.text.split("。")
         audio_received = False
+        all_words = []
 
         for i, sentence in enumerate(sentences):
             if not sentence:
@@ -97,6 +98,7 @@ async def main():
                         "format": args.encoding,
                         "sample_rate": 24000,
                         "enable_timestamp": True,
+                        "enable_subtitle": True,
                     },
                     "additions": json.dumps(
                         {
@@ -141,6 +143,21 @@ async def main():
                 if msg.type == MsgType.FullServerResponse:
                     if msg.event == EventType.SessionFinished:
                         break
+                    elif msg.event == EventType.TTSSubtitle:
+                        try:
+                            payload = json.loads(msg.payload.decode("utf-8"))
+                            for w in payload.get("words", []):
+                                text = w.get("word", w.get("text", ""))
+                                start_s = w.get("startTime", w.get("start_ms", 0))
+                                end_s = w.get("endTime", w.get("end_ms", 0))
+                                if text:
+                                    all_words.append({
+                                        "text": text,
+                                        "start_ms": int(start_s * 1000),
+                                        "end_ms": int(end_s * 1000),
+                                    })
+                        except Exception:
+                            pass
                 elif msg.type == MsgType.AudioOnlyServer:
                     if not audio_received and len(audio_data) > 0:
                         audio_received = True
@@ -159,6 +176,17 @@ async def main():
                 with open(filename, "wb") as f:
                     f.write(audio_data)
                 logger.info(f"Audio received: {len(audio_data)}, saved to {filename}")
+
+        # Save word timestamps
+        if all_words:
+            ts_path = os.path.join(args.output_dir, "timestamps.json")
+            with open(ts_path, "w", encoding="utf-8") as f:
+                json.dump({
+                    "words": all_words,
+                    "total_duration_ms": all_words[-1]["end_ms"] if all_words else 0,
+                    "voice_type": args.voice_type,
+                }, f, ensure_ascii=False, indent=2)
+            logger.info(f"Timestamps saved: {ts_path} ({len(all_words)} words)")
 
         if not audio_received:
             raise RuntimeError("No audio data received")

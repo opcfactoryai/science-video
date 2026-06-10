@@ -1,0 +1,27 @@
+{
+  "total_duration_ms": 16435,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "text": "Anthropic 发布了 Claude Fable 5，这是首个 Mythos-class 模型。",
+      "start_ms": 665,
+      "end_ms": 5085,
+      "duration_ms": 4420
+    },
+    {
+      "id": "scene-02",
+      "text": "它完成了 Stripe 五千万行代码的迁移，仅用了一天时间。",
+      "start_ms": 5085,
+      "end_ms": 9625,
+      "duration_ms": 4540
+    },
+    {
+      "id": "scene-03",
+      "text": "它还自主运行了九个小时，生成了子 Agent，完成了完整的产品方案。",
+      "start_ms": 9625,
+      "end_ms": 15095,
+      "duration_ms": 5470
+    }
+  ],
+  "generated_at": "2026-06-11T10:00:00Z"
+}

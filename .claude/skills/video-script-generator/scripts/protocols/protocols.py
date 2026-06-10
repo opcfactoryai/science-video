@@ -119,6 +119,7 @@ class EventType(IntEnum):
     TTSSentenceStart = 350
     TTSSentenceEnd = 351
     TTSResponse = 352
+    TTSSubtitle = 364
     TTSEnded = 359
     PodcastRoundStart = 360
     PodcastRoundResponse = 361
