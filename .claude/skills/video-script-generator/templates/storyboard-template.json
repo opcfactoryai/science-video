@@ -1,0 +1,97 @@
+{
+  "// meta": "视频元信息",
+  "meta": {
+    "title": "视频标题（对外展示的标题）",
+    "topic": "选题主题（用户输入的原文本）",
+    "style_category": "科普解说 | 新闻快讯 | 产品评测 | 知识分享 | 科技前沿",
+    "target_duration_seconds": 180,
+    "tone": "专业严谨 | 轻松幽默 | 感人生动 | 震撼大气 | 悬念叙事",
+    "target_audience": "目标受众描述（如：对科技感兴趣的普通大众，18-35岁）",
+    "version": "2.0",
+    "generated_at": "2026-06-10T12:00:00Z"
+  },
+
+  "// cover": "封面设计",
+  "cover": {
+    "title": "封面主标题（大字号，≤15字）",
+    "subtitle": "封面副标题（小字号，≤20字，可选）",
+    "visual_concept": "封面视觉概念描述（用于指导设计方向）",
+    "text_overlay_position": "文字叠加位置，如：upper-third / center / bottom",
+    "text_style": "文字风格，如：bold white with glow / minimal sans-serif",
+    "image_prompt": "封面图AI提示词。必须包含：主体、构图、背景、光照、色调、氛围、风格、画质标记。注意上方/中间文字区域预留空间。"
+  },
+
+  "// hook": "钩子（前3秒黄金法则）",
+  "hook": {
+    "text": "钩子口播文案。必须≤20字，前3秒完成注意力抓取。",
+    "type": "反常识 | 悬念 | 痛点 | 数据冲击 | 故事开场 | 设问互动 | 热点绑定",
+    "delivery_note": "情绪状态和语调说明（如：压低声音说、突然提高音量、用疑问语气）",
+    "visual_effect": "钩子对应的视觉描述（如：黑屏白字逐字出现、快速剪辑蒙太奇）"
+  },
+
+  "// full_narration": "全量口播稿（连续完整文本，含时间戳标记，供TTS直接使用）",
+  "full_narration": "[00:00-00:03] 钩子部分口播...\n[00:03-00:10] 开场部分...\n[00:10-00:25] 分镜1口播...\n...\n[00:00:00] 所有scene的narration文本拼接成的完整口播稿",
+
+  "// scenes": "分镜头列表（至少5个，建议5-12个）",
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "cover | hook | explainer | demonstration | analogy | data-viz | talking-head | b-roll | comparison | summary | outro",
+      "title": "镜头标题（用于标识）",
+      "duration_seconds": 8,
+      "narration": "该镜头对应的口播文本。与full_narration中对应段落一致。",
+      "narration_tone": "该段口播的情绪状态（如：兴奋、严肃、好奇、沉重、轻快）",
+
+      "visual_description": "画面视觉描述（供导演/剪辑参考的自然语言描述）",
+
+      "// video_prompt": "AI视频生成提示词 — 必须包含景别、运镜、主体、动作、环境、至少3个风格要素",
+      "video_prompt": "[Shot Type] of [Subject] [Action] in [Environment]. Camera [Movement]. [Lighting]. [Color Palette], [Atmosphere]. [Style], [Motion Dynamics]. — 一段完整的自然语言描述。",
+
+      "// image_prompt": "AI图像生成提示词 — 该镜头的关键帧/缩略图提示词",
+      "image_prompt": "[Subject], [Composition]. [Background], [Lighting]. [Color Scheme], [Mood]. [Style], [Quality]. — 一段完整的自然语言描述。",
+
+      "transition": "进入此镜头的转场效果。可选值：cut | dissolve | fade-in | wipe | zoom-in | slide-left | slide-right | whip-pan | morph | none(opening)",
+      "transition_out": "离开此镜头的转场效果。可选值：同上 + none(closing)",
+
+      "bgm_suggestion": "背景音乐建议（如：低音电子脉冲、钢琴轻音、弦乐渐强）",
+      "sfx_suggestion": "音效建议（如：woosh转场声、科技感beep、纸张翻页声）"
+    },
+    {
+      "id": "scene-02",
+      "type": "explainer",
+      "title": "概念解释：什么是X",
+      "duration_seconds": 12,
+      "narration": "对应的口播文本...",
+      "narration_tone": "好奇、启发式",
+      "visual_description": "画面视觉描述...",
+      "video_prompt": "视频提示词...",
+      "image_prompt": "图像提示词...",
+      "transition": "dissolve",
+      "transition_out": "cut",
+      "bgm_suggestion": "轻科技电子",
+      "sfx_suggestion": "woosh"
+    }
+  ],
+
+  "// outro": "结尾设计",
+  "outro": {
+    "text": "结尾口播文案（包含回顾总结 + 感谢 + CTA）",
+    "duration_seconds": 8,
+    "cta_type": "关注 | 点赞 | 评论 | 分享 | 下期预告",
+    "cta_text": "具体的CTA话术",
+    "visual_description": "结尾画面描述",
+    "image_prompt": "结尾图AI提示词（通常包含品牌色、Logo位置预留）"
+  },
+
+  "// production_notes": "制作备注",
+  "production_notes": {
+    "recommended_bgm": "推荐BGM曲目或风格",
+    "total_duration_check": "各scene duration_seconds之和",
+    "narration_word_count": "full_narration总字数",
+    "estimated_speed": "预计语速（字/分钟）",
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "special_notes": "特殊备注（如：需要绿幕、需要实拍素材、需要授权音乐等）"
+  }
+}

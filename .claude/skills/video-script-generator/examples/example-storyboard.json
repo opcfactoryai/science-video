@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "title": "量子计算机到底有多强？5分钟彻底搞懂",
+    "topic": "量子计算科普",
+    "style_category": "科普解说",
+    "target_duration_seconds": 180,
+    "tone": "悬念叙事 + 轻松科普",
+    "target_audience": "对科技感兴趣的普通大众，18-35岁，无物理背景",
+    "version": "2.0",
+    "generated_at": "2026-06-10T12:00:00Z"
+  },
+
+  "cover": {
+    "title": "量子计算机到底有多强？",
+    "subtitle": "5分钟彻底搞懂",
+    "visual_concept": "打开中的量子计算机，内部金色线缆如瀑布般垂下，芯片发出蓝色幽光。深邃的蓝金配色，科技感与神秘感并存。上方文字区域有暗色渐变。",
+    "text_overlay_position": "upper-third",
+    "text_style": "bold white sans-serif with subtle cyan glow",
+    "image_prompt": "A dramatic wide shot of an open quantum computer cryostat revealing its inner chambers with cascading gold and copper wiring. The central quantum chip emits a subtle blue glow. Composition follows the rule of thirds with the glowing chip at the lower-left focal point and intricate cooling infrastructure filling the upper frame. Deep navy blue and warm gold metallic color scheme creates a premium technology feel. Volumetric volumetric lighting with subtle god rays. The upper third of the image has a dark gradient area suitable for bold white text overlay. Photorealistic CG render, 8K resolution, hyper-detailed, sharp focus. Cinematic lighting with strong contrast between cool blue interior and warm gold accents. Atmosphere of scientific awe and mystery."
+  },
+
+  "hook": {
+    "text": "你用的电脑，其实是个计算器。但量子计算机……",
+    "type": "反常识",
+    "delivery_note": "前3字用正常语气，'你用的电脑'稍停顿，'其实是个计算器'用略带调侃的语气，'但量子计算机'音量提高，留0.5秒悬念",
+    "visual_effect": "黑屏，白字逐字打出'你用的电脑，其实是个计算器。' 最后一个字打出后画面碎裂/切换，进入流光特效引出标题"
+  },
+
+  "full_narration": "[00:00-00:05] 你用的电脑，其实是个计算器。但量子计算机……它可能彻底改变人类文明的进程。\n\n[00:05-00:10] 我是老白，今天我们用5分钟，把量子计算机这件事彻底讲清楚。\n\n[00:10-00:22] 要理解量子计算机为什么这么强，我们首先得知道，传统计算机是怎么工作的——嗯对，就是你现在正在用的这台。传统计算机的核心，是一个叫'比特'的东西。\n\n[00:22-00:35] 比特就像一个开关：要么是0，要么是1。所有的软件、游戏、视频，本质上都是亿万次0和1的组合运算。你可以想象一个硬币——永远只有正面或反面。\n\n[00:35-00:50] 但量子计算机用的不是比特，而是'量子比特'，或者叫qubit。qubit和比特最大的不同就是——它可以同时是0和1。你没听错，同时。\n\n[00:50-01:05] 这就像那个硬币，它不再只是正面或反面，而是在旋转的过程中——既是正面，又是反面。物理学上，这叫'叠加态'。这个概念是薛定谔在1935年提出的，没错，就是那个养猫的物理学家。\n\n[01:05-01:25] 那叠加态到底有什么用呢？我给你算一笔账。1个比特只能表示1个数字。但1个量子比特可以同时表示2个状态。2个量子比特？4个。3个？8个。看到了吗？是指数级的增长。50个量子比特，就能同时处理2的50次方个状态——那是超过一千万亿个组合。\n\n[01:25-01:45] 但事情没这么简单。量子比特有一个致命弱点——它太脆弱了。任何微小的干扰，温度波动、电磁波、甚至是宇宙射线，都会让它'退相干'，也就是失去量子特性。所以量子计算机必须被冷却到接近绝对零度，零下273度，比外太空还冷。\n\n[01:45-02:05] 这就是为什么你看到的量子计算机都是那么个巨大的'吊灯'形状——那是它的制冷系统。真正的芯片，大概只有指甲盖那么大。但你猜怎么着？2024年底，谷歌发布了Willow芯片，只有一平方厘米，但它在标准基准测试中，完成了一个任务只需要5分钟。同样的任务，当今最快的超级计算机需要——10的25次方年。比宇宙的年龄还长。\n\n[02:05-02:25] 当然，这并不意味着我们的手机马上能变得更快。量子计算机不是替代传统计算机的，它们是不同赛道上的工具。某些问题上它吊打传统计算——比如药物分子模拟、金融风险建模、密码破解、优化问题、人工智能。但如果你只是想刷抖音？传统芯片足够了。\n\n[02:25-02:40] 最让人兴奋的应用，是药物研发。传统的药物研发需要筛选数百万种分子组合，超级计算机跑一次可能要几个月。而量子计算机，可以在几天甚至几小时内完成。这可能让癌症特效药的研发周期从10年缩短到1年。\n\n[02:40-02:52] 当然，量子计算还处在非常早期的阶段。现在的量子计算机还有很高的错误率，我们需要量子纠错技术才能真正实用化。但谷歌、IBM、微软、中国科学技术大学——全世界最聪明的团队，都在全力攻克这个难题。\n\n[02:52-03:00] 未来十年，量子计算可能会像20年前互联网一样，悄然改变一切。而你，刚刚用5分钟，提前看到了未来。\n\n[03:00-03:05] 如果这个视频让你有所启发，点个关注，咱们下期继续探索前沿科技。我是老白，下期见。",
+
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "cover",
+      "title": "开场：量子计算机外观",
+      "duration_seconds": 5,
+      "narration": "你用的电脑，其实是个计算器。但量子计算机……它可能彻底改变人类文明的进程。",
+      "narration_tone": "开场平静，'改变人类文明'时带震撼感",
+      "visual_description": "量子计算机的巨大吊灯式结构，金色线缆层层堆叠，蓝色冷光从中心发出。摄像机缓缓上摇，展示全貌。",
+      "video_prompt": "A slow crane-up shot from a low angle of a massive quantum computer cryostat, the camera tilting upward to reveal its full chandelier-like structure. Multiple layers of gold and copper rings stacked vertically, with blue LED indicators pulsing along cooling pipes. Dramatic volumetric lighting casting long shadows through layers of metallic hardware. Deep blue atmosphere with warm copper highlights. Cinematic style with 24fps film grain, shallow depth of field blurring the upper layers. Slow, respectful camera movement suggesting awe and wonder. Cool industrial color palette with cyan and amber accents.",
+      "image_prompt": "Low angle wide shot of a quantum computer cryostat, its multi-layer chandelier structure dominating the frame. Symmetrical composition with the central column as the focal point. Gold and copper rings stack upward into shadow. Blue LED lights create scattered pinpoints of cool color against dark metallic surfaces. Dramatic side lighting emphasizes the geometric precision. Cinematic still style, 8K, hyper-detailed, deep shadows with metallic specular highlights. Mood of technological awe.",
+      "transition": "none",
+      "transition_out": "cut",
+      "bgm_suggestion": "低音电子脉冲，开场缓慢渐入",
+      "sfx_suggestion": "低沉的设备启动嗡鸣声"
+    },
+    {
+      "id": "scene-02",
+      "type": "explainer",
+      "title": "传统计算机如何工作",
+      "duration_seconds": 12,
+      "narration": "要理解量子计算机为什么这么强，我们首先得知道，传统计算机是怎么工作的——嗯对，就是你现在正在用的这台。传统计算机的核心，是一个叫'比特'的东西。",
+      "narration_tone": "亲切、对话感，'就是你现在正在用的这台'带调侃",
+      "visual_description": "3D动画：一枚硬币旋转，停在正面（0），再旋转停在反面（1）。旁边有0和1的数字流动显示。",
+      "video_prompt": "A 2D motion graphics animation of a silver coin spinning on a dark surface. The coin alternates between landing heads-up and tails-up, with glowing digital '0' and '1' appearing above it respectively. The camera remains static, focused on the coin. Clean studio lighting with a soft key light. Modern flat-design infographic style with smooth animation curves. Blue and white color scheme with subtle glow effects on the numbers. The background shows faint cascading binary code. Professional, educational atmosphere.",
+      "image_prompt": "A split composition showing a silver coin on the left half labeled '0' (heads) and on the right half labeled '1' (tails). Clean minimalist dark background with subtle binary code pattern. The '0' is colored cool blue, the '1' is warm orange. Vector illustration style with smooth gradients. Professional, educational mood. High contrast with the coin sharply detailed.",
+      "transition": "cut",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "轻快的科技电子，节奏稳定",
+      "sfx_suggestion": "硬币旋转的清脆金属声"
+    },
+    {
+      "id": "scene-03",
+      "type": "analogy",
+      "title": "比特 vs 量子比特：硬币类比",
+      "duration_seconds": 15,
+      "narration": "比特就像一个开关：要么是0，要么是1。所有的软件、游戏、视频，本质上都是亿万次0和1的组合运算。你可以想象一个硬币——永远只有正面或反面。但量子计算机用的不是比特，而是'量子比特'，或者叫qubit。qubit和比特最大的不同就是——它可以同时是0和1。你没听错，同时。",
+      "narration_tone": "'你没听错，同时' 语气突然放慢、加重，制造顿悟时刻",
+      "visual_description": "左边一枚静止硬币(比特)，右边一枚快速旋转的硬币(量子比特)，旋转的硬币呈现半透明 ghost 效果，同时显示0和1。",
+      "video_prompt": "A split-screen 3D animation. Left side: a stationary coin labeled 'Bit' showing only heads or tails, static. Right side: a spinning coin labeled 'Qubit' rotating rapidly, creating a semi-transparent ghost effect where both heads and tails are visible simultaneously. The camera slowly dollies in toward the spinning coin. Clean studio lighting with blue tint on the left coin and purple-magenta glow on the right. Educational 3D animation style with cel-shaded rendering. The right coin emits subtle particle effects. Smooth 60fps motion.",
+      "image_prompt": "Split composition comparing two coins. Left: sharp, static silver coin showing only heads, labeled 'Bit = 0 or 1'. Right: semi-transparent spinning coin showing both heads and tails simultaneously with a ghosting effect, labeled 'Qubit = 0 AND 1'. Dark gradient background. Left side cool blue lighting, right side warm purple glow. Photorealistic CG render with clear typography labels. Educational infographic aesthetic with premium production value.",
+      "transition": "dissolve",
+      "transition_out": "cut",
+      "bgm_suggestion": "音调在量子比特出现时略微升高，制造'新概念'的提示感",
+      "sfx_suggestion": "硬币旋转声逐渐变快，'同时'出现时有一个音效突停效果"
+    },
+    {
+      "id": "scene-04",
+      "type": "explainer",
+      "title": "叠加态概念",
+      "duration_seconds": 15,
+      "narration": "这就像那个硬币，它不再只是正面或反面，而是在旋转的过程中——既是正面，又是反面。物理学上，这叫'叠加态'。这个概念是薛定谔在1935年提出的，没错，就是那个养猫的物理学家。",
+      "narration_tone": "'养猫的物理学家'带轻松幽默，让观众会心一笑",
+      "visual_description": "薛定谔的头像浮现（卡通风格），旁边出现一个半透明盒子，里面同时出现活猫和死猫的虚影。然后风格转回科学可视化。",
+      "video_prompt": "A playful 2D animation sequence. A cartoon portrait of Schrödinger with wild hair appears on the left. On the right, a semi-transparent box materializes showing a ghostly superposition of a living cat and a sleeping cat overlaid. The cats are stylized vector illustrations with pastel colors. The animation then morphs into a more scientific visualization with quantum state vectors spinning. Camera pans smoothly from the cartoon to the scientific visualization. Soft lighting with warm beige background. Whimsical then transitions to serious educational tone.",
+      "image_prompt": "Split composition: left half shows a stylized cartoon of Schrödinger with a knowing smile, right half shows a glass box containing a glowing quantum superposition — a cat that appears simultaneously alive and as a faint ghost. Pastel color scheme with purple and teal accents. Vector illustration style transitioning to scientific visualization. Playful yet educational mood. The box has ethereal glow lines suggesting quantum energy.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "轻快的木琴音效过渡到沉静的科技音",
+      "sfx_suggestion": "卡通出现时有'叮'的音效，科学可视化时转为低沉持续的电子音"
+    },
+    {
+      "id": "scene-05",
+      "type": "data-viz",
+      "title": "指数增长可视化",
+      "duration_seconds": 20,
+      "narration": "那叠加态到底有什么用呢？我给你算一笔账。1个比特只能表示1个数字。但1个量子比特可以同时表示2个状态。2个量子比特？4个。3个？8个。看到了吗？是指数级的增长。50个量子比特，就能同时处理2的50次方个状态——那是超过一千万亿个组合。",
+      "narration_tone": "语速逐渐加快、激昂，'指数级的增长'加重音，'一千万亿'放慢加重",
+      "visual_description": "屏幕上出现柱状图/树状分叉图。1→2→4→8→16→32→... 指数爆炸。到50时画面充满光线和数据流。",
+      "video_prompt": "A dynamic data visualization animation showing exponential growth. Starting from a single node that branches into 2, then 4, then 8, each branch splitting outward like a fractal tree. The camera dollies back as the tree expands to fill the frame. At 50 qubits, the branching becomes so dense it transforms into a brilliant explosion of light particles and data streams. Cinematic lighting with warm orange on the branching lines and blue particle accents. Motion graphics style with smooth keyframe animation. The numbers glow brighter with each multiplication. Awe-inspiring atmosphere as the tree becomes a galaxy of light.",
+      "image_prompt": "A stunning data visualization of exponential growth: a fractal tree of glowing nodes branching from 1 to 50, with the density at the top exploding into a galaxy of light particles. Warm gold to cool blue gradient. The base shows '1 qubit = 2 states' and the top shows '50 qubits = 2^50 states'. Infographic style meets cinematic art. Deep dark blue background with the branching tree as the main visual. Awe-inspiring and educational mood. 8K resolution, sharp typography overlay.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "节奏逐渐加快的电子音乐，在指数爆炸时达到高潮",
+      "sfx_suggestion": "每次翻倍有'叮'声，节奏越来越快，最后爆发为 swoosh 音效"
+    },
+    {
+      "id": "scene-06",
+      "type": "explainer",
+      "title": "量子比特的脆弱性",
+      "duration_seconds": 20,
+      "narration": "但事情没这么简单。量子比特有一个致命弱点——它太脆弱了。任何微小的干扰，温度波动、电磁波、甚至是宇宙射线，都会让它'退相干'——也就是失去量子特性。所以量子计算机必须被冷却到接近绝对零度，零下273度，比外太空还冷。这就是为什么你看到的量子计算机都是那么个巨大的'吊灯'形状——那是它的制冷系统。真正的芯片，大概只有指甲盖那么大。",
+      "narration_tone": "从激昂转为冷静严肃，'致命弱点'加重语气，描述温度时放慢制造反差",
+      "visual_description": "展示量子芯片（指甲盖大小）对比巨大的制冷设备。温度显示从室温急速下降到 -273°C 的动画。芯片放大展示其精密结构。",
+      "video_prompt": "A dramatic scale comparison shot using a rapid push-in transition. Start with a wide shot of the full quantum computer cryostat (the 'chandelier'), then fast zoom through the layers into an extreme close-up of a fingernail-sized quantum chip. The temperature display overlay drops rapidly from 25°C to -273°C. The chip surface shows intricate etched circuits with delicate gold wire bonding. Volumetric fog with cold blue lighting, the metal surfaces frosted with ice crystals. Cinematic macro photography style. The contrast between the massive cooling infrastructure and the tiny chip creates visual impact. Slow drifting particles of frozen air around the chip.",
+      "image_prompt": "Extreme close-up macro shot of a fingernail-sized quantum processor chip mounted on a circuit board, with intricate gold bond wires and etched patterns visible. The chip is surrounded by frosted metallic cooling structures. The background shows the massive layered rings of the cryostat receding into darkness. Dramatic cold blue lighting with frost details. Ultra-detailed photorealistic CG render. The scale contrast between the tiny central chip and the massive industrial equipment around it creates visual impact. 8K resolution, sharp focus on the chip surface.",
+      "transition": "dissolve",
+      "transition_out": "cut",
+      "bgm_suggestion": "低沉、谨慎的科技音，制造'这里有个问题'的暗示",
+      "sfx_suggestion": "温度下降的音效（越来越高的冷冻声），芯片特写时非常细微的电子嗡鸣"
+    },
+    {
+      "id": "scene-07",
+      "type": "explainer",
+      "title": "谷歌Willow芯片",
+      "duration_seconds": 20,
+      "narration": "但你猜怎么着？2024年底，谷歌发布了Willow芯片，只有一平方厘米，但它在标准基准测试中，完成了一个任务只需要5分钟。同样的任务，当今最快的超级计算机需要——10的25次方年。比宇宙的年龄还长。",
+      "narration_tone": "'但你猜怎么着'兴奋、期待，'比宇宙的年龄还长'放慢、一字一顿、制造震撼",
+      "visual_description": "Willow芯片特写（艺术渲染），旁边对比超级计算机的巨大机房。数据对比动画：5分钟 vs 10^25年。宇宙年龄时间线。",
+      "video_prompt": "A cinematic reveal of the Willow quantum chip — a 1cm square silicon die with intricate geometric patterns. The camera slowly orbits the chip as it levitates slightly above a dark surface. The chip glows with subtle cyan internal light. A dramatic split-screen comparison then shows a massive supercomputer center on one side (rows of server racks) and the tiny Willow chip on the other. Data visualization shows '5 minutes' versus '10^25 years' with a cosmic timeline visualization expanding into a universe of stars. Cinematic lighting with heroic warm gold on the Willow chip. Awe-inspiring atmosphere with slow camera movements. Documentary-style with high production value.",
+      "image_prompt": "A cinematic product shot of a 1cm square quantum chip floating above a reflective dark surface, glowing with internal cyan light. The chip surface shows intricate geometric circuit patterns. Split screen comparison: left side shows the tiny chip, right side shows an immense supercomputer facility with endless server racks fading into perspective. Warm gold lighting on the chip, cool blue on the supercomputer. Text overlay area shows '5 min vs 10^25 years'. Product photography meets scientific visualization. 8K, hyperrealistic, award-winning photography quality.",
+      "transition": "cut",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "音乐突然提升，激昂有力的科技交响乐，在数字对比时达到顶点",
+      "sfx_suggestion": "芯片出现时有焕然一新的升调音效，数据对比时有计时器的滴答声加速"
+    },
+    {
+      "id": "scene-08",
+      "type": "comparison",
+      "title": "不同赛道：量子 vs 传统",
+      "duration_seconds": 20,
+      "narration": "当然，这并不意味着我们的手机马上能变得更快。量子计算机不是替代传统计算机的，它们是不同赛道上的工具。某些问题上它吊打传统计算——比如药物分子模拟、金融风险建模、密码破解、优化问题、人工智能。但如果你只是想刷抖音？传统芯片足够了。",
+      "narration_tone": "语气放缓、实在，'刷抖音'时用轻松调侃的语气，制造亲和力",
+      "visual_description": "两条赛道可视化：左边是传统计算机赛道（日常使用场景：抖音、游戏），右边是量子计算机赛道（分子、金融、宇宙）。分屏对比动画。",
+      "video_prompt": "A dynamic split-screen animation showing two parallel 'tracks' or pathways. Left track: traditional computing highway showing everyday scenes — a smartphone with TikTok, a gaming PC, weather icons — all in warm natural colors, smooth and stable. Right track: quantum computing highway showing abstract scientific visuals — molecular structures rotating, financial data streams, glowing encryption keys, neural network visualizations — in cool blue-purple with particle effects. The camera follows a split-path dolly movement, staying centered on the dividing line. Infographic style transitioning into cinematic visualization. Clear, educational atmosphere.",
+      "image_prompt": "Split-screen comparison infographic. Left half: 'Classical Computing' with familiar icons — smartphone, laptop, gaming controller — in warm amber and teal colors, flat design style. Right half: 'Quantum Computing' with molecular structures, financial graphs, encryption keys, neural network nodes — in cool indigo and magenta, futuristic glow style. A clear dividing line with the text 'Different Tools, Different Jobs'. Modern infographic aesthetic transitioning into sci-fi. Educational and visually striking.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "音乐的激昂感退去，转为平稳、带节奏感的电子音",
+      "sfx_suggestion": "抖音部分插入短视频滚动声，量子部分转为科技感数据流声"
+    },
+    {
+      "id": "scene-09",
+      "type": "explainer",
+      "title": "药物研发应用",
+      "duration_seconds": 15,
+      "narration": "最让人兴奋的应用，是药物研发。传统的药物研发需要筛选数百万种分子组合，超级计算机跑一次可能要几个月。而量子计算机，可以在几天甚至几小时内完成。这可能让癌症特效药的研发周期从10年缩短到1年。",
+      "narration_tone": "充满希望和憧憬的语气，'从10年缩短到1年'一字一顿，重音强调",
+      "visual_description": "分子结构的3D动画，各种分子组合快速匹配。左边是传统方法（慢速搜索），右边是量子方法（瞬间找到最优解）。最后展示治愈的象征画面。",
+      "video_prompt": "A split-screen animation starting with a medium wide shot of molecular structures rotating in 3D space. Left side: a slow step-by-step molecular search with progress bars moving incrementally, camera static. Right side: a dramatic close-up dolly-in as the correct molecular match glows instantly among thousands of possibilities. The matched molecule emits a bright golden pulse. Camera whip-pans to a hopeful visual of a scientific breakthrough — a petri dish glowing in a dim lab. Cinematic lighting with warm golden hour tones. Inspiring, emotional atmosphere. Documentary-style cinematography with medical-scientific accuracy. Shallow depth of field on the glowing molecule.",
+      "image_prompt": "Molecular docking visualization showing a drug molecule perfectly fitting into a protein binding site. The correct molecular match is highlighted with a brilliant golden glow against a dark blue background of other molecular possibilities. The scene suggests 'the needle found in the haystack.' Photorealistic CG render of molecular structures with volumetric lighting. Hopeful and inspiring atmosphere. 8K resolution, scientific accuracy combined with artistic beauty. Deep blue background with the golden molecule as the focal point.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "温暖、希望的钢琴旋律渐入，科技音退去",
+      "sfx_suggestion": "分子匹配时的心跳声，成功后舒缓的呼吸声"
+    },
+    {
+      "id": "scene-10",
+      "type": "summary",
+      "title": "总结与展望",
+      "duration_seconds": 12,
+      "narration": "当然，量子计算还处在非常早期的阶段。现在的量子计算机还有很高的错误率，我们需要量子纠错技术才能真正实用化。但谷歌、IBM、微软、中国科学技术大学——全世界最聪明的团队，都在全力攻克这个难题。未来十年，量子计算可能会像20年前互联网一样，悄然改变一切。而你，刚刚用5分钟，提前看到了未来。",
+      "narration_tone": "平静但有力，'提前看到了未来'缓慢、笃定",
+      "visual_description": "蒙太奇剪辑风格：快速闪过全球量子实验室的画面（Google、IBM、中科大），最终画面回到开头量子计算机的全景，但背景从暗色转为璀璨星空。",
+      "video_prompt": "A rapid montage sequence transitioning between global quantum research labs — Google's quantum lab with Willow chip, IBM's Quantum System One, University of Science and Technology of China's quantum facility. Each flash is 1-2 seconds with whip-pan transitions. The sequence slows back to the opening shot of the quantum computer chandelier, but now the dark background has transformed into a brilliant starfield suggesting the universe of possibilities. The camera slowly pulls back, revealing the quantum computer floating in a cosmic setting. Cinematic, inspiring, with a sense of looking into the future. Warm amber final glow with a slight lens flare.",
+      "image_prompt": "The final shot: a quantum computer cryostat standing majestically in a cosmic setting, its golden rings illuminated against a field of distant stars and nebulae. The contrast between the precise metallic machine and the organic cosmos creates a powerful statement. Wide shot, symmetrical composition. The quantum computer's blue internal glow reflects on the polished floor. Cinematic still, 8K, hyperrealistic. Awe-inspiring and hopeful atmosphere. The upper section has a subtle dark area for text overlay (CTA text).",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "音乐渐强，温暖宏大的管弦乐与电子乐融合",
+      "sfx_suggestion": "蒙太奇剪辑时快速切换的 woosh 声，最后定格时一声深沉低音"
+    },
+    {
+      "id": "scene-11",
+      "type": "outro",
+      "title": "结尾引导关注",
+      "duration_seconds": 5,
+      "narration": "如果这个视频让你有所启发，点个关注，咱们下期继续探索前沿科技。我是老白，下期见。",
+      "narration_tone": "友好、真诚，语速正常",
+      "visual_description": "品牌结尾卡：频道Logo居中，下方关注按钮动画。鼓励订阅。",
+      "video_prompt": "A static brand end card with subtle 2D motion graphics animation. The channel logo appears centered with a soft glow reveal. Below it, a 'Subscribe' button pulses gently with a magnetic-like wobble animation. Social media handles fade in below. The background is the dark cosmic starfield from the previous scene. The camera is completely static. Clean, minimal motion graphics with subtle particle effects. Professional YouTuber end card style. Warm amber and cool blue brand colors. 2 seconds of hold after all elements appear.",
+      "image_prompt": "YouTube-style end card with dark cosmic background. Centered composition with the channel logo '老白科技' in bold modern typography with a subtle cyan glow. Below, a red 'Subscribe' button with white text. Bottom shows '@laobaitech' social handle. Minimalist, clean, professional. Dark gradient background with faint stars. The text elements are sharp and legible. Branding style graphic design.",
+      "transition": "dissolve",
+      "transition_out": "none",
+      "bgm_suggestion": "音乐淡出，最后一秒完全静音",
+      "sfx_suggestion": "Logo出现时的柔和叮当声"
+    }
+  ],
+
+  "outro": {
+    "text": "如果这个视频让你有所启发，点个关注，咱们下期继续探索前沿科技。我是老白，下期见。",
+    "duration_seconds": 8,
+    "cta_type": "关注",
+    "cta_text": "点个关注，下期继续探索前沿科技",
+    "visual_description": "品牌结尾卡：频道Logo + 关注按钮 + 社交媒体信息。星空背景延续前一镜头的宇宙主题。",
+    "image_prompt": "YouTube-style end card with deep cosmic space background showing faint stars and nebulae. Center: '老白科技' channel name in bold modern sans-serif typography with subtle cyan glow effect. Below: red 'Subscribe' button with white text, slightly pulsing. Bottom: '@laobaitech' social handle. Minimalist, clean, professional. The upper part shows '量子计算机到底有多强？' as a small reminder of the video title. Dark gradient ensures all text is fully legible. Brand identity consistent with the video's cool blue and warm gold color palette."
+  },
+
+  "production_notes": {
+    "recommended_bgm": "开场: 低沉电子脉冲 → 解释部分: 轻快科技电子 → 数据部分: 节奏加速 → 应用部分: 温暖钢琴 → 结尾: 宏大管弦+电子融合",
+    "total_duration_check": 164,
+    "narration_word_count": 1850,
+    "estimated_speed": 190,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "fps": 30,
+    "special_notes": "整体色调以深蓝、金色为主，保持视觉一致性。Willow芯片部分建议使用谷歌官方素材或艺术渲染。部分复杂分子动画可外包或使用现成素材库。"
+  }
+}

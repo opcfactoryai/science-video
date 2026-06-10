@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Video Storyboard Script Schema",
+  "description": "工业级视频分镜头脚本 JSON Schema — 校验所有必填字段、类型、格式",
+  "type": "object",
+  "required": ["meta", "cover", "hook", "full_narration", "scenes", "outro", "production_notes"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "description": "视频元信息",
+      "required": ["title", "topic", "style_category", "target_duration_seconds", "tone", "version"],
+      "properties": {
+        "title": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "topic": { "type": "string", "minLength": 2 },
+        "style_category": { "type": "string", "enum": ["科普解说", "新闻快讯", "产品评测", "知识分享", "科技前沿"] },
+        "target_duration_seconds": { "type": "integer", "minimum": 15, "maximum": 1800 },
+        "tone": { "type": "string", "minLength": 2 },
+        "target_audience": { "type": "string" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+$" },
+        "generated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "cover": {
+      "type": "object",
+      "description": "封面设计",
+      "required": ["title", "visual_concept", "text_overlay_position", "image_prompt"],
+      "properties": {
+        "title": { "type": "string", "minLength": 2, "maxLength": 30 },
+        "subtitle": { "type": "string" },
+        "visual_concept": { "type": "string", "minLength": 10 },
+        "text_overlay_position": { "type": "string", "enum": ["upper-third", "center", "bottom"] },
+        "text_style": { "type": "string" },
+        "image_prompt": { "type": "string", "minLength": 50 }
+      }
+    },
+    "hook": {
+      "type": "object",
+      "description": "钩子（前3秒黄金法则）",
+      "required": ["text", "type", "delivery_note", "visual_effect"],
+      "properties": {
+        "text": { "type": "string", "minLength": 5, "maxLength": 40 },
+        "type": { "type": "string", "enum": ["反常识", "悬念", "痛点", "数据冲击", "故事开场", "设问互动", "热点绑定"] },
+        "delivery_note": { "type": "string", "minLength": 5 },
+        "visual_effect": { "type": "string", "minLength": 5 }
+      }
+    },
+    "full_narration": {
+      "type": "string",
+      "description": "全量口播稿，必须包含所有scene的narration文本，用时间戳标记",
+      "minLength": 100
+    },
+    "scenes": {
+      "type": "array",
+      "description": "分镜头列表（至少5个）",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "title", "duration_seconds", "narration", "visual_description", "video_prompt", "image_prompt", "transition"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^scene-\\d{2,}$" },
+          "type": {
+            "type": "string",
+            "enum": ["cover", "hook", "explainer", "demonstration", "analogy", "data-viz", "talking-head", "b-roll", "comparison", "summary", "outro"]
+          },
+          "title": { "type": "string", "minLength": 2 },
+          "duration_seconds": { "type": "integer", "minimum": 2, "maximum": 60 },
+          "narration": { "type": "string", "minLength": 5 },
+          "narration_tone": { "type": "string" },
+          "visual_description": { "type": "string", "minLength": 10 },
+          "video_prompt": { "type": "string", "minLength": 50 },
+          "image_prompt": { "type": "string", "minLength": 50 },
+          "transition": {
+            "type": "string",
+            "enum": ["cut", "dissolve", "fade-in", "wipe", "zoom-in", "slide-left", "slide-right", "whip-pan", "morph", "none"]
+          },
+          "transition_out": {
+            "type": "string",
+            "enum": ["cut", "dissolve", "fade-in", "wipe", "zoom-in", "slide-left", "slide-right", "whip-pan", "morph", "none"]
+          },
+          "bgm_suggestion": { "type": "string" },
+          "sfx_suggestion": { "type": "string" }
+        },
+        "additionalProperties": true
+      },
+      "uniqueSceneIds": {
+        "description": "所有scene的id必须唯一",
+        "type": "boolean"
+      }
+    },
+    "outro": {
+      "type": "object",
+      "description": "结尾设计",
+      "required": ["text", "duration_seconds", "cta_type", "cta_text", "visual_description", "image_prompt"],
+      "properties": {
+        "text": { "type": "string", "minLength": 10 },
+        "duration_seconds": { "type": "integer", "minimum": 3, "maximum": 20 },
+        "cta_type": { "type": "string", "enum": ["关注", "点赞", "评论", "分享", "下期预告"] },
+        "cta_text": { "type": "string", "minLength": 5 },
+        "visual_description": { "type": "string", "minLength": 10 },
+        "image_prompt": { "type": "string", "minLength": 50 }
+      }
+    },
+    "production_notes": {
+      "type": "object",
+      "description": "制作备注",
+      "required": ["aspect_ratio", "resolution"],
+      "properties": {
+        "recommended_bgm": { "type": "string" },
+        "total_duration_check": { "type": "integer" },
+        "narration_word_count": { "type": "integer" },
+        "estimated_speed": { "type": "integer" },
+        "aspect_ratio": { "type": "string" },
+        "resolution": { "type": "string" },
+        "fps": { "type": "integer", "minimum": 24, "maximum": 60 },
+        "special_notes": { "type": "string" }
+      }
+    }
+  }
+}
