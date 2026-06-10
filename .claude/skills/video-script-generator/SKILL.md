@@ -134,16 +134,18 @@ python .claude/skills/video-script-generator/scripts/validate_script.py \
 
 如校验失败则根据错误信息修正后重新生成，直到通过。
 
-### 3.2 提取全量口播稿
+### 3.2 提取全量口播稿（去时间戳）
 
 ```bash
 python -c "
-import json
+import re, json
 with open('projects/${PROJECT_NAME}/script.json', encoding='utf-8') as f:
     data = json.load(f)
+# 去掉 [hh:mm-hh:mm] 时间戳标记，只保留纯口播文本
+clean = re.sub(r'\[\d+:\d+-\d+:\d+\]\s*', '', data['full_narration'])
 with open('projects/${PROJECT_NAME}/narration.txt', 'w', encoding='utf-8') as out:
-    out.write(data['full_narration'])
-print('✅ narration.txt saved')
+    out.write(clean)
+print('OK narration.txt saved (timestamps stripped)')
 "
 ```
 
