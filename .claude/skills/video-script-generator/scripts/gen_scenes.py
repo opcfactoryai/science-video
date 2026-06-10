@@ -14,7 +14,10 @@ import requests
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-API_KEY = os.environ.get("IMAGE_API_KEY", "sk-dwghZmhFGW4HOuFQ6G5wsoqdFwrX7JTrEAPKuuRn0tfSGdMt")
+API_KEY = os.environ.get("IMAGE_API_KEY")
+if not API_KEY:
+    print("❌ 环境变量 IMAGE_API_KEY 未设置。请 source .env 或 export IMAGE_API_KEY=xxx")
+    sys.exit(1)
 API_URL = os.environ.get("IMAGE_API_URL", "https://api.mmh1.top/v1/chat/completions")
 MODEL = os.environ.get("IMAGE_MODEL", "gpt-image-2")
 

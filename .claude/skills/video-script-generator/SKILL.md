@@ -205,8 +205,6 @@ source .env && python .claude/skills/video-script-generator/scripts/gen_tts.py \
 
 ### 🖼️ 生成各分镜图片
 
-> ⚠️ 依赖 `.env` 中的 `IMAGE_API_KEY` / `IMAGE_API_URL`。
-
 ```bash
 cd D:/labs/science-video
 source .env && python .claude/skills/video-script-generator/scripts/gen_scenes.py \
