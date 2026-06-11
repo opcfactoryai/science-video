@@ -206,11 +206,11 @@ source .env && python .claude/skills/video-script-generator/scripts/gen_tts.py \
   --output-dir "$PROJECT_DIR"
 ```
 
-### 🖼️ 生成各分镜图片
+### 🖼️ 生成各分镜图片（XAI Router gpt-image-2）
 
 ```bash
 cd D:/labs/science-video
-source .env && python .claude/skills/video-script-generator/scripts/gen_scenes.py \
+source .env && node .claude/skills/video-script-generator/scripts/gen_scenes_xai.mjs \
   --project-dir "projects/${PROJECT_NAME}"
 ```
 
@@ -232,7 +232,8 @@ video_prompt 字段可供 Runway / Pika / Sora 等 AI 视频工具直接使用�
 | `templates/storyboard-schema.json` | JSON Schema 校验文件 |
 | `scripts/validate_script.py` | 脚本校验工具（读取 schema 校验 script.json） |
 | `scripts/gen_tts.py` | **不动** — 火山引擎双向 TTS V3 |
-| `scripts/gen_scenes.py` | **不动** — gpt-image-2 文字生图 |
+| `scripts/gen_scenes.py` | 旧版 — gpt-image-2 文字生图（Python） |
+| `scripts/gen_scenes_xai.mjs` | **新版** — gpt-image-2 文字生图（Node.js，推荐） |
 | `scripts/protocols/` | **不动** — TTS WebSocket 协议 |
 | `examples/example-storyboard.json` | 完整示例（选题：量子计算科普） |
 
