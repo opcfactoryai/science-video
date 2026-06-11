@@ -18,6 +18,21 @@ import fs from "node:fs";
 import path from "node:path";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 
+// 自动加载项目根目录的 .env 文件（不再需要手动 source .env）
+const envPath = path.resolve(".");
+const envFile = fs.existsSync(path.join(envPath, ".env"))
+  ? fs.readFileSync(path.join(envPath, ".env"), "utf-8")
+  : "";
+for (const line of envFile.split("\n")) {
+  const trimmed = line.trim();
+  if (!trimmed || trimmed.startsWith("#")) continue;
+  const eqIdx = trimmed.indexOf("=");
+  if (eqIdx === -1) continue;
+  const key = trimmed.slice(0, eqIdx).trim();
+  const val = trimmed.slice(eqIdx + 1).trim();
+  if (!process.env[key]) process.env[key] = val;
+}
+
 const API_URL =
   process.env.XAI_API_URL ||
   "https://api.xairouter.com/v1/images/generations";

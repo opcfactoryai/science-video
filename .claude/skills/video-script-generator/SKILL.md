@@ -209,8 +209,9 @@ source .env && python .claude/skills/video-script-generator/scripts/gen_tts.py \
 ### 🖼️ 生成各分镜图片（XAI Router gpt-image-2）
 
 ```bash
+# 脚本自动读取 .env，无需手动 source
 cd D:/labs/science-video
-source .env && node .claude/skills/video-script-generator/scripts/gen_scenes_xai.mjs \
+node .claude/skills/video-script-generator/scripts/gen_scenes_xai.mjs \
   --project-dir "projects/${PROJECT_NAME}"
   # --count 2   # 限制只生成前N个镜头（调试省钱），默认500=全部生成
 ```
