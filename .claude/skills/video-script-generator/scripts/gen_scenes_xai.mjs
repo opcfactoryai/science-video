@@ -46,11 +46,26 @@ function parseArgs() {
   return args;
 }
 
-async function generateImage(prompt, outputPath, retries = 2) {
+/** 从 "1920x1080" 或 "1080x1920" 解析出 API 可用的 size */
+function parseSize(resolution) {
+  if (!resolution) return "1024x1024";
+  const parts = resolution.toLowerCase().split("x");
+  if (parts.length !== 2) return "1024x1024";
+  const w = parseInt(parts[0]);
+  const h = parseInt(parts[1]);
+  if (isNaN(w) || isNaN(h)) return "1024x1024";
+  // API 最大 1024，按比例缩
+  const max = Math.max(w, h);
+  if (max <= 1024) return `${w}x${h}`;
+  const ratio = 1024 / max;
+  return `${Math.round(w * ratio)}x${Math.round(h * ratio)}`;
+}
+
+async function generateImage(prompt, outputPath, resolution, retries = 2) {
   const body = {
     model: "gpt-image-2",
     prompt,
-    size: "1024x1024",
+    size: parseSize(resolution),
     quality: "high",
     output_format: "png",
     response_format: "b64_json",
@@ -128,7 +143,8 @@ async function main() {
     process.stdout.write(`  [${ok + fail + 1}/${scenes.length}] 🖼️  ${scene.id} → ${scene.id}.png  `);
 
     try {
-      await generateImage(prompt, outputPath);
+      const resolution = script.production_notes?.resolution || "1920x1080";
+      await generateImage(prompt, outputPath, resolution);
       const size = fs.statSync(outputPath).size;
       console.log(`✅ (${(size / 1024).toFixed(0)} KB)`);
       ok++;

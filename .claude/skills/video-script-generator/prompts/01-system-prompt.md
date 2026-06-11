@@ -25,6 +25,8 @@
 
 所有 `video_prompt` 和 `image_prompt` 的构图中必须体现对应的画幅方向（竖屏构图 vs 横屏构图）。
 
+确认后将分辨率写入 `production_notes.resolution`（如 `"1920x1080"`）和 `production_notes.aspect_ratio`（如 `"16:9"`）。图片生成脚本将自动读取此字段决定输出尺寸。
+
 ### 0.2 视觉风格
 
 **必须询问用户：** 期望的视觉风格方向？提供以下预设选项：
