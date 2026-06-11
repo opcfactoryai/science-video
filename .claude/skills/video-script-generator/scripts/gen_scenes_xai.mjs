@@ -143,7 +143,8 @@ async function main() {
     process.stdout.write(`  [${ok + fail + 1}/${scenes.length}] 🖼️  ${scene.id} → ${scene.id}.png  `);
 
     try {
-      const resolution = script.production_notes?.resolution || "1920x1080";
+      // 优先级: CLI --size 参数 > script.json production_notes.resolution > 默认 1920x1080
+      const resolution = args["size"] || script.production_notes?.resolution || "1920x1080";
       await generateImage(prompt, outputPath, resolution);
       const size = fs.statSync(outputPath).size;
       console.log(`✅ (${(size / 1024).toFixed(0)} KB)`);

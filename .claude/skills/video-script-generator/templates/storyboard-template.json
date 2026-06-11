@@ -81,12 +81,14 @@
     "image_prompt": "结尾图AI提示词（通常包含品牌色、Logo位置预留）"
   },
 
-  "// production_notes": "制作备注",
+  "// production_notes": "制作备注。生成脚本前用户需确认「竖屏(抖音/快手)」还是「横屏(B站/YouTube)」",
   "production_notes": {
     "recommended_bgm": "推荐BGM曲目或风格",
     "total_duration_check": "各scene duration_seconds之和",
     "narration_word_count": "scenes 中所有非空 narration 的总字数",
+    "// aspect_ratio": "画幅比例：竖屏=9:16，横屏=16:9。由用户选择，全片统一",
     "aspect_ratio": "16:9",
+    "// resolution": "分辨率。竖屏=1080x1920，横屏=1920x1080。图片生成脚本自动读取此值决定输出尺寸",
     "resolution": "1920x1080",
     "fps": 30,
     "special_notes": "特殊备注（如：需要绿幕、需要实拍素材、需要授权音乐等）"
