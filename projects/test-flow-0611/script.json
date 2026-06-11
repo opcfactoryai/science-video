@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "Fable 5 发布测试",
+    "topic": "Claude Fable 5 发布",
+    "style_category": "知识分享",
+    "target_duration_seconds": 60,
+    "tone": "轻松",
+    "target_audience": "开发者",
+    "version": "2.0",
+    "generated_at": "2026-06-11T12:00:00Z"
+  },
+  "cover": {
+    "title": "测试完整流程",
+    "subtitle": "",
+    "visual_concept": "测试封面",
+    "text_overlay_position": "upper-third",
+    "text_style": "bold white",
+    "image_prompt": "A test cover image with a glowing AI emblem on dark background. Cinematic lighting, 8K resolution."
+  },
+  "hook": {
+    "text": "Fable 5 大幅提升了代码能力，可以自主运行数小时。",
+    "type": "数据冲击",
+    "delivery_note": "正常语速",
+    "visual_effect": "标题从屏幕中心逐渐放大出现"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "hook",
+      "title": "开场钩子",
+      "duration_seconds": 10,
+      "narration": "Fable 5 大幅提升了代码能力，可以自主运行数小时。",
+      "narration_tone": "正常",
+      "visual_description": "Fable 5 标识出现",
+      "video_prompt": "A cinematic medium shot of a glowing Fable 5 emblem with camera dolly-in. Blue volumetric lighting. Slow motion particles.",
+      "image_prompt": "A glowing Fable 5 emblem centered with dark background. Cinematic blue lighting, 8K resolution.",
+      "transition": "none",
+      "transition_out": "cut",
+      "bgm_suggestion": "科技电子",
+      "sfx_suggestion": "woosh"
+    },
+    {
+      "id": "scene-02",
+      "type": "explainer",
+      "title": "Stripe案例",
+      "duration_seconds": 12,
+      "narration": "它完成了 Stripe 五千万行代码的迁移，仅用了短短一天。",
+      "narration_tone": "兴奋",
+      "visual_description": "代码流动画",
+      "video_prompt": "A dolly-in close-up of flowing code with digital particles. Camera pan right tracking code lines. Cyan neon lighting.",
+      "image_prompt": "Flowing code on dark background with cyan highlight. Cinematic lighting, 8K quality.",
+      "transition": "cut",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "科技电子",
+      "sfx_suggestion": "键盘声"
+    },
+    {
+      "id": "scene-03",
+      "type": "explainer",
+      "title": "自主运行",
+      "duration_seconds": 12,
+      "narration": "它还自主运行了九个小时，生成了子 Agent 完成了复杂的任务。",
+      "narration_tone": "惊叹",
+      "visual_description": "时间轴动画",
+      "video_prompt": "A wide shot of a futuristic timeline with camera tracking right. Agent nodes branching out. Warm amber lighting.",
+      "image_prompt": "Timeline visualization with branching agent nodes. Warm amber color scheme, cinematic style.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "科技电子",
+      "sfx_suggestion": ""
+    },
+    {
+      "id": "scene-04",
+      "type": "summary",
+      "title": "总结",
+      "duration_seconds": 8,
+      "narration": "这就是 Fable 5 的能力，一个真正能自主工作的AI模型。",
+      "narration_tone": "笃定",
+      "visual_description": "Fable 5 标识缓缓旋转",
+      "video_prompt": "A slow orbit around a glowing Fable 5 emblem. Camera steady. Soft volumetric light. Deep blue atmosphere.",
+      "image_prompt": "Fable 5 emblem floating in dark space. Cinematic CG render, 8K resolution.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "钢琴渐起",
+      "sfx_suggestion": ""
+    },
+    {
+      "id": "scene-05",
+      "type": "outro",
+      "title": "结尾",
+      "duration_seconds": 6,
+      "narration": "这就是 Fable 5 的强大之处，点个关注下期见。",
+      "narration_tone": "友好",
+      "visual_description": "品牌结尾卡",
+      "video_prompt": "A static wide shot of a brand end card with channel logo. Professional YouTube end card style.",
+      "image_prompt": "Channel end card with logo and subscribe button. Dark background, clean typography.",
+      "transition": "dissolve",
+      "transition_out": "none",
+      "bgm_suggestion": "",
+      "sfx_suggestion": ""
+    }
+  ],
+  "outro": {
+    "text": "这就是 Fable 5 的强大之处，点个关注下期见。",
+    "duration_seconds": 6,
+    "cta_type": "关注",
+    "cta_text": "点个关注下期见",
+    "visual_description": "品牌结尾卡包含Logo和关注按钮",
+    "image_prompt": "Channel end card with logo and subscribe button. Dark background, clean typography, 8K quality."
+  },
+  "production_notes": {
+    "total_duration_check": 48,
+    "narration_word_count": 95,
+    "aspect_ratio": "16:9",
+    "resolution": "1920x1080",
+    "fps": 30
+  }
+}

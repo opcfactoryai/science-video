@@ -156,13 +156,17 @@
 
 ### 5.4 全文结构
 
-`full_narration` 字段必须包含从 hook 到 outro 的 **全部口播文本**，用时间戳标记分段：
+`scenes[]` 是视频合成的**唯一数据源**，必须包含全部镜头（cover、hook、explainer…、outro），按时间顺序排列，一个不能缺。
 
+顶层 `hook` / `outro` 对象只存创作元数据（delivery_note、visual_effect、cta_type 等），口播正文以 `scenes[].narration` 为准。
+
+数据源依赖链：
 ```
-[00:00-00:03] 你知道吗？量子计算机的运算速度是传统计算机的亿万倍。
-[00:03-00:12] 但等等，量子计算机到底是什么？它和我们用的电脑有什么不同？
-[00:12-00:28] 要理解这个问题，我们首先要从"比特"说起。在传统计算机中...
-...
+scenes[].narration     →  narration.txt  →  TTS  →  audio + timestamps.json
+scenes[].narration     +  timestamps     →  scene_boundaries.json（每镜起止毫秒）
+scenes[].image/video   →  各镜头的 AI 素材
+scenes[].transition    →  视频转场
+scenes[].duration      →  剪辑时间轴
 ```
 
 ---
@@ -194,16 +198,48 @@
 
 ## 七、输出质量检查清单
 
+## 八、Narration 一致性规则（关键）
+
+**这条规则决定了视频合成时语音和画面能否对齐，必须严格遵守：**
+
+### 8.1 数据源唯一
+
+全程口播的唯一数据源是 **`scenes[].narration`**。不再使用 `full_narration` 字段。
+
+### 8.2 各镜头类型是否含口播
+
+| scene.type | narration | 说明 |
+|-----------|----------|------|
+| `hook` | ✅ 必须有 | 第一镜，口播内容与 `hook.text` 完全一致 |
+| `cover` | ❌ 通常无 | 封面卡纯视觉，留空 |
+| `explainer` | ✅ 必须有 | |
+| `demonstration` | ✅ 必须有 | |
+| `analogy` | ✅ 必须有 | |
+| `data-viz` | ✅ 必须有 | |
+| `talking-head` | ✅ 必须有 | |
+| `b-roll` | ❌ 无 | 纯视觉过渡素材，留空 |
+| `comparison` | ✅ 必须有 | |
+| `summary` | ✅ 必须有 | |
+| `outro` | ✅ 必须有 | 最后一镜，口播内容与 `outro.text` 完全一致 |
+
+### 8.3 一致性检查
+
+- `hook.text` 必须与 `scenes[]` 中第一个有口播的镜头的 `narration` 完全一致
+- `outro.text` 必须与 `scenes[]` 中最后一个有口播的镜头的 `narration` 完全一致
+- 有口播的镜头按顺序拼接后，口播内容连续不中断
+- 无口播镜头（封面卡、b-roll）narration 设为空字符串 `""`
+
 在提交最终 JSON 前，逐项检查：
 
-- [ ] **结构完整** — 包含 cover, hook, full_narration, scenes(≥5), outro
+- [ ] **scenes 包含全部镜头** — cover、hook、outro 都必须在 scenes[] 中有一席，一个不落
+- [ ] **结构完整** — 包含 cover, hook, scenes(≥5), outro
 - [ ] **ID 唯一** — scenes 中每个 scene 的 id 唯一递增
 - [ ] **时间对齐** — 各 scene 的 duration_seconds 之和 ≈ 总时长
-- [ ] **口播覆盖** — full_narration 覆盖所有 scene 的 narration 文本
+- [ ] **口播一致** — scenes 中 type=hook 的首镜 narration 以 hook.text 开头，type=outro 的末镜 narration 以 outro.text 结尾
 - [ ] **双提示词** — 每个 scene 同时包含 video_prompt 和 image_prompt
 - [ ] **视频提示词** — 包含 shot type + camera movement + subject + action + environment + 至少 3 个风格要素
 - [ ] **图像提示词** — 包含 subject + composition + style + lighting + quality markers
 - [ ] **钩子有效** — hook 文本 ≤ 20 字，前 3 秒完成注意力抓取
 - [ ] **封面可用** — cover.image_prompt 可生成合适的封面图（含文字空间）
-- [ ] **CTA 明确** — outro 包含行动号召
+- [ ] **CTA 明确** — 最后一个有口播的镜头的 narration 包含行动号召
 - [ ] **风格统一** — 所有分镜的视觉风格提示词一致

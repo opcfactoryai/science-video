@@ -1,0 +1,551 @@
+{
+  "words": [
+    {
+      "text": "Fable",
+      "start_ms": 515,
+      "end_ms": 1175
+    },
+    {
+      "text": "5",
+      "start_ms": 1415,
+      "end_ms": 1445
+    },
+    {
+      "text": "大",
+      "start_ms": 1565,
+      "end_ms": 1815
+    },
+    {
+      "text": "幅",
+      "start_ms": 1815,
+      "end_ms": 2005
+    },
+    {
+      "text": "提",
+      "start_ms": 2005,
+      "end_ms": 2175
+    },
+    {
+      "text": "升",
+      "start_ms": 2175,
+      "end_ms": 2315
+    },
+    {
+      "text": "了",
+      "start_ms": 2315,
+      "end_ms": 2405
+    },
+    {
+      "text": "代",
+      "start_ms": 2405,
+      "end_ms": 2575
+    },
+    {
+      "text": "码",
+      "start_ms": 2575,
+      "end_ms": 2725
+    },
+    {
+      "text": "能",
+      "start_ms": 2725,
+      "end_ms": 2915
+    },
+    {
+      "text": "力，",
+      "start_ms": 2915,
+      "end_ms": 3235
+    },
+    {
+      "text": "可",
+      "start_ms": 3415,
+      "end_ms": 3555
+    },
+    {
+      "text": "以",
+      "start_ms": 3555,
+      "end_ms": 3665
+    },
+    {
+      "text": "自",
+      "start_ms": 3665,
+      "end_ms": 3845
+    },
+    {
+      "text": "主",
+      "start_ms": 3845,
+      "end_ms": 4035
+    },
+    {
+      "text": "运",
+      "start_ms": 4035,
+      "end_ms": 4145
+    },
+    {
+      "text": "行",
+      "start_ms": 4145,
+      "end_ms": 4325
+    },
+    {
+      "text": "数",
+      "start_ms": 4325,
+      "end_ms": 4585
+    },
+    {
+      "text": "小",
+      "start_ms": 4585,
+      "end_ms": 4775
+    },
+    {
+      "text": "时。",
+      "start_ms": 4775,
+      "end_ms": 5165
+    },
+    {
+      "text": "。",
+      "start_ms": 5795,
+      "end_ms": 5825
+    },
+    {
+      "text": "。",
+      "start_ms": 6445,
+      "end_ms": 6475
+    },
+    {
+      "text": "它",
+      "start_ms": 6480,
+      "end_ms": 6555
+    },
+    {
+      "text": "完",
+      "start_ms": 6555,
+      "end_ms": 6585
+    },
+    {
+      "text": "成",
+      "start_ms": 6585,
+      "end_ms": 6645
+    },
+    {
+      "text": "了",
+      "start_ms": 6645,
+      "end_ms": 6705
+    },
+    {
+      "text": "Stripe",
+      "start_ms": 6705,
+      "end_ms": 6855
+    },
+    {
+      "text": "五",
+      "start_ms": 6855,
+      "end_ms": 6885
+    },
+    {
+      "text": "千",
+      "start_ms": 6885,
+      "end_ms": 7085
+    },
+    {
+      "text": "万",
+      "start_ms": 7085,
+      "end_ms": 7215
+    },
+    {
+      "text": "行",
+      "start_ms": 7215,
+      "end_ms": 7365
+    },
+    {
+      "text": "代",
+      "start_ms": 7365,
+      "end_ms": 7605
+    },
+    {
+      "text": "码",
+      "start_ms": 7605,
+      "end_ms": 7715
+    },
+    {
+      "text": "的",
+      "start_ms": 7715,
+      "end_ms": 7805
+    },
+    {
+      "text": "迁",
+      "start_ms": 7805,
+      "end_ms": 8105
+    },
+    {
+      "text": "移，",
+      "start_ms": 8105,
+      "end_ms": 8395
+    },
+    {
+      "text": "仅",
+      "start_ms": 8705,
+      "end_ms": 8905
+    },
+    {
+      "text": "用",
+      "start_ms": 8905,
+      "end_ms": 9045
+    },
+    {
+      "text": "了",
+      "start_ms": 9045,
+      "end_ms": 9145
+    },
+    {
+      "text": "短",
+      "start_ms": 9145,
+      "end_ms": 9325
+    },
+    {
+      "text": "短",
+      "start_ms": 9325,
+      "end_ms": 9495
+    },
+    {
+      "text": "一",
+      "start_ms": 9495,
+      "end_ms": 9755
+    },
+    {
+      "text": "天。",
+      "start_ms": 9755,
+      "end_ms": 10105
+    },
+    {
+      "text": "。",
+      "start_ms": 10800,
+      "end_ms": 10845
+    },
+    {
+      "text": "它",
+      "start_ms": 11420,
+      "end_ms": 11495
+    },
+    {
+      "text": "还",
+      "start_ms": 11495,
+      "end_ms": 11555
+    },
+    {
+      "text": "自",
+      "start_ms": 11555,
+      "end_ms": 11615
+    },
+    {
+      "text": "主",
+      "start_ms": 11615,
+      "end_ms": 11675
+    },
+    {
+      "text": "运",
+      "start_ms": 11675,
+      "end_ms": 11705
+    },
+    {
+      "text": "行",
+      "start_ms": 11705,
+      "end_ms": 11765
+    },
+    {
+      "text": "了",
+      "start_ms": 11765,
+      "end_ms": 11825
+    },
+    {
+      "text": "九",
+      "start_ms": 11825,
+      "end_ms": 11885
+    },
+    {
+      "text": "个",
+      "start_ms": 11885,
+      "end_ms": 11995
+    },
+    {
+      "text": "小",
+      "start_ms": 11995,
+      "end_ms": 12175
+    },
+    {
+      "text": "时，",
+      "start_ms": 12175,
+      "end_ms": 12515
+    },
+    {
+      "text": "生",
+      "start_ms": 12685,
+      "end_ms": 12975
+    },
+    {
+      "text": "成",
+      "start_ms": 12975,
+      "end_ms": 13105
+    },
+    {
+      "text": "了",
+      "start_ms": 13105,
+      "end_ms": 13195
+    },
+    {
+      "text": "子",
+      "start_ms": 13195,
+      "end_ms": 13435
+    },
+    {
+      "text": "Agent",
+      "start_ms": 13435,
+      "end_ms": 13905
+    },
+    {
+      "text": "完",
+      "start_ms": 14115,
+      "end_ms": 14235
+    },
+    {
+      "text": "成",
+      "start_ms": 14235,
+      "end_ms": 14375
+    },
+    {
+      "text": "了",
+      "start_ms": 14375,
+      "end_ms": 14455
+    },
+    {
+      "text": "复",
+      "start_ms": 14455,
+      "end_ms": 14745
+    },
+    {
+      "text": "杂",
+      "start_ms": 14745,
+      "end_ms": 14885
+    },
+    {
+      "text": "的",
+      "start_ms": 14885,
+      "end_ms": 14985
+    },
+    {
+      "text": "任",
+      "start_ms": 14985,
+      "end_ms": 15155
+    },
+    {
+      "text": "务。",
+      "start_ms": 15155,
+      "end_ms": 15395
+    },
+    {
+      "text": "。",
+      "start_ms": 16015,
+      "end_ms": 16045
+    },
+    {
+      "text": "。",
+      "start_ms": 17545,
+      "end_ms": 17575
+    },
+    {
+      "text": "这",
+      "start_ms": 17580,
+      "end_ms": 17655
+    },
+    {
+      "text": "就",
+      "start_ms": 17655,
+      "end_ms": 17715
+    },
+    {
+      "text": "是",
+      "start_ms": 18175,
+      "end_ms": 18235
+    },
+    {
+      "text": "Fable",
+      "start_ms": 18235,
+      "end_ms": 18385
+    },
+    {
+      "text": "5",
+      "start_ms": 18385,
+      "end_ms": 18415
+    },
+    {
+      "text": "的",
+      "start_ms": 18415,
+      "end_ms": 18505
+    },
+    {
+      "text": "能",
+      "start_ms": 18505,
+      "end_ms": 18565
+    },
+    {
+      "text": "力，",
+      "start_ms": 18565,
+      "end_ms": 18625
+    },
+    {
+      "text": "一",
+      "start_ms": 18625,
+      "end_ms": 18655
+    },
+    {
+      "text": "个",
+      "start_ms": 18655,
+      "end_ms": 18715
+    },
+    {
+      "text": "真",
+      "start_ms": 18715,
+      "end_ms": 18775
+    },
+    {
+      "text": "正",
+      "start_ms": 18775,
+      "end_ms": 18865
+    },
+    {
+      "text": "能",
+      "start_ms": 18865,
+      "end_ms": 19005
+    },
+    {
+      "text": "自",
+      "start_ms": 19005,
+      "end_ms": 19185
+    },
+    {
+      "text": "主",
+      "start_ms": 19185,
+      "end_ms": 19335
+    },
+    {
+      "text": "工",
+      "start_ms": 19335,
+      "end_ms": 19585
+    },
+    {
+      "text": "作",
+      "start_ms": 19585,
+      "end_ms": 19725
+    },
+    {
+      "text": "的",
+      "start_ms": 19725,
+      "end_ms": 19855
+    },
+    {
+      "text": "AI",
+      "start_ms": 20105,
+      "end_ms": 20295
+    },
+    {
+      "text": "模",
+      "start_ms": 20295,
+      "end_ms": 20475
+    },
+    {
+      "text": "型。",
+      "start_ms": 20475,
+      "end_ms": 20765
+    },
+    {
+      "text": "。",
+      "start_ms": 22045,
+      "end_ms": 22075
+    },
+    {
+      "text": "这",
+      "start_ms": 22080,
+      "end_ms": 22155
+    },
+    {
+      "text": "就",
+      "start_ms": 22155,
+      "end_ms": 22215
+    },
+    {
+      "text": "是",
+      "start_ms": 22215,
+      "end_ms": 22275
+    },
+    {
+      "text": "Fable",
+      "start_ms": 22275,
+      "end_ms": 22425
+    },
+    {
+      "text": "5",
+      "start_ms": 22425,
+      "end_ms": 22455
+    },
+    {
+      "text": "的",
+      "start_ms": 22455,
+      "end_ms": 22515
+    },
+    {
+      "text": "强",
+      "start_ms": 22515,
+      "end_ms": 22755
+    },
+    {
+      "text": "大",
+      "start_ms": 22755,
+      "end_ms": 22955
+    },
+    {
+      "text": "之",
+      "start_ms": 22955,
+      "end_ms": 23115
+    },
+    {
+      "text": "处，",
+      "start_ms": 23115,
+      "end_ms": 23435
+    },
+    {
+      "text": "点",
+      "start_ms": 23655,
+      "end_ms": 23875
+    },
+    {
+      "text": "个",
+      "start_ms": 23875,
+      "end_ms": 23995
+    },
+    {
+      "text": "关",
+      "start_ms": 23995,
+      "end_ms": 24195
+    },
+    {
+      "text": "注",
+      "start_ms": 24195,
+      "end_ms": 24475
+    },
+    {
+      "text": "下",
+      "start_ms": 24505,
+      "end_ms": 24875
+    },
+    {
+      "text": "期",
+      "start_ms": 24875,
+      "end_ms": 24975
+    },
+    {
+      "text": "见。",
+      "start_ms": 24975,
+      "end_ms": 25035
+    }
+  ],
+  "total_duration_ms": 25035,
+  "voice_type": "zh_male_yizhipiannan_uranus_bigtts"
+}

@@ -1,0 +1,41 @@
+{
+  "total_duration_ms": 25035,
+  "scenes": [
+    {
+      "id": "scene-01",
+      "text": "Fable 5 大幅提升了代码能力，可以自主运行数小时。",
+      "start_ms": 515,
+      "end_ms": 4775,
+      "duration_ms": 4260
+    },
+    {
+      "id": "scene-02",
+      "text": "它完成了 Stripe 五千万行代码的迁移，仅用了短短一天。",
+      "start_ms": 4775,
+      "end_ms": 9045,
+      "duration_ms": 4270
+    },
+    {
+      "id": "scene-03",
+      "text": "它还自主运行了九个小时，生成了子 Agent 完成了复杂的任务。",
+      "start_ms": 9045,
+      "end_ms": 13905,
+      "duration_ms": 4860
+    },
+    {
+      "id": "scene-04",
+      "text": "这就是 Fable 5 的能力，一个真正能自主工作的AI模型。",
+      "start_ms": 14115,
+      "end_ms": 18715,
+      "duration_ms": 4600
+    },
+    {
+      "id": "scene-05",
+      "text": "这就是 Fable 5 的强大之处，点个关注下期见。",
+      "start_ms": 18715,
+      "end_ms": 22425,
+      "duration_ms": 3710
+    }
+  ],
+  "generated_at": "2026-06-11T10:00:00Z"
+}

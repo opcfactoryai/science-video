@@ -52,17 +52,58 @@ def validate_timing(scenes):
     return total, None
 
 
-def validate_narration_coverage(scenes, full_narration):
-    """检查 full_narration 的基本完整性"""
-    if not full_narration:
-        return ["full_narration 为空"]
-    if len(full_narration) < 100:
-        return [f"full_narration 过短 ({len(full_narration)}字，建议>=100)"]
-    # 以场景数为参考，确保口播稿长度合理
-    expected_min = len(scenes) * 30  # 每镜至少30字
-    if len(full_narration) < expected_min:
-        return [f"full_narration 长度 ({len(full_narration)}字) 低于预期 ({expected_min}字)"]
-    return []
+def validate_narration_consistency(script):
+    """
+    验证口播一致性：
+    1. scenes[] 中至少有一个有口播的镜头
+    2. hook.text 与第一个有口播的 scene.narration 一致
+    3. outro.text 与最后一个有口播的 scene.narration 一致
+    """
+    scenes = script.get("scenes", [])
+    hook = script.get("hook", {})
+    outro = script.get("outro", {})
+    errors = []
+
+    # 收集有口播的镜头
+    voiced = [s for s in scenes if s.get("narration", "").strip()]
+    if not voiced:
+        errors.append("❌ 没有找到有口播的镜头（所有 scene.narration 为空）")
+        return errors
+
+    # hook 一致性检查：首镜 narration 必须以 hook.text 开头
+    hook_text = hook.get("text", "").strip()
+    if hook_text:
+        first_narration = voiced[0].get("narration", "").strip()
+        import re
+        def clean(t): return re.sub(r'[\s，。！？、：；…—]', '', t)
+        if not clean(first_narration).startswith(clean(hook_text)):
+            errors.append(
+                f"⚠️  首镜 narration 不以 hook.text 开头\n"
+                f"    hook.text:     '{hook_text[:40]}'\n"
+                f"    首镜 narration: '{first_narration[:60]}'"
+            )
+    else:
+        errors.append("⚠️  hook.text 为空")
+
+    # outro 一致性检查：末镜 narration 必须以 outro.text 结尾
+    outro_text = outro.get("text", "").strip()
+    if outro_text:
+        last_narration = voiced[-1].get("narration", "").strip()
+        import re
+        def clean(t): return re.sub(r'[\s，。！？、：；…—]', '', t)
+        if not clean(last_narration).endswith(clean(outro_text)):
+            errors.append(
+                f"⚠️  末镜 narration 不以 outro.text 结尾\n"
+                f"    outro.text:    '{outro_text[:40]}'\n"
+                f"    末镜 narration: '{last_narration[:60]}'"
+            )
+
+    # 口播总长度
+    total_len = sum(len(s.get("narration", "")) for s in voiced)
+    if total_len < 100:
+        errors.append(f"⚠️  口播总长度过短 ({total_len}字，建议≥100)")
+
+    return errors
 
 
 def validate_prompt_quality(scenes):
@@ -126,7 +167,7 @@ def basic_schema_check(script):
     """简易 Schema 检查（无 jsonschema 依赖时的回退）"""
     errors = []
 
-    required_root = ["meta", "cover", "hook", "full_narration", "scenes", "outro", "production_notes"]
+    required_root = ["meta", "cover", "hook", "scenes", "outro", "production_notes"]
     for field in required_root:
         if field not in script:
             errors.append(f"❌ 缺少顶级字段: {field}")
@@ -153,9 +194,6 @@ def basic_schema_check(script):
         for field in outro_required:
             if field not in script["outro"]:
                 errors.append(f"❌ outro 缺少字段: {field}")
-
-    if "full_narration" in script and len(script["full_narration"]) < 100:
-        errors.append(f"❌ full_narration 过短（{len(script.get('full_narration', ''))}字，建议≥100）")
 
     return errors
 
@@ -200,11 +238,9 @@ def main():
             )
         print(f"📊 总时长: {total}s (目标: {target}s)")
 
-    # 4. 口播覆盖率
-    if "scenes" in script and "full_narration" in script:
-        all_errors.extend(
-            validate_narration_coverage(script["scenes"], script["full_narration"])
-        )
+    # 4. 口播一致性校验（hook/outro vs scenes）
+    if "scenes" in script:
+        all_errors.extend(validate_narration_consistency(script))
 
     # 5. 提示词质量
     if "scenes" in script:
@@ -215,7 +251,8 @@ def main():
     scenes_count = len(script.get("scenes", []))
     print(f"📹 标题: {meta.get('title', 'N/A')}")
     print(f"🎬 分镜数: {scenes_count}")
-    print(f"📝 口播字数: {len(script.get('full_narration', ''))}")
+    narration_words = sum(len(s.get("narration", "")) for s in script.get("scenes", []) if s.get("narration"))
+    print(f"📝 口播字数: {narration_words}")
 
     # 输出结果
     if all_errors:

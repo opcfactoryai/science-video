@@ -11,7 +11,7 @@
     "generated_at": "2026-06-10T12:00:00Z"
   },
 
-  "// cover": "封面设计",
+  "// cover": "封面设计（纯视觉，无口播）",
   "cover": {
     "title": "封面主标题（大字号，≤15字）",
     "subtitle": "封面副标题（小字号，≤20字，可选）",
@@ -21,25 +21,23 @@
     "image_prompt": "封面图AI提示词。必须包含：主体、构图、背景、光照、色调、氛围、风格、画质标记。注意上方/中间文字区域预留空间。"
   },
 
-  "// hook": "钩子（前3秒黄金法则）",
+  "// hook": "钩子元信息（口播正文在 scenes[] 中 type=hook 的镜头里）",
   "hook": {
-    "text": "钩子口播文案。必须≤20字，前3秒完成注意力抓取。",
+    "text": "钩子口播文案。必须≤20字，前3秒完成注意力抓取。注意：此文本必须与 scenes[] 中 type=hook 的第一镜 narration 完全一致。",
     "type": "反常识 | 悬念 | 痛点 | 数据冲击 | 故事开场 | 设问互动 | 热点绑定",
     "delivery_note": "情绪状态和语调说明（如：压低声音说、突然提高音量、用疑问语气）",
     "visual_effect": "钩子对应的视觉描述（如：黑屏白字逐字出现、快速剪辑蒙太奇）"
   },
 
-  "// full_narration": "全量口播稿（连续完整文本，含时间戳标记，供TTS直接使用）",
-  "full_narration": "[00:00-00:03] 钩子部分口播...\n[00:03-00:10] 开场部分...\n[00:10-00:25] 分镜1口播...\n...\n[00:00:00] 所有scene的narration文本拼接成的完整口播稿",
-
-  "// scenes": "分镜头列表（至少5个，建议5-12个）",
+  "// scenes": "分镜头列表（唯一场景数据源）。必须包含全部镜头：hook、cover、explainer…、outro，一个不缺。视频合成直接遍历此数组，无需再读 hook/outro 顶层字段。每个镜头是否含口播由 narration 字段决定：有内容则有口播，空字符串则纯视觉。",
   "scenes": [
     {
       "id": "scene-01",
       "type": "cover | hook | explainer | demonstration | analogy | data-viz | talking-head | b-roll | comparison | summary | outro",
       "title": "镜头标题（用于标识）",
       "duration_seconds": 8,
-      "narration": "该镜头对应的口播文本。与full_narration中对应段落一致。",
+      "// narration": "口播文本。无口播的镜头（如封面卡、b-roll）留空。全片 narration.txt 由此字段拼接生成。",
+      "narration": "该镜头对应的口播文本",
       "narration_tone": "该段口播的情绪状态（如：兴奋、严肃、好奇、沉重、轻快）",
 
       "visual_description": "画面视觉描述（供导演/剪辑参考的自然语言描述）",
@@ -73,9 +71,9 @@
     }
   ],
 
-  "// outro": "结尾设计",
+  "// outro": "结尾元信息（口播正文在 scenes[] 中 type=outro 的镜头里）",
   "outro": {
-    "text": "结尾口播文案（包含回顾总结 + 感谢 + CTA）",
+    "text": "结尾口播文案（包含回顾总结 + 感谢 + CTA）。注意：此文本必须与 scenes[] 中 type=outro 的最后一镜 narration 完全一致。",
     "duration_seconds": 8,
     "cta_type": "关注 | 点赞 | 评论 | 分享 | 下期预告",
     "cta_text": "具体的CTA话术",
@@ -87,8 +85,7 @@
   "production_notes": {
     "recommended_bgm": "推荐BGM曲目或风格",
     "total_duration_check": "各scene duration_seconds之和",
-    "narration_word_count": "full_narration总字数",
-    "estimated_speed": "预计语速（字/分钟）",
+    "narration_word_count": "scenes 中所有非空 narration 的总字数",
     "aspect_ratio": "16:9",
     "resolution": "1920x1080",
     "fps": 30,

@@ -1,13 +1,12 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Video Storyboard Script Schema",
-  "description": "工业级视频分镜头脚本 JSON Schema — 校验所有必填字段、类型、格式",
+  "description": "工业级视频分镜头脚本 JSON Schema",
   "type": "object",
-  "required": ["meta", "cover", "hook", "full_narration", "scenes", "outro", "production_notes"],
+  "required": ["meta", "cover", "hook", "scenes", "outro", "production_notes"],
   "properties": {
     "meta": {
       "type": "object",
-      "description": "视频元信息",
       "required": ["title", "topic", "style_category", "target_duration_seconds", "tone", "version"],
       "properties": {
         "title": { "type": "string", "minLength": 2, "maxLength": 100 },
@@ -22,7 +21,6 @@
     },
     "cover": {
       "type": "object",
-      "description": "封面设计",
       "required": ["title", "visual_concept", "text_overlay_position", "image_prompt"],
       "properties": {
         "title": { "type": "string", "minLength": 2, "maxLength": 30 },
@@ -35,7 +33,6 @@
     },
     "hook": {
       "type": "object",
-      "description": "钩子（前3秒黄金法则）",
       "required": ["text", "type", "delivery_note", "visual_effect"],
       "properties": {
         "text": { "type": "string", "minLength": 5, "maxLength": 40 },
@@ -44,14 +41,9 @@
         "visual_effect": { "type": "string", "minLength": 5 }
       }
     },
-    "full_narration": {
-      "type": "string",
-      "description": "全量口播稿，必须包含所有scene的narration文本，用时间戳标记",
-      "minLength": 100
-    },
     "scenes": {
       "type": "array",
-      "description": "分镜头列表（至少5个）",
+      "description": "分镜头列表（至少5个）。有口播的镜头 narration 字段写文案，无口播的留空",
       "minItems": 5,
       "items": {
         "type": "object",
@@ -64,7 +56,7 @@
           },
           "title": { "type": "string", "minLength": 2 },
           "duration_seconds": { "type": "integer", "minimum": 2, "maximum": 60 },
-          "narration": { "type": "string", "minLength": 5 },
+          "narration": { "type": "string" },
           "narration_tone": { "type": "string" },
           "visual_description": { "type": "string", "minLength": 10 },
           "video_prompt": { "type": "string", "minLength": 50 },
@@ -81,15 +73,10 @@
           "sfx_suggestion": { "type": "string" }
         },
         "additionalProperties": true
-      },
-      "uniqueSceneIds": {
-        "description": "所有scene的id必须唯一",
-        "type": "boolean"
       }
     },
     "outro": {
       "type": "object",
-      "description": "结尾设计",
       "required": ["text", "duration_seconds", "cta_type", "cta_text", "visual_description", "image_prompt"],
       "properties": {
         "text": { "type": "string", "minLength": 10 },
@@ -102,7 +89,6 @@
     },
     "production_notes": {
       "type": "object",
-      "description": "制作备注",
       "required": ["aspect_ratio", "resolution"],
       "properties": {
         "recommended_bgm": { "type": "string" },
