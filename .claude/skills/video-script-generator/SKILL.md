@@ -212,6 +212,7 @@ source .env && python .claude/skills/video-script-generator/scripts/gen_tts.py \
 cd D:/labs/science-video
 source .env && node .claude/skills/video-script-generator/scripts/gen_scenes_xai.mjs \
   --project-dir "projects/${PROJECT_NAME}"
+  # --count 2   # 限制只生成前N个镜头（调试省钱），默认500=全部生成
 ```
 
 ### 🎥 生成视频（待接入）

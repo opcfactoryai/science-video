@@ -126,13 +126,16 @@ async function main() {
   }
 
   const scenes = script.scenes || [];
+  const maxCount = parseInt(args["count"] || args["max"] || "500", 10);
+  const targets = scenes.slice(0, maxCount);
+
   console.log(`🎬 ${script.meta?.title || "未命名"}`);
   console.log(`📁 ${path.resolve(projectDir)}`);
-  console.log(`🖼️  共 ${scenes.length} 个镜头需要生成\n`);
+  console.log(`🖼️  共 ${scenes.length} 个镜头, 本次生成前 ${targets.length} 个 (--count ${maxCount})\n`);
 
   let ok = 0,
     fail = 0;
-  for (const scene of scenes) {
+  for (const scene of targets) {
     const prompt = scene.image_prompt;
     if (!prompt) {
       console.log(`  [${ok + fail + 1}/${scenes.length}] ⏭️  ${scene.id}: 无提示词`);
