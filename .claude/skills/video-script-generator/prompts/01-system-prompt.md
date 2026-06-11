@@ -10,6 +10,35 @@
 
 ---
 
+## 零、生成前必须确认的信息
+
+在开始生成脚本前，必须先向用户确认以下信息：
+
+### 0.1 分辨率与比例
+
+**必须询问用户：** 视频目标平台是竖屏（抖音/快手/视频号）还是横屏（B站/YouTube）？
+
+| 平台 | 画幅 | 分辨率 | image_prompt 追加 |
+|------|------|--------|-------------------|
+| 抖音/快手/视频号 | 竖屏 9:16 | 1080×1920 | `, vertical portrait composition, 9:16 aspect ratio` |
+| B站/YouTube/西瓜 | 横屏 16:9 | 1920×1080 | `, horizontal landscape composition, 16:9 aspect ratio` |
+
+所有 `video_prompt` 和 `image_prompt` 的构图中必须体现对应的画幅方向（竖屏构图 vs 横屏构图）。
+
+### 0.2 视觉风格
+
+**必须询问用户：** 期望的视觉风格方向？提供以下预设选项：
+
+| 风格 | 适用类型 | 视觉特征 |
+|------|---------|---------|
+| `科技数据风` | 财经、科技、分析 | 深色背景 + 蓝色/金色高光 + Bloomberg终端式图表 + 干净字体 |
+| `纪实纪录片风` | 科普、历史、人文 | 暖色调 + 自然光影 + 电影级构图 + 低饱和度 |
+| `动画信息图风` | 教育、知识分享 | 扁平插画 + 明亮色调 + 2D动效 + 简洁构图 |
+| `电影叙事风` | 故事、评论、深度 | 电影宽屏 + 戏剧性光影 + 深景深 + 35mm质感 |
+| `科技产品风` | 评测、开箱、展示 | 极简白或黑背景 + 产品居中 + 柔和补光 + 高锐度 |
+
+---
+
 ## 一、脚本结构总纲
 
 每个视频脚本必须遵循以下 5 段式结构：
@@ -53,7 +82,35 @@
 | **summary** | 总结 | 5-10s | 要点回顾 |
 | **outro** | 结尾 | 3-6s | CTA + 收尾 |
 
-### 2.3 节奏控制
+### 2.3 全片视觉风格一致性锁定
+
+**这是最重要的规则之一。所有镜头的提示词必须共享同一套视觉语言，不能出现第一镜 photorealistic、第二镜 vector illustration 的情况。**
+
+#### 2.3.1 锁定元素（全片统一）
+
+| 维度 | 所有镜头必须一致 |
+|------|----------------|
+| **Art Style** | 全是 photorealistic，或全是 motion graphics，不能混搭 |
+| **Color Palette** | 主色调全片保持一致（如全是 cool blue + gold accent） |
+| **Lighting** | 光照风格一致（如全是 dramatic volumetric lighting） |
+| **Mood** | 整体情绪基调一致（如全是 cinematic, awe-inspiring） |
+| **Quality** | 画质标记一致（如全是 8K, hyper-detailed） |
+| **Aspect Ratio** | 全是 16:9 横屏或全是 9:16 竖屏 |
+
+#### 2.3.2 如何锁定
+
+在 `image_prompt` 和 `video_prompt` 的结尾统一追加风格锚点：
+
+```
+统一追加的尾部风格锚点：
+, cinematic photorealistic style, cool blue and warm gold color palette, 
+dramatic volumetric lighting, 8K resolution, hyper-detailed, 
+16:9 horizontal composition
+```
+
+**禁止**：不同的镜头使用不同的 art style、不同的色调、不同的光照方案。
+
+### 2.4 节奏控制
 
 - **信息密度**：每 30 秒只传达 1 个核心概念
 - **情绪曲线**：脚本的情绪应呈波浪形（平缓 → 高潮 → 平缓 → 小高潮）
@@ -198,6 +255,25 @@ scenes[].duration      →  剪辑时间轴
 
 ## 七、输出质量检查清单
 
+在提交最终 JSON 前，逐项检查：
+
+- [ ] **scenes 包含全部镜头** — cover、hook、outro 都必须在 scenes[] 中有一席
+- [ ] **分辨率已确认** — 已询问用户竖屏(9:16)还是横屏(16:9)，且所有 prompt 的构图方向一致
+- [ ] **视觉风格已确认** — 已询问用户风格方向，全片统一
+- [ ] **Art Style 全片一致** — 所有 image_prompt 和 video_prompt 的 art style 描述完全相同
+- [ ] **Color Palette 全片一致** — 所有 prompt 的配色描述一致
+- [ ] **Lighting 全片一致** — 所有 prompt 的光照描述一致
+- [ ] **Mood 全片一致** — 所有 prompt 的情绪描述一致
+- [ ] **画幅一致** — 全片要么全是竖屏构图，要么全是横屏构图
+- [ ] **ID 唯一** — scenes 中每个 scene 的 id 唯一递增
+- [ ] **时间合理** — 各 scene 的 duration_seconds 之和 ≈ 总时长
+- [ ] **口播一致** — 首镜 narration 以 hook.text 开头，末镜以 outro.text 结尾
+- [ ] **双提示词** — 每个 scene 同时包含 video_prompt 和 image_prompt，且长度≥50字
+- [ ] **视频提示词** — 包含 shot type + camera movement + subject + action + environment + 至少 3 个风格要素
+- [ ] **图像提示词** — 包含 subject + composition + style + lighting + quality markers
+- [ ] **钩子有效** — hook.text ≤ 20 字，前 3 秒完成注意力抓取
+- [ ] **CTA 明确** — 最后一个有口播的镜头的 narration 包含行动号召
+
 ## 八、Narration 一致性规则（关键）
 
 **这条规则决定了视频合成时语音和画面能否对齐，必须严格遵守：**
@@ -229,17 +305,4 @@ scenes[].duration      →  剪辑时间轴
 - 有口播的镜头按顺序拼接后，口播内容连续不中断
 - 无口播镜头（封面卡、b-roll）narration 设为空字符串 `""`
 
-在提交最终 JSON 前，逐项检查：
-
-- [ ] **scenes 包含全部镜头** — cover、hook、outro 都必须在 scenes[] 中有一席，一个不落
-- [ ] **结构完整** — 包含 cover, hook, scenes(≥5), outro
-- [ ] **ID 唯一** — scenes 中每个 scene 的 id 唯一递增
-- [ ] **时间对齐** — 各 scene 的 duration_seconds 之和 ≈ 总时长
-- [ ] **口播一致** — scenes 中 type=hook 的首镜 narration 以 hook.text 开头，type=outro 的末镜 narration 以 outro.text 结尾
-- [ ] **双提示词** — 每个 scene 同时包含 video_prompt 和 image_prompt
-- [ ] **视频提示词** — 包含 shot type + camera movement + subject + action + environment + 至少 3 个风格要素
-- [ ] **图像提示词** — 包含 subject + composition + style + lighting + quality markers
-- [ ] **钩子有效** — hook 文本 ≤ 20 字，前 3 秒完成注意力抓取
-- [ ] **封面可用** — cover.image_prompt 可生成合适的封面图（含文字空间）
-- [ ] **CTA 明确** — 最后一个有口播的镜头的 narration 包含行动号召
-- [ ] **风格统一** — 所有分镜的视觉风格提示词一致
+（检查清单见上方 **第 七 节**）
