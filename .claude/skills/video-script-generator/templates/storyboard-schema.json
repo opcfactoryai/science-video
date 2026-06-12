@@ -3,7 +3,7 @@
   "title": "Video Storyboard Script Schema",
   "description": "工业级视频分镜头脚本 JSON Schema",
   "type": "object",
-  "required": ["meta", "cover", "hook", "scenes", "outro", "production_notes"],
+  "required": ["meta", "aspect_ratio", "quality", "cover", "hook", "scenes", "outro", "production_notes"],
   "properties": {
     "meta": {
       "type": "object",
@@ -19,6 +19,8 @@
         "generated_at": { "type": "string", "format": "date-time" }
       }
     },
+    "aspect_ratio": { "type": "string", "enum": ["16:9", "9:16"] },
+    "quality": { "type": "string", "enum": ["1K", "2K", "4K"] },
     "cover": {
       "type": "object",
       "required": ["title", "visual_concept", "text_overlay_position", "image_prompt"],
@@ -89,14 +91,14 @@
     },
     "production_notes": {
       "type": "object",
-      "required": ["aspect_ratio", "resolution"],
+      "required": ["aspect_ratio", "quality"],
       "properties": {
         "recommended_bgm": { "type": "string" },
         "total_duration_check": { "type": "integer" },
         "narration_word_count": { "type": "integer" },
         "estimated_speed": { "type": "integer" },
-        "aspect_ratio": { "type": "string" },
-        "resolution": { "type": "string" },
+        "aspect_ratio": { "type": "string", "enum": ["16:9", "9:16"] },
+        "quality": { "type": "string", "enum": ["1K", "2K", "4K"] },
         "fps": { "type": "integer", "minimum": 24, "maximum": 60 },
         "special_notes": { "type": "string" }
       }

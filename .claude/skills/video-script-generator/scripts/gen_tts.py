@@ -39,7 +39,7 @@ async def main():
     parser.add_argument("--text", required=True, help="Text to convert")
     parser.add_argument("--voice_type", default="", required=True, help="Voice type")
     parser.add_argument("--encoding", default="mp3", help="Output file encoding")
-    parser.add_argument("--no-split", action="store_true", help="Generate one audio file for the entire text instead of splitting by sentences")
+    parser.add_argument("--split", action="store_true", help="Split by sentence into multiple audio files (default: one file for entire text)")
     parser.add_argument("--output-dir", default=".", help="Output directory for audio files (default: current dir)")
     parser.add_argument(
         "--endpoint",
@@ -74,11 +74,11 @@ async def main():
             websocket, MsgType.FullServerResponse, EventType.ConnectionStarted
         )
 
-        # Process each sentence (or whole text if --no-split)
-        if args.no_split:
-            sentences = [args.text]
-        else:
+        # Process each sentence (or whole text if --split is not set)
+        if args.split:
             sentences = args.text.split("。")
+        else:
+            sentences = [args.text]
         audio_received = False
         all_words = []
 

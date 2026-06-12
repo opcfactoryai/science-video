@@ -149,6 +149,26 @@ Camera [{Camera Movement}], [{Lighting}].
 
 ---
 
+### 10. Aspect Ratio & Quality（画幅与画质）— 末尾必锁
+
+| 要素 | 说明 | 示例 |
+|------|------|------|
+| `aspect_ratio` | 画幅比例：16:9（横屏）或 9:16（竖屏） | `aspect ratio 16:9` |
+| `quality` | 画质等级：1K/2K/4K，默认2K | `quality 2K` |
+
+**硬性规则：** 每个 `video_prompt` 的末尾**必须**追加 `aspect_ratio` 和 `quality`。格式统一如下：
+```
+, aspect ratio 16:9, quality 2K
+```
+或
+```
+, aspect ratio 9:16, quality 2K
+```
+
+这是 100% 覆盖的硬性要求，所有镜头、所有提示词都必须在末尾锁死这两个参数，一个不能少。
+
+---
+
 ## 三、高质量 vs 低质量对比
 
 ### 科技解释类场景

@@ -125,6 +125,22 @@ professional photography, extreme detail
 
 ---
 
+### 8. Aspect Ratio & Quality（画幅与画质）— 末尾必锁
+
+每个 `image_prompt` 的末尾**必须**追加 `aspect_ratio` 和 `quality`。格式统一如下：
+```
+, aspect ratio 16:9, quality 2K
+```
+
+| 参数 | 可选值 | 说明 |
+|------|--------|------|
+| `aspect_ratio` | `16:9` 或 `9:16` | 横屏/竖屏，全片统一 |
+| `quality` | `1K` / `2K` / `4K` | 默认 `2K`。LLM 不支持自定义分辨率 |
+
+> ⚠️ **这是硬性要求：** 每个 `image_prompt` 末尾都必须锁死这两个参数，100%覆盖，一个镜头不能少。生成脚本后通过 validate_script.py 自动校验。
+
+---
+
 ## 三、场景类型与提示词策略
 
 ### 封面图 (cover)

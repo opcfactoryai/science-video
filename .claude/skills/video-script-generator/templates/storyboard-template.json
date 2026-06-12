@@ -11,6 +11,11 @@
     "generated_at": "2026-06-10T12:00:00Z"
   },
 
+  "// aspect_ratio": "画幅比例。根层级，Python脚本可直接读取。竖屏=9:16，横屏=16:9。全片统一",
+  "aspect_ratio": "16:9",
+  "// quality": "画质等级。根层级，Python脚本可直接读取。1K(快速) / 2K(默认推荐) / 4K(高精度)。所有prompt末尾必须锁死此值",
+  "quality": "2K",
+
   "// cover": "封面设计（纯视觉，无口播）",
   "cover": {
     "title": "封面主标题（大字号，≤15字）",
@@ -18,7 +23,7 @@
     "visual_concept": "封面视觉概念描述（用于指导设计方向）",
     "text_overlay_position": "文字叠加位置，如：upper-third / center / bottom",
     "text_style": "文字风格，如：bold white with glow / minimal sans-serif",
-    "image_prompt": "封面图AI提示词。必须包含：主体、构图、背景、光照、色调、氛围、风格、画质标记。注意上方/中间文字区域预留空间。"
+    "image_prompt": "封面图AI提示词。必须包含：主体、构图、背景、光照、色调、氛围、风格、画质标记。注意上方/中间文字区域预留空间。提示词末尾必须锁死 aspect_ratio 和 quality。"
   },
 
   "// hook": "钩子元信息（口播正文在 scenes[] 中 type=hook 的镜头里）",
@@ -30,6 +35,7 @@
   },
 
   "// scenes": "分镜头列表（唯一场景数据源）。必须包含全部镜头：hook、cover、explainer…、outro，一个不缺。视频合成直接遍历此数组，无需再读 hook/outro 顶层字段。每个镜头是否含口播由 narration 字段决定：有内容则有口播，空字符串则纯视觉。",
+  "// prompts_aspect_quality": "【关键规则】每个 scene 的 video_prompt 和 image_prompt 末尾必须锁死 aspect_ratio（16:9 横屏 / 9:16 竖屏）和 quality（1K / 2K / 4K），例如 'aspect ratio 9:16, quality 2K'。这是硬性要求，每个提示词都不能遗漏。",
   "scenes": [
     {
       "id": "scene-01",
@@ -42,11 +48,17 @@
 
       "visual_description": "画面视觉描述（供导演/剪辑参考的自然语言描述）",
 
-      "// video_prompt": "AI视频生成提示词 — 必须包含景别、运镜、主体、动作、环境、至少3个风格要素",
-      "video_prompt": "[Shot Type] of [Subject] [Action] in [Environment]. Camera [Movement]. [Lighting]. [Color Palette], [Atmosphere]. [Style], [Motion Dynamics]. — 一段完整的自然语言描述。",
+      "// video_prompt": "AI视频生成提示词 — 末尾必须锁死 aspect_ratio 和 quality。前1秒必须视觉钩子。",
+      "video_prompt": "文字描述 + [Shot Type] of [Subject] [Action] in [Environment]. Camera [Movement]. [Lighting]. [Color], [Mood]. [Style]. — 以文字描述开头，再写镜头。末尾必须追加 ', aspect ratio 16:9/9:16, quality 2K/1K/4K'。",
 
-      "// image_prompt": "AI图像生成提示词 — 该镜头的关键帧/缩略图提示词",
-      "image_prompt": "[Subject], [Composition]. [Background], [Lighting]. [Color Scheme], [Mood]. [Style], [Quality]. — 一段完整的自然语言描述。",
+      "text_overlay": {
+        "text": "画面叠加的文字内容（如主标题/数据/关键词/引语）",
+        "position": "位置：center | upper-third | bottom | left | right | split-left | split-right",
+        "font_style": "字体风格描述（如：bold white serif with gold edge / minimal sans-serif red pulse）",
+        "priority": "文字在画面中的优先级：primary（主导画面）| secondary（辅助）| accent（点缀）"
+      },
+      "// image_prompt": "AI图像生成提示词 — 末尾必须锁死 aspect_ratio 和 quality。**必须**包含文字叠加描述（文字内容、位置、字体风格、颜色），文字是信息传递的核心要素，不能只描述抽象画面。",
+      "image_prompt": "[Text-overlay description] + [Subject], [Composition]. [Background], [Lighting]. [Color Scheme], [Mood]. [Style], [Quality]. — 以文字描述开头，再描述画面。末尾必须追加 ', aspect ratio 16:9/9:16, quality 2K/1K/4K'。",
 
       "transition": "进入此镜头的转场效果。可选值：cut | dissolve | fade-in | wipe | zoom-in | slide-left | slide-right | whip-pan | morph | none(opening)",
       "transition_out": "离开此镜头的转场效果。可选值：同上 + none(closing)",
@@ -62,8 +74,8 @@
       "narration": "对应的口播文本...",
       "narration_tone": "好奇、启发式",
       "visual_description": "画面视觉描述...",
-      "video_prompt": "视频提示词...",
-      "image_prompt": "图像提示词...",
+      "video_prompt": "视频提示词... , aspect ratio 16:9, quality 2K",
+      "image_prompt": "图像提示词... , aspect ratio 16:9, quality 2K",
       "transition": "dissolve",
       "transition_out": "cut",
       "bgm_suggestion": "轻科技电子",
@@ -78,18 +90,18 @@
     "cta_type": "关注 | 点赞 | 评论 | 分享 | 下期预告",
     "cta_text": "具体的CTA话术",
     "visual_description": "结尾画面描述",
-    "image_prompt": "结尾图AI提示词（通常包含品牌色、Logo位置预留）"
+    "image_prompt": "结尾图AI提示词（通常包含品牌色、Logo位置预留）。末尾必须锁死 aspect_ratio 和 quality。"
   },
 
-  "// production_notes": "制作备注。生成脚本前用户需确认「竖屏(抖音/快手)」还是「横屏(B站/YouTube)」",
+  "// production_notes": "制作备注。aspect_ratio 必须为 16:9（横屏/B站/YouTube）或 9:16（竖屏/抖音）。quality 建议默认 2K（竖屏抖音），1K 用于快速出图，4K 用于高精度画质。",
   "production_notes": {
     "recommended_bgm": "推荐BGM曲目或风格",
     "total_duration_check": "各scene duration_seconds之和",
     "narration_word_count": "scenes 中所有非空 narration 的总字数",
     "// aspect_ratio": "画幅比例：竖屏=9:16，横屏=16:9。由用户选择，全片统一",
     "aspect_ratio": "16:9",
-    "// resolution": "分辨率。竖屏=1080x1920，横屏=1920x1080。图片生成脚本自动读取此值决定输出尺寸",
-    "resolution": "1920x1080",
+    "// quality": "画质等级：1K(快速出图) / 2K(默认推荐) / 4K(高精度)。竖屏抖音默认 2K。此参数必须被所有 prompt 末尾引用锁死",
+    "quality": "2K",
     "fps": 30,
     "special_notes": "特殊备注（如：需要绿幕、需要实拍素材、需要授权音乐等）"
   }

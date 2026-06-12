@@ -14,18 +14,20 @@
 
 在开始生成脚本前，必须先向用户确认以下信息：
 
-### 0.1 分辨率与比例
+### 0.1 画幅比例与画质等级
 
-**必须询问用户：** 视频目标平台是竖屏（抖音/快手/视频号）还是横屏（B站/YouTube）？
+**必须询问用户：** 视频目标平台是竖屏（抖音/Shorts）还是横屏（B站/YouTube）？
 
-| 平台 | 画幅 | 分辨率 | image_prompt 追加 |
-|------|------|--------|-------------------|
-| 抖音/快手/视频号 | 竖屏 9:16 | 1080×1920 | `, vertical portrait composition, 9:16 aspect ratio` |
-| B站/YouTube/西瓜 | 横屏 16:9 | 1920×1080 | `, horizontal landscape composition, 16:9 aspect ratio` |
+| 平台 | aspect_ratio | 默认 quality | 说明 |
+|------|-------------|-------------|------|
+| 横屏（YouTube、B站） | `16:9` | `2K` | 电影级宽屏叙事 |
+| 竖屏（抖音、Shorts） | `9:16` | `2K` | 满屏视觉冲击，默认 2K |
 
-所有 `video_prompt` 和 `image_prompt` 的构图中必须体现对应的画幅方向（竖屏构图 vs 横屏构图）。
-
-确认后将分辨率写入 `production_notes.resolution`（如 `"1920x1080"`）和 `production_notes.aspect_ratio`（如 `"16:9"`）。图片生成脚本将自动读取此字段决定输出尺寸。
+- `production_notes.aspect_ratio` 写入画幅比例（如 `"16:9"` 或 `"9:16"`）
+- **同时脚本根层级必须包含 `aspect_ratio` 和 `quality`**（Python脚本直接读取用，与 production_notes 值一致）
+- `production_notes.quality` 写入画质等级（`"1K"` / `"2K"` / `"4K"`），默认 `"2K"`
+- 每个 `video_prompt` 和 `image_prompt` 的末尾**必须锁死** `aspect_ratio` 和 `quality`，格式如：`, aspect ratio 9:16, quality 2K`
+- LLM 不支持自定义分辨率（如 1920×1080），但理解 `aspect_ratio` 和 `quality` 这两个语义参数
 
 ### 0.2 视觉风格
 
@@ -84,31 +86,87 @@
 | **summary** | 总结 | 5-10s | 要点回顾 |
 | **outro** | 结尾 | 3-6s | CTA + 收尾 |
 
+### 2.2.5 镜头文字叠加（Chyron）规则 ⭐ 关键
+
+**这是最常被忽略但最重要的规则。所有镜头都必须有文字说明，不能让观众看"抽象画面"猜意思。**
+
+#### 为什么必须有文字？
+- 视频是**信息传递媒介**，不是纯艺术。每个镜头必须在画面中通过文字告诉观众"你现在该看什么"
+- 用户刷视频时**前3秒没有声音是静音的**，没有文字他们不知道在讲什么
+- 文字是**情绪锚点**，正确的字体/颜色/位置能把画面意境钉死
+
+#### 文字叠加类型
+
+| 类型 | 镜头类型 | 文字内容要求 |
+|------|---------|------------|
+| **片头大标题** | `cover` | 视频主标题，巨大字体（占画面30%以上），如"黄金暴跌26%" |
+| **数据标签** | `data-viz`, `explainer` | 核心数据以标签形式压在画面上，如"+$5B"、"-31%" |
+| **意境关键词** | `explainer`, `analogy` | 1-3个关键词说明当前概念，如"恐慌抛售"、"流动性危机" |
+| **引语/金句** | `summary` | 金句字幕，如"当所有人都觉得会涨的时候..." |
+| **CTA** | `outro` | "关注"、"点赞"等按钮文字 |
+
+#### image_prompt 中描述文字的规范
+
+每个 `image_prompt` 必须以自然语言描述画面中的文字内容：
+
+```
+"画面中央巨大粗体白色文字 'GOLD CRASH 26%'，文字表面有金色裂纹效果。
+文字下方小号副标题 '你的钱还安全吗？'，悬在黑底裂痕背景上。"
+```
+
+文字描述要点：
+- **位置**：center / upper-third / bottom / left / right
+- **字号暗示**：huge / large / medium / small
+- **字体风格**：bold serif / minimal sans-serif / handwritten / neon / glitch / gold metallic
+- **颜色和效果**：white with glow / gold with crack effect / red pulse / gradient
+- **与画面的关系**：文字是压在图上的，不要挡住关键视觉元素
+
+#### 特别：Cover 片头画面
+
+Cover 的第一优先级是**文字可读性**，不是画面华丽。Cover 提示词必须：
+
+1. **画面背景**不能太复杂，避免抢文字注意力（纯黑/深色渐变/简约背景优先）
+2. **文字是主角**，占画面主要面积
+3. **画面上方或中央预留暗部区域**用于文字叠加（在提示词中明确写出）
+4. **文字描述在 prompt 中放在最前面**
+
+✅ Cover 示例：
+```
+"Black dark gradient background with subtle gold particles floating downward. 
+The frame is split: left 60% has huge bold white serif text 'GOLD CRASH 26%' 
+with gold metallic crack effect, right 40% shows a dramatic K-line chart cliff 
+drop. Small subtitle at bottom: '你的钱还安全吗？' in minimal white sans-serif. 
+Magazine cover level typography, cinematic lighting, aspect ratio 16:9, quality 2K.."
+```
+
 ### 2.3 全片视觉风格一致性锁定
 
 **这是最重要的规则之一。所有镜头的提示词必须共享同一套视觉语言，不能出现第一镜 photorealistic、第二镜 vector illustration 的情况。**
 
-#### 2.3.1 锁定元素（全片统一）
+#### 2.3.1 锁定与变化（全片统一 vs 叙事弧线）
 
-| 维度 | 所有镜头必须一致 |
-|------|----------------|
-| **Art Style** | 全是 photorealistic，或全是 motion graphics，不能混搭 |
-| **Color Palette** | 主色调全片保持一致（如全是 cool blue + gold accent） |
-| **Lighting** | 光照风格一致（如全是 dramatic volumetric lighting） |
-| **Mood** | 整体情绪基调一致（如全是 cinematic, awe-inspiring） |
-| **Quality** | 画质标记一致（如全是 8K, hyper-detailed） |
-| **Aspect Ratio** | 全是 16:9 横屏或全是 9:16 竖屏 |
+| 维度 | 规则 | 说明 |
+|------|------|------|
+| **Art Style** | 🔒 全片锁定 | 全是 photorealistic，或全是 motion graphics，不能混搭 |
+| **Quality** | 🔒 全片锁定 | 画质标记一致（如全是 8K, hyper-detailed） |
+| **Aspect Ratio** | 🔒 全片锁定 | 全是 16:9 横屏或全是 9:16 竖屏 |
+| **Resolution** | 🔒 全片锁定 | 生成尺寸全片一致 |
+| **Color Palette** | 🔄 随叙事弧线变化 | 开场暖金（贪婪）→ 暴跌血红（恐慌）→ 分析深蓝（理智）→ 总结暖金（信任） |
+| **Lighting** | 🔄 随情绪变化 | 温暖背光 → 戏剧性高对比 → 冷调柔光 → 柔和散射 |
+| **Mood** | 🔄 随叙事进展 | 兴奋 → 震惊 → 冷静 → 信任 |
+
+> ⚠️ 锁定与变化的原则：**技术规格（风格/画质/aspect_ratio/quality）全片统一，但美学表达（色调/光照/情绪）跟随叙事弧线动态变化。** 这是电影级制作的常识——《盗梦空间》开头和结尾的色调完全不同。
 
 #### 2.3.2 如何锁定
 
-在 `image_prompt` 和 `video_prompt` 的结尾统一追加风格锚点：
+在 `image_prompt` 和 `video_prompt` 的结尾统一追加风格锚点（只锁技术规格，色调和情绪留给每镜单独控制）：
 
 ```
 统一追加的尾部风格锚点：
-, cinematic photorealistic style, cool blue and warm gold color palette, 
-dramatic volumetric lighting, 8K resolution, hyper-detailed, 
-16:9 horizontal composition
+, cinematic photorealistic style, aspect ratio 16:9, quality 2K
 ```
+
+**关键规则：** 每个 `video_prompt` 和 `image_prompt` 末尾**必须**包含 `aspect_ratio` 和 `quality`。格式：`, aspect ratio 16:9, quality 2K`（横屏）或 `, aspect ratio 9:16, quality 2K`（竖屏）。这是硬性要求，100% 覆盖所有提示词，一个不能少。
 
 **禁止**：不同的镜头使用不同的 art style、不同的色调、不同的光照方案。
 
@@ -123,7 +181,15 @@ dramatic volumetric lighting, 8K resolution, hyper-detailed,
 
 ## 三、视频提示词撰写规范（video_prompt）
 
-每个视频提示词必须包含以下 10 大要素，自然地融入一段连贯的自然语言描述中：
+### 3.0 短视频视频提示词核心哲学
+
+视频提示词是为 **3-30 秒短视频分镜**服务的，不是电影长镜头。
+
+每段视频必须考虑：
+- **前 1 秒抓眼球** — 第一帧就要有视觉钩子（文字突然出现/物体爆炸/快速推镜）
+- **画面信息可持续** — 观众能盯着看完整段 narration 不无聊
+- **动势有目的** — 运镜不是为了"酷"，是为了引导注意力到关键信息上
+- **结尾帧可转场** — 最后一帧的自然终点就是下个镜头的起点
 
 ### 3.1 必要要素
 
@@ -158,35 +224,199 @@ dramatic volumetric lighting, 8K resolution, hyper-detailed,
 
 ---
 
-## 四、图像提示词撰写规范（image_prompt）
+## 四、图像提示词撰写规范（image_prompt）—— 电影视角设计
 
-### 4.1 必要要素
+### 4.0 核心哲学：每帧都是 storytelling + 短视频传播设计
 
-| # | 要素 | 说明 |
-|---|------|------|
-| 1 | **Subject (主体)** | 画面主体的详细描述 |
-| 2 | **Composition (构图)** | `centered`, `rule of thirds`, `asymmetric`, `symmetrical`, `leading lines`, `frame within frame`, `top-down`, `eye-level`, `low angle`, `high angle`, `dynamic diagonal` |
-| 3 | **Background (背景/环境)** | 背景和环境细节 |
-| 4 | **Lighting (光照)** | 同上视频规范 |
-| 5 | **Color Scheme (配色)** | 主色调 + 辅助色 |
-| 6 | **Mood (情绪/氛围)** | 同上视频规范 |
-| 7 | **Style (艺术风格)** | `photorealistic`, `cinematic still`, `3D render`, `vector illustration`, `watercolor`, `oil painting`, `sketch`, `concept art`, `isometric`, `minimalist flat design`, `infographic`, `comic book style`, `retro futurism` |
-| 8 | **Quality Markers (质量)** | `8K resolution`, `highly detailed`, `sharp focus`, `trending on ArtStation`, `award-winning photography` — 注意适度使用，不要堆砌 |
+**你不是在"生成一张图"，你是在设计一个观众会在 6 寸手机上盯着看 3-10 秒的电影帧。**
 
-### 4.2 图像提示词撰写原则
+这意味着：
+- 观众在这一帧能**读到什么信息**？（文字）
+- 观众**应该看哪里**？（信息层级）
+- 观众**应该感受到什么**？（情绪/色调）
+- 如果静音/没声音，观众**光看画面能懂吗**？（必须能）
 
-- **封面图**：需要预留文字叠加空间（上方或中间偏下留暗部/纯色区）
-- **分镜图**：作为关键帧使用，注重叙事性
-- **结尾图**：包含品牌色或 Logo 位置预留
-- **风格一致性**：同一视频的所有分镜图风格应保持统一
+### 4.0.1 短视频传播四大设计原则
 
-### 4.3 示例
+| 原则 | 要求 | 为什么 |
+|------|------|--------|
+| **📱 小屏优先** | 文字足够大，在6寸手机全屏预览下一眼可读。最小字体在1080P画面中不低于60px | 用户拇指滑动时只有1-2秒决定是否停下来 |
+| **🎬 电影级质感** | 每帧都是独立摄影作品，构图/光照/色彩/景深符合电影美学 | 高质量视觉=高停留，粗糙=划走 |
+| **🏷️ 信息自包含** | 画面+文字本身就能传达70%信息，不依赖声音 | 大量用户刷视频是静音的 |
+| **⚡ 视觉冲击力** | 前1秒必须有钩子——无论是文字冲击还是视觉奇观 | 短视频的竞争发生在前1秒 |
 
-**✅ 高质量封面提示词：**
-> "A dramatic wide shot of a quantum computer with its access panels open revealing the inner cryogenic chamber. The frame is compositionally divided into thirds — glowing quantum chip on the left, cascading data visualizations on the right. Deep blue and gold color scheme. Intricate maze of golden wires cascading from the top. Volumetric fog with subtle light rays. Photorealistic CG render style, 8K, sharp focus, cinematic lighting with strong contrast between the cool blue interior and warm gold accents. The top third of the image has a dark gradient area suitable for text overlay."
+### 4.0.2 Cover/每帧的小屏可读性 Checklist
 
-**❌ 低质量示例：**
-> "量子计算机，蓝色，很酷。"
+每写一个 image_prompt，问自己：
+- [ ] 如果把这张图缩成手机全屏预览，最大的那行字能看清楚吗？
+- [ ] 画面最亮和最暗的区域是否在引导视线到文字上？
+- [ ] 文字和背景的 contrast ratio 够吗？（白字深色背景最优）
+- [ ] 有没有任何视觉元素和文字"抢视线"？
+- [ ] 如果去掉颜色变成灰度图，信息层级还在吗？
+
+### 4.1 图像提示词 5 层设计框架
+
+每写一个 `image_prompt`，从这 5 层从上往下设计，每层不可跳过：
+
+```
+Layer 1: 🏷️ 文字（信息核心）
+  ↓
+Layer 2: 🎨 画面（视觉载体）
+  ↓
+Layer 3: 💡 光照与色调（情绪定调）
+  ↓
+Layer 4: 📐 构图与焦点（视觉引导）
+  ↓
+Layer 5: ✨ 品质锚点（统一质感）
+```
+
+#### Layer 1 — 文字（信息核心）
+
+**为什么文字必须写在最前面？** 因为这是观众第一眼看到的东西。
+
+| 镜头类型 | 文字内容 | 示例 |
+|----------|---------|------|
+| `cover` | 视频主标题（巨大，占画面30-50%） | "黄金暴跌26%" |
+| `hook` | 数据冲击或反问 | "你的钱缩水了" / "10万 → 7.4万" |
+| `explainer` | 概念关键词 | "美联储不降息"、"流动性危机" |
+| `data-viz` | 核心数字标签 | "-31%"、"26%"、"$150,000" |
+| `summary` | 金句 | "当所有人都觉得会涨的时候..." |
+| `outro` | 品牌 + CTA | "老白财经 关注获取更多" |
+
+写 prompt 时，**文字描述放在段落最前面**，占 30-50% 篇幅：
+
+```
+"画面中央巨大粗体白色衬线字 '黄金暴跌26%'，文字有金色裂纹金属质感，
+下方小号白字 '两个月蒸发一辆宝马5系'。所有文字叠加在深色渐变背景上。
+文字是视觉焦点，背景是辅助衬托..."
+```
+
+#### Layer 2 — 画面（视觉载体）
+
+画面是文字的**情绪放大器**，不能喧宾夺主。
+
+- **Cover**：画面是"背景"级别的，文字才是主角——用纯黑/深色渐变/简约纹理
+- **Data-viz**：画面是"图表+数据"为主体，文字标签是所有数字的标注
+- **Explainer**：画面是"概念可视化"，文字是关键词+数据标注
+- **Hook**：画面是"场景再现"，文字是情绪锚点
+
+#### Layer 3 — 光照与色调（情绪定调）
+
+**色调跟随情绪弧线变化**，不是全片统一一个配色——这是对 2.3 节的修正：
+
+| 叙事阶段 | 情绪 | 主色调 | 辅色调 | 光照风格 |
+|---------|------|--------|--------|---------|
+| 开场/贪婪期 | 兴奋、狂热 | 暖金 #D4AF37 | 琥珀橙 | 温暖柔和背光 |
+| 暴跌/恐惧期 | 震惊、恐慌 | 血红 #CC0000 | 暗红 | 戏剧性顶光，高对比 |
+| 分析/求知期 | 冷静、理智 | 深蓝 #0A1628 | 冰蓝 | 冷调柔光，干净利落 |
+| 总结/行动期 | 温暖、信任 | 深金 #996515 | 暖白 | 柔和散射光 |
+
+**怎么写：** prompt 中明确写出主色 HEX 或描述，保证生成可控。
+
+#### Layer 4 — 构图与焦点（视觉引导）
+
+观众眼睛第一个落在哪里？第二个？第三个？
+
+- **Z 型构图**（先看左上文字→再右下关键元素→最后左下补充）→ cover 和总结镜头
+- **F 型构图**（先看中央/上方文字→再看下方图表/数据）→ data-viz 镜头
+- **对角线构图**（文字在左上，视觉元素在右下形成平衡）→ explainer
+
+关键原则：**文字和高亮区域必须有足够的 contrast 和呼吸空间**，不能和其他元素打架。
+
+#### Layer 5 — 品质锚点
+
+追加统一的后缀锚点，保证全片画质一致（只锁技术规格，色调情绪每镜自控）：
+```
+cinematic photorealistic style, aspect ratio 16:9, quality 2K
+```
+> **硬性要求：** `aspect_ratio` 和 `quality` 必须出现在每个提示词末尾。这是后续 AI 生成工具出图的必要条件。LLM 不支持自定义分辨率参数，但这两个语义参数能被正确理解和执行。
+
+### 4.2 Cover 片头设计规范（特别重要）
+
+Cover 是视频的"电影海报"。它必须在第一帧就告诉观众三个信息：
+1. **这是什么话题？** — 标题文字
+2. **我为什么要在意？** — 副标题或数据
+3. **这是什么调性？** — 色调和视觉风格
+
+设计 Checklist：
+- [ ] 标题文字占画面 30-50%，是绝对视觉焦点
+- [ ] 文字描述排在 prompt 最前面
+- [ ] 背景不抢文字（深色/纯色/简约纹理）
+- [ ] 有足够的 dark gradient 区域保证白字可读
+- [ ] 包含副标题或关键词数据
+- [ ] 色调暗示视频基调（灾难性？教育性？）
+
+✅ Cover prompt 格式：
+```
+"文字描述（30-50%篇幅）：[字体、大小、颜色、位置、效果]
+画面描述：背景类型、微纹理或简约视觉元素
+色调描述：主色+辅色+光照
+品质锚点：风格+aspect_ratio+quality
+```
+
+### 4.3 每镜 text_overlay 字段配合
+
+`script.json` 中每个 scene 新增 `text_overlay` 字段（见 template），与 `image_prompt` 配合使用：
+
+```json
+"text_overlay": {
+  "text": "画面叠加的文字内容",
+  "position": "center | upper-third | bottom | split-left",
+  "font_style": "bold white serif with gold edge",
+  "priority": "primary | secondary | accent"
+}
+```
+
+### 4.4 写 image_prompt 的完整流程
+
+对每个 scene，按以下顺序思考并输出：
+
+1. **这一帧我在讲什么？** → 提取 1-3 个关键词
+2. **观众应该看到什么文字？** → 确定 text_overlay
+3. **文字放在哪里？** → 构图规划（Z型/F型）
+4. **这个场景是什么情绪？** → 查色调表选主色
+5. **画面长什么样？** → 用画面放大文字的情绪
+6. **品质锚点** → 追加统一后缀
+
+### 4.5 完整示例
+
+**Cover 场景：**
+```
+text_overlay: {
+  text: "黄金暴跌26%",
+  subtitle: "两个月蒸发一辆宝马5系",
+  position: "center",
+  font_style: "extrabold white serif with gold metallic crack effect",
+  priority: "primary"
+}
+
+image_prompt:
+"画面中央巨大粗体白色衬线字 '黄金暴跌26%'，文字表面有金色金属裂纹和微光效果。
+下方小号白字 '两个月蒸发一辆宝马5系'，简约无衬线字体。
+深黑背景上有细微裂痕纹理和金色尘埃粒子缓慢飘落。
+背景隐约可见红色K线断崖式暴跌的轮廓。
+戏剧性高对比光照，暖金色裂纹边缘高光。
+电影级照片写实风格，aspect ratio 16:9, quality 2K，超精细细节。
+灾难性、紧张、沉重的情绪基调。"
+```
+
+**Hook 场景（钱包燃烧）：**
+```
+text_overlay: {
+  text: "10万 → 7.4万",
+  subtitle: "两个月蒸发26%",
+  position: "upper-third",
+  font_style: "bold white sans-serif red pulse",
+  priority: "primary"
+}
+
+image_prompt:
+"画面上方大号白色粗体无衬线字 '¥100,000 → ¥74,000 -26%'，文字有红色脉冲发光效果，
+每次脉冲暗示数字在减少。画面下方：一个被火烧焦的皮革钱包，残存几叠现金，
+灰烬和火星在空中飘浮。暖金色火焰余烬与暗红火烧痕迹形成强烈对比。
+构图上方40%留给文字，下方60%展示毁灭场景。戏剧性高对比光照，
+深色背景，火光照亮残骸边缘。电影级照片写实风格，aspect ratio 16:9, quality 2K，超精细细节。冲击、损失、后悔的情绪基调。"
+```
 
 ---
 
@@ -260,7 +490,9 @@ scenes[].duration      →  剪辑时间轴
 在提交最终 JSON 前，逐项检查：
 
 - [ ] **scenes 包含全部镜头** — cover、hook、outro 都必须在 scenes[] 中有一席
-- [ ] **分辨率已确认** — 已询问用户竖屏(9:16)还是横屏(16:9)，且所有 prompt 的构图方向一致
+- [ ] **画幅比例已确认** — 已询问用户竖屏(9:16)还是横屏(16:9)，写入 production_notes.aspect_ratio
+- [ ] **画质等级已确认** — quality 写入 production_notes（默认 2K），可指定 1K/2K/4K
+- [ ] **所有 prompt 锁死 aspect_ratio + quality** — 每个 video_prompt 和 image_prompt 末尾必须有 ', aspect ratio 16:9/9:16, quality 2K/1K/4K'，100%覆盖，一个不能少
 - [ ] **视觉风格已确认** — 已询问用户风格方向，全片统一
 - [ ] **Art Style 全片一致** — 所有 image_prompt 和 video_prompt 的 art style 描述完全相同
 - [ ] **Color Palette 全片一致** — 所有 prompt 的配色描述一致
@@ -273,6 +505,8 @@ scenes[].duration      →  剪辑时间轴
 - [ ] **双提示词** — 每个 scene 同时包含 video_prompt 和 image_prompt，且长度≥50字
 - [ ] **视频提示词** — 包含 shot type + camera movement + subject + action + environment + 至少 3 个风格要素
 - [ ] **图像提示词** — 包含 subject + composition + style + lighting + quality markers
+- [ ] **每镜必有文字** — 每个 image_prompt 都包含至少一句文字叠加描述（片头/数据/关键词/引语），不能只有纯抽象画面
+- [ ] **Cover 作为场景-01** — scenes[] 中第一个镜头必须是 type=cover 的片头，带巨大标题文字
 - [ ] **钩子有效** — hook.text ≤ 20 字，前 3 秒完成注意力抓取
 - [ ] **CTA 明确** — 最后一个有口播的镜头的 narration 包含行动号召
 
