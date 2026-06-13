@@ -211,7 +211,7 @@ def _print_summary(scene_times: list[dict], total_sec: float, limit: int, ok: in
 
 def main():
     parser = argparse.ArgumentParser(
-        description="从 script.json 逐镜生成图片（gpt-image-2，流式 SSE）",
+        description="从 script.json 逐镜生成图片（gpt-image-2，流式 SSE），自动跳过已有，缺图补图",
     )
     parser.add_argument(
         "--project-dir", "-d",
@@ -229,11 +229,6 @@ def main():
         type=int,
         default=2,
         help="每镜间隔秒数（默认 2）",
-    )
-    parser.add_argument(
-        "--skip-existing",
-        action="store_true",
-        help="跳过已存在的 PNG 文件",
     )
     args = parser.parse_args()
 
@@ -263,54 +258,100 @@ def main():
     image_size = resolve_image_size(script_data)
     print(f"🎬 {title}")
     print(f"📁 {proj.resolve()}")
-    print(f"🎯 共 {total} 个图片提示词，本次生成 {limit} 个（--limit={args.limit}）\n")
+    print(f"🎯 共 {total} 个图片提示词，目标生成 {limit} 个\n")
 
-    scene_times: list[dict] = []
     t_start_all = time.time()
-    ok = fail = skip = 0
+    scene_times: list[dict] = []
+    total_ok = total_fail = total_skip = 0
 
-    for idx, (name, prompt) in enumerate(items[:limit]):
-        safe = re.sub(r"[^\w\-]", "_", name) or "scene"
-        fpath = proj / f"{safe}.png"
+    # ── 第 1 轮：生成所有缺失的镜头 ──
+    for attempt in range(2):  # 最多两轮：首轮 + 一轮补偿
+        missing = []
+        for name, prompt in items[:limit]:
+            safe = re.sub(r"[^\w\-]", "_", name) or "scene"
+            fpath = proj / f"{safe}.png"
+            if not fpath.exists():
+                missing.append((name, prompt, safe))
 
-        if args.skip_existing and fpath.exists():
-            print(f"  [{idx + 1}/{limit}] ⏭️  {name} → {safe}.png  (已存在)")
-            skip += 1
-            continue
+        if not missing:
+            print(f"\n{'=' * 50}")
+            print(f"  ✅ 全部 {limit} 个镜头图片已就绪！")
+            print(f"{'=' * 50}")
+            break
 
-        t0 = time.time()
-        ts0 = datetime.now().strftime("%H:%M:%S")
-        print(f"  [{idx + 1}/{limit}] 🖼️  {name} → {safe}.png  ", end="", flush=True)
-        print(f"\n        ⏱️  开始 {ts0}", end="", flush=True)
+        if attempt == 0:
+            existing_count = limit - len(missing)
+            if existing_count > 0:
+                print(f"  ⏭️  跳过 {existing_count} 个已存在的图片\n")
+                total_skip += existing_count
+            print(f"{'─' * 50}")
+            print(f"  首轮：生成 {len(missing)} 个缺失镜头")
+            print(f"{'─' * 50}")
+        else:
+            print(f"\n{'─' * 50}")
+            print(f"  补偿轮：重新生成 {len(missing)} 个仍缺失的镜头")
+            print(f"{'─' * 50}")
 
-        try:
-            img_data = generate_one(prompt, image_size)
-            elapsed = time.time() - t0
-            with open(fpath, "wb") as f:
-                f.write(img_data)
-            size_kb = len(img_data) / 1024
-            print(f" ✅ ({size_kb:.0f} KB, {_fmt_duration(elapsed)})")
-            ok += 1
-            scene_times.append({"name": name, "file": safe, "status": "ok", "elapsed": elapsed, "size_kb": size_kb})
-        except Exception as e:
-            elapsed = time.time() - t0
-            print(f" ❌ ({_fmt_duration(elapsed)}) {e}")
-            fail += 1
-            scene_times.append({"name": name, "file": safe, "status": "fail", "elapsed": elapsed, "size_kb": 0})
+        round_ok = round_fail = 0
+        round_results = []
 
-        # ETA
-        done = ok + fail + skip
-        if ok > 0 and done < limit:
-            avg = (time.time() - t_start_all) / ok
-            eta = avg * (limit - done)
-            print(f"        📈 已完成 {done}/{limit}，平均 {avg:.0f}s/镜，预计剩余 {_fmt_duration(eta)}")
+        for idx, (name, prompt, safe) in enumerate(missing):
+            fpath = proj / f"{safe}.png"
 
-        if idx < limit - 1:
-            time.sleep(args.delay)
+            # 补偿轮中可能已被生成
+            if fpath.exists():
+                print(f"  [{idx + 1}/{len(missing)}] ⏭️  {name} → {safe}.png  (已存在)")
+                round_ok += 1
+                continue
+
+            t0 = time.time()
+            ts0 = datetime.now().strftime("%H:%M:%S")
+            print(f"  [{idx + 1}/{len(missing)}] 🖼️  {name} → {safe}.png  ", end="", flush=True)
+            print(f"\n        ⏱️  开始 {ts0}", end="", flush=True)
+
+            try:
+                img_data = generate_one(prompt, image_size)
+                elapsed = time.time() - t0
+                with open(fpath, "wb") as f:
+                    f.write(img_data)
+                size_kb = len(img_data) / 1024
+                print(f" ✅ ({size_kb:.0f} KB, {_fmt_duration(elapsed)})")
+                round_ok += 1
+                round_results.append({"name": name, "file": safe, "status": "ok", "elapsed": elapsed, "size_kb": size_kb})
+            except Exception as e:
+                elapsed = time.time() - t0
+                print(f" ❌ ({_fmt_duration(elapsed)}) {e}")
+                round_fail += 1
+                round_results.append({"name": name, "file": safe, "status": "fail", "elapsed": elapsed, "size_kb": 0})
+
+            if idx < len(missing) - 1:
+                time.sleep(args.delay)
+
+        total_ok += round_ok
+        total_fail += round_fail
+        scene_times.extend(round_results)
+
+        done_now = total_ok + total_skip
+        print(f"\n  📊 本轮: ✅ {round_ok} 成功, ❌ {round_fail} 失败  | 累计: {done_now}/{limit}")
+
+        # 第二轮结束仍缺失 → 报错
+        if attempt == 1:
+            still_missing = [(n, p, s) for n, p, s in missing
+                           if not (proj / f"{s}.png").exists()]
+            if still_missing:
+                print(f"\n{'=' * 50}")
+                print(f"  ❌ 补偿后仍有 {len(still_missing)} 个镜头缺失:")
+                for name, _, safe in still_missing:
+                    print(f"     - {safe}.png")
+                print(f"  请检查后重新运行")
+                print(f"{'=' * 50}")
+                t_total = time.time() - t_start_all
+                _print_summary(scene_times, t_total, limit, total_ok, total_fail, total_skip)
+                return 1
 
     t_total = time.time() - t_start_all
-    _print_summary(scene_times, t_total, limit, ok, fail, skip)
-    return 0 if fail == 0 else 1
+    _print_summary(scene_times, t_total, limit, total_ok, total_fail, total_skip)
+    return 0 if total_fail == 0 else 1
 
 
 if __name__ == "__main__":
