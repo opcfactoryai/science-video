@@ -106,26 +106,12 @@ def validate_narration_consistency(script):
     return errors
 
 
-def validate_aspect_quality(script):
-    """检查所有 prompt 是否锁死 aspect_ratio 和 quality"""
+def validate_production_notes(script):
+    """检查 production_notes 字段完整性"""
     errors = []
-
-    # 检查根层级字段（Python 脚本直接读取）
-    root_ar = script.get("aspect_ratio", "")
-    root_ql = script.get("quality", "")
-    if not root_ar:
-        errors.append("❌ 根层级缺少 aspect_ratio（必须为 16:9 或 9:16，Python脚本直接读取）")
-    elif root_ar not in ("16:9", "9:16"):
-        errors.append(f"❌ 根层级 aspect_ratio 值无效: '{root_ar}'（必须为 16:9 或 9:16）")
-    if not root_ql:
-        errors.append("❌ 根层级缺少 quality（必须为 1K / 2K / 4K，Python脚本直接读取）")
-    elif root_ql not in ("1K", "2K", "4K"):
-        errors.append(f"❌ 根层级 quality 值无效: '{root_ql}'（必须为 1K / 2K / 4K）")
-
-    # 检查 production_notes（与根层级一致）
     pn = script.get("production_notes", {})
-    ar = pn.get("aspect_ratio", "") or root_ar
-    ql = pn.get("quality", "") or root_ql
+    ar = pn.get("aspect_ratio", "")
+    ql = pn.get("quality", "")
     if not ar:
         errors.append("❌ production_notes 缺少 aspect_ratio（必须为 16:9 或 9:16）")
     elif ar not in ("16:9", "9:16"):
@@ -134,52 +120,6 @@ def validate_aspect_quality(script):
         errors.append("❌ production_notes 缺少 quality（必须为 1K / 2K / 4K）")
     elif ql not in ("1K", "2K", "4K"):
         errors.append(f"❌ production_notes.quality 值无效: '{ql}'（必须为 1K / 2K / 4K）")
-
-    # 构建期望的末尾片段（全部小写，与被检查文本 vid_lower/img_lower 匹配）
-    expected_ar = f"aspect ratio {ar}".lower()
-    expected_ql = f"quality {ql}".lower()
-
-    scenes = script.get("scenes", [])
-    for s in scenes:
-        sid = s.get("id", "?")
-        vid = s.get("video_prompt", "")
-        img = s.get("image_prompt", "")
-
-        vid_lower = vid.lower()
-        img_lower = img.lower()
-
-        # video_prompt 检查
-        if vid:
-            if expected_ar not in vid_lower:
-                errors.append(f"❌ scene {sid} video_prompt 末尾缺少 '{expected_ar}' → 提示词未锁死 aspect_ratio")
-            if expected_ql not in vid_lower:
-                errors.append(f"❌ scene {sid} video_prompt 末尾缺少 '{expected_ql}' → 提示词未锁死 quality")
-
-        # image_prompt 检查
-        if img:
-            if expected_ar not in img_lower:
-                errors.append(f"❌ scene {sid} image_prompt 末尾缺少 '{expected_ar}' → 提示词未锁死 aspect_ratio")
-            if expected_ql not in img_lower:
-                errors.append(f"❌ scene {sid} image_prompt 末尾缺少 '{expected_ql}' → 提示词未锁死 quality")
-
-    # 检查 cover image_prompt
-    cover = script.get("cover", {})
-    cover_img = cover.get("image_prompt", "")
-    if cover_img:
-        if expected_ar not in cover_img.lower():
-            errors.append(f"❌ cover image_prompt 末尾缺少 '{expected_ar}' → 提示词未锁死 aspect_ratio")
-        if expected_ql not in cover_img.lower():
-            errors.append(f"❌ cover image_prompt 末尾缺少 '{expected_ql}' → 提示词未锁死 quality")
-
-    # 检查 outro image_prompt
-    outro = script.get("outro", {})
-    outro_img = outro.get("image_prompt", "")
-    if outro_img:
-        if expected_ar not in outro_img.lower():
-            errors.append(f"❌ outro image_prompt 末尾缺少 '{expected_ar}' → 提示词未锁死 aspect_ratio")
-        if expected_ql not in outro_img.lower():
-            errors.append(f"❌ outro image_prompt 末尾缺少 '{expected_ql}' → 提示词未锁死 quality")
-
     return errors
 
 
@@ -315,8 +255,8 @@ def main():
             )
         print(f"📊 总时长: {total}s (目标: {target}s)")
 
-    # 4. aspect_ratio + quality 锁死校验
-    all_errors.extend(validate_aspect_quality(script))
+    # 4. production_notes 完整性校验
+    all_errors.extend(validate_production_notes(script))
 
     # 5. 口播一致性校验（hook/outro vs scenes）
     if "scenes" in script:

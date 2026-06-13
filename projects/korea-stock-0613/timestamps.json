@@ -1,0 +1,2511 @@
+{
+  "words": [
+    {
+      "text": "下",
+      "start_ms": 535,
+      "end_ms": 745
+    },
+    {
+      "text": "午",
+      "start_ms": 745,
+      "end_ms": 895
+    },
+    {
+      "text": "3",
+      "start_ms": 895,
+      "end_ms": 925
+    },
+    {
+      "text": "点",
+      "start_ms": 1125,
+      "end_ms": 1255
+    },
+    {
+      "text": "半，",
+      "start_ms": 1255,
+      "end_ms": 1635
+    },
+    {
+      "text": "首",
+      "start_ms": 1935,
+      "end_ms": 2235
+    },
+    {
+      "text": "尔",
+      "start_ms": 2235,
+      "end_ms": 2275
+    },
+    {
+      "text": "写",
+      "start_ms": 2275,
+      "end_ms": 2505
+    },
+    {
+      "text": "字",
+      "start_ms": 2505,
+      "end_ms": 2635
+    },
+    {
+      "text": "楼",
+      "start_ms": 2635,
+      "end_ms": 2745
+    },
+    {
+      "text": "的",
+      "start_ms": 2745,
+      "end_ms": 2835
+    },
+    {
+      "text": "厕",
+      "start_ms": 2835,
+      "end_ms": 3045
+    },
+    {
+      "text": "所",
+      "start_ms": 3045,
+      "end_ms": 3215
+    },
+    {
+      "text": "隔",
+      "start_ms": 3215,
+      "end_ms": 3415
+    },
+    {
+      "text": "间",
+      "start_ms": 3415,
+      "end_ms": 3635
+    },
+    {
+      "text": "里，",
+      "start_ms": 3635,
+      "end_ms": 3915
+    },
+    {
+      "text": "挤",
+      "start_ms": 4005,
+      "end_ms": 4245
+    },
+    {
+      "text": "满",
+      "start_ms": 4245,
+      "end_ms": 4425
+    },
+    {
+      "text": "了",
+      "start_ms": 4425,
+      "end_ms": 4515
+    },
+    {
+      "text": "看",
+      "start_ms": 4515,
+      "end_ms": 4685
+    },
+    {
+      "text": "盘",
+      "start_ms": 4685,
+      "end_ms": 4875
+    },
+    {
+      "text": "的",
+      "start_ms": 4875,
+      "end_ms": 4975
+    },
+    {
+      "text": "人。",
+      "start_ms": 4975,
+      "end_ms": 5255
+    },
+    {
+      "text": "收",
+      "start_ms": 5720,
+      "end_ms": 5955
+    },
+    {
+      "text": "盘",
+      "start_ms": 5955,
+      "end_ms": 6135
+    },
+    {
+      "text": "前",
+      "start_ms": 6135,
+      "end_ms": 6315
+    },
+    {
+      "text": "最",
+      "start_ms": 6315,
+      "end_ms": 6545
+    },
+    {
+      "text": "后",
+      "start_ms": 6545,
+      "end_ms": 6775
+    },
+    {
+      "text": "几",
+      "start_ms": 6775,
+      "end_ms": 6945
+    },
+    {
+      "text": "分",
+      "start_ms": 6945,
+      "end_ms": 7095
+    },
+    {
+      "text": "钟，",
+      "start_ms": 7095,
+      "end_ms": 7375
+    },
+    {
+      "text": "所",
+      "start_ms": 7595,
+      "end_ms": 7925
+    },
+    {
+      "text": "有",
+      "start_ms": 7925,
+      "end_ms": 8045
+    },
+    {
+      "text": "人",
+      "start_ms": 8045,
+      "end_ms": 8225
+    },
+    {
+      "text": "都",
+      "start_ms": 8225,
+      "end_ms": 8415
+    },
+    {
+      "text": "躲",
+      "start_ms": 8415,
+      "end_ms": 8595
+    },
+    {
+      "text": "进",
+      "start_ms": 8595,
+      "end_ms": 8755
+    },
+    {
+      "text": "隔",
+      "start_ms": 8755,
+      "end_ms": 8985
+    },
+    {
+      "text": "间",
+      "start_ms": 8985,
+      "end_ms": 9335
+    },
+    {
+      "text": "—",
+      "start_ms": 9385,
+      "end_ms": 9415
+    },
+    {
+      "text": "—",
+      "start_ms": 9505,
+      "end_ms": 9535
+    },
+    {
+      "text": "不",
+      "start_ms": 9565,
+      "end_ms": 9735
+    },
+    {
+      "text": "是",
+      "start_ms": 9735,
+      "end_ms": 9905
+    },
+    {
+      "text": "为",
+      "start_ms": 9905,
+      "end_ms": 9995
+    },
+    {
+      "text": "了",
+      "start_ms": 9995,
+      "end_ms": 10075
+    },
+    {
+      "text": "上",
+      "start_ms": 10075,
+      "end_ms": 10285
+    },
+    {
+      "text": "厕",
+      "start_ms": 10285,
+      "end_ms": 10495
+    },
+    {
+      "text": "所，",
+      "start_ms": 10495,
+      "end_ms": 10915
+    },
+    {
+      "text": "是",
+      "start_ms": 11080,
+      "end_ms": 11275
+    },
+    {
+      "text": "为",
+      "start_ms": 11275,
+      "end_ms": 11365
+    },
+    {
+      "text": "了",
+      "start_ms": 11365,
+      "end_ms": 11485
+    },
+    {
+      "text": "看",
+      "start_ms": 11485,
+      "end_ms": 11685
+    },
+    {
+      "text": "一",
+      "start_ms": 11685,
+      "end_ms": 11785
+    },
+    {
+      "text": "眼",
+      "start_ms": 11785,
+      "end_ms": 12015
+    },
+    {
+      "text": "手",
+      "start_ms": 12135,
+      "end_ms": 12455
+    },
+    {
+      "text": "里",
+      "start_ms": 12455,
+      "end_ms": 12575
+    },
+    {
+      "text": "的",
+      "start_ms": 12575,
+      "end_ms": 12675
+    },
+    {
+      "text": "三",
+      "start_ms": 12675,
+      "end_ms": 12905
+    },
+    {
+      "text": "星",
+      "start_ms": 12905,
+      "end_ms": 13215
+    },
+    {
+      "text": "和",
+      "start_ms": 13345,
+      "end_ms": 13505
+    },
+    {
+      "text": "SK",
+      "start_ms": 13935,
+      "end_ms": 13965
+    },
+    {
+      "text": "海",
+      "start_ms": 13965,
+      "end_ms": 14215
+    },
+    {
+      "text": "力",
+      "start_ms": 14215,
+      "end_ms": 14345
+    },
+    {
+      "text": "士。",
+      "start_ms": 14345,
+      "end_ms": 14685
+    },
+    {
+      "text": "这",
+      "start_ms": 15185,
+      "end_ms": 15335
+    },
+    {
+      "text": "不",
+      "start_ms": 15335,
+      "end_ms": 15615
+    },
+    {
+      "text": "是",
+      "start_ms": 15615,
+      "end_ms": 15775
+    },
+    {
+      "text": "段",
+      "start_ms": 15775,
+      "end_ms": 16025
+    },
+    {
+      "text": "子，",
+      "start_ms": 16025,
+      "end_ms": 16315
+    },
+    {
+      "text": "这",
+      "start_ms": 16595,
+      "end_ms": 16735
+    },
+    {
+      "text": "是",
+      "start_ms": 16735,
+      "end_ms": 16855
+    },
+    {
+      "text": "2026",
+      "start_ms": 17475,
+      "end_ms": 17505
+    },
+    {
+      "text": "年",
+      "start_ms": 17505,
+      "end_ms": 17655
+    },
+    {
+      "text": "的",
+      "start_ms": 17655,
+      "end_ms": 17745
+    },
+    {
+      "text": "韩",
+      "start_ms": 17745,
+      "end_ms": 18045
+    },
+    {
+      "text": "国。",
+      "start_ms": 18045,
+      "end_ms": 18335
+    },
+    {
+      "text": "一",
+      "start_ms": 18700,
+      "end_ms": 18755
+    },
+    {
+      "text": "个",
+      "start_ms": 18755,
+      "end_ms": 18845
+    },
+    {
+      "text": "只",
+      "start_ms": 18845,
+      "end_ms": 19015
+    },
+    {
+      "text": "有",
+      "start_ms": 19015,
+      "end_ms": 19145
+    },
+    {
+      "text": "5100",
+      "start_ms": 19805,
+      "end_ms": 19835
+    },
+    {
+      "text": "万",
+      "start_ms": 19835,
+      "end_ms": 19995
+    },
+    {
+      "text": "人",
+      "start_ms": 19995,
+      "end_ms": 20195
+    },
+    {
+      "text": "口",
+      "start_ms": 20195,
+      "end_ms": 20345
+    },
+    {
+      "text": "的",
+      "start_ms": 20345,
+      "end_ms": 20445
+    },
+    {
+      "text": "国",
+      "start_ms": 20445,
+      "end_ms": 20635
+    },
+    {
+      "text": "家，",
+      "start_ms": 20635,
+      "end_ms": 20925
+    },
+    {
+      "text": "开",
+      "start_ms": 21115,
+      "end_ms": 21335
+    },
+    {
+      "text": "了",
+      "start_ms": 21335,
+      "end_ms": 21435
+    },
+    {
+      "text": "1.05",
+      "start_ms": 22245,
+      "end_ms": 22275
+    },
+    {
+      "text": "亿",
+      "start_ms": 22275,
+      "end_ms": 22435
+    },
+    {
+      "text": "个",
+      "start_ms": 22435,
+      "end_ms": 22645
+    },
+    {
+      "text": "股",
+      "start_ms": 22645,
+      "end_ms": 22885
+    },
+    {
+      "text": "票",
+      "start_ms": 22885,
+      "end_ms": 23095
+    },
+    {
+      "text": "账",
+      "start_ms": 23095,
+      "end_ms": 23315
+    },
+    {
+      "text": "户。",
+      "start_ms": 23315,
+      "end_ms": 23655
+    },
+    {
+      "text": "人",
+      "start_ms": 24020,
+      "end_ms": 24105
+    },
+    {
+      "text": "均",
+      "start_ms": 24105,
+      "end_ms": 24295
+    },
+    {
+      "text": "两",
+      "start_ms": 24295,
+      "end_ms": 24555
+    },
+    {
+      "text": "个。",
+      "start_ms": 24615,
+      "end_ms": 24975
+    },
+    {
+      "text": "。",
+      "start_ms": 25565,
+      "end_ms": 25615
+    },
+    {
+      "text": "。",
+      "start_ms": 26515,
+      "end_ms": 26545
+    },
+    {
+      "text": "29",
+      "start_ms": 26550,
+      "end_ms": 26595
+    },
+    {
+      "text": "岁",
+      "start_ms": 26595,
+      "end_ms": 26655
+    },
+    {
+      "text": "的",
+      "start_ms": 26655,
+      "end_ms": 26715
+    },
+    {
+      "text": "金",
+      "start_ms": 27125,
+      "end_ms": 27185
+    },
+    {
+      "text": "敏",
+      "start_ms": 27185,
+      "end_ms": 27245
+    },
+    {
+      "text": "浩，",
+      "start_ms": 27245,
+      "end_ms": 27305
+    },
+    {
+      "text": "月",
+      "start_ms": 27305,
+      "end_ms": 27335
+    },
+    {
+      "text": "薪",
+      "start_ms": 27335,
+      "end_ms": 27645
+    },
+    {
+      "text": "280",
+      "start_ms": 27795,
+      "end_ms": 27825
+    },
+    {
+      "text": "万",
+      "start_ms": 28565,
+      "end_ms": 28675
+    },
+    {
+      "text": "韩",
+      "start_ms": 28675,
+      "end_ms": 28895
+    },
+    {
+      "text": "元",
+      "start_ms": 28895,
+      "end_ms": 29165
+    },
+    {
+      "text": "—",
+      "start_ms": 29165,
+      "end_ms": 29195
+    },
+    {
+      "text": "—",
+      "start_ms": 29465,
+      "end_ms": 29495
+    },
+    {
+      "text": "大",
+      "start_ms": 29525,
+      "end_ms": 29705
+    },
+    {
+      "text": "概",
+      "start_ms": 29705,
+      "end_ms": 30005
+    },
+    {
+      "text": "一",
+      "start_ms": 30045,
+      "end_ms": 30245
+    },
+    {
+      "text": "万",
+      "start_ms": 30245,
+      "end_ms": 30395
+    },
+    {
+      "text": "五",
+      "start_ms": 30395,
+      "end_ms": 30595
+    },
+    {
+      "text": "人",
+      "start_ms": 30595,
+      "end_ms": 30735
+    },
+    {
+      "text": "民",
+      "start_ms": 30735,
+      "end_ms": 30925
+    },
+    {
+      "text": "币。",
+      "start_ms": 30925,
+      "end_ms": 31175
+    },
+    {
+      "text": "在",
+      "start_ms": 31759,
+      "end_ms": 31834
+    },
+    {
+      "text": "首",
+      "start_ms": 31834,
+      "end_ms": 32004
+    },
+    {
+      "text": "尔",
+      "start_ms": 32004,
+      "end_ms": 32104
+    },
+    {
+      "text": "租",
+      "start_ms": 32104,
+      "end_ms": 32354
+    },
+    {
+      "text": "房",
+      "start_ms": 32354,
+      "end_ms": 32664
+    },
+    {
+      "text": "住，",
+      "start_ms": 32664,
+      "end_ms": 32964
+    },
+    {
+      "text": "买",
+      "start_ms": 33204,
+      "end_ms": 33444
+    },
+    {
+      "text": "房",
+      "start_ms": 33444,
+      "end_ms": 33604
+    },
+    {
+      "text": "的",
+      "start_ms": 33604,
+      "end_ms": 33694
+    },
+    {
+      "text": "念",
+      "start_ms": 33694,
+      "end_ms": 33854
+    },
+    {
+      "text": "头",
+      "start_ms": 33854,
+      "end_ms": 34164
+    },
+    {
+      "text": "早",
+      "start_ms": 34224,
+      "end_ms": 34524
+    },
+    {
+      "text": "就",
+      "start_ms": 34524,
+      "end_ms": 34644
+    },
+    {
+      "text": "不",
+      "start_ms": 34644,
+      "end_ms": 34784
+    },
+    {
+      "text": "敢",
+      "start_ms": 34784,
+      "end_ms": 34964
+    },
+    {
+      "text": "有",
+      "start_ms": 34964,
+      "end_ms": 35134
+    },
+    {
+      "text": "了。",
+      "start_ms": 35134,
+      "end_ms": 35374
+    },
+    {
+      "text": "他",
+      "start_ms": 35739,
+      "end_ms": 35924
+    },
+    {
+      "text": "看",
+      "start_ms": 35924,
+      "end_ms": 36104
+    },
+    {
+      "text": "到",
+      "start_ms": 36104,
+      "end_ms": 36234
+    },
+    {
+      "text": "同",
+      "start_ms": 36234,
+      "end_ms": 36444
+    },
+    {
+      "text": "事'",
+      "start_ms": 36444,
+      "end_ms": 36754
+    },
+    {
+      "text": "随",
+      "start_ms": 36824,
+      "end_ms": 37154
+    },
+    {
+      "text": "便",
+      "start_ms": 37154,
+      "end_ms": 37324
+    },
+    {
+      "text": "买",
+      "start_ms": 37324,
+      "end_ms": 37504
+    },
+    {
+      "text": "了",
+      "start_ms": 37504,
+      "end_ms": 37604
+    },
+    {
+      "text": "点",
+      "start_ms": 37604,
+      "end_ms": 37734
+    },
+    {
+      "text": "海",
+      "start_ms": 37734,
+      "end_ms": 37964
+    },
+    {
+      "text": "力",
+      "start_ms": 37964,
+      "end_ms": 38104
+    },
+    {
+      "text": "士",
+      "start_ms": 38104,
+      "end_ms": 38404
+    },
+    {
+      "text": "就",
+      "start_ms": 38494,
+      "end_ms": 38644
+    },
+    {
+      "text": "赚",
+      "start_ms": 38644,
+      "end_ms": 38824
+    },
+    {
+      "text": "了",
+      "start_ms": 38824,
+      "end_ms": 38924
+    },
+    {
+      "text": "三",
+      "start_ms": 38924,
+      "end_ms": 39234
+    },
+    {
+      "text": "个",
+      "start_ms": 39234,
+      "end_ms": 39344
+    },
+    {
+      "text": "月",
+      "start_ms": 39344,
+      "end_ms": 39454
+    },
+    {
+      "text": "的",
+      "start_ms": 39454,
+      "end_ms": 39544
+    },
+    {
+      "text": "工",
+      "start_ms": 39544,
+      "end_ms": 39744
+    },
+    {
+      "text": "资'，",
+      "start_ms": 39744,
+      "end_ms": 40064
+    },
+    {
+      "text": "他",
+      "start_ms": 40354,
+      "end_ms": 40664
+    },
+    {
+      "text": "也",
+      "start_ms": 40664,
+      "end_ms": 40764
+    },
+    {
+      "text": "冲",
+      "start_ms": 40764,
+      "end_ms": 40994
+    },
+    {
+      "text": "进",
+      "start_ms": 40994,
+      "end_ms": 41134
+    },
+    {
+      "text": "去",
+      "start_ms": 41134,
+      "end_ms": 41314
+    },
+    {
+      "text": "了。",
+      "start_ms": 41314,
+      "end_ms": 41544
+    },
+    {
+      "text": "三",
+      "start_ms": 41939,
+      "end_ms": 42234
+    },
+    {
+      "text": "个",
+      "start_ms": 42234,
+      "end_ms": 42364
+    },
+    {
+      "text": "账",
+      "start_ms": 42364,
+      "end_ms": 42574
+    },
+    {
+      "text": "户，",
+      "start_ms": 42574,
+      "end_ms": 42894
+    },
+    {
+      "text": "信",
+      "start_ms": 43034,
+      "end_ms": 43334
+    },
+    {
+      "text": "用",
+      "start_ms": 43334,
+      "end_ms": 43494
+    },
+    {
+      "text": "贷、",
+      "start_ms": 43654,
+      "end_ms": 43684
+    },
+    {
+      "text": "信",
+      "start_ms": 43994,
+      "end_ms": 44224
+    },
+    {
+      "text": "用",
+      "start_ms": 44224,
+      "end_ms": 44344
+    },
+    {
+      "text": "卡",
+      "start_ms": 44344,
+      "end_ms": 44554
+    },
+    {
+      "text": "套",
+      "start_ms": 44554,
+      "end_ms": 44764
+    },
+    {
+      "text": "现、",
+      "start_ms": 44764,
+      "end_ms": 44794
+    },
+    {
+      "text": "借",
+      "start_ms": 44794,
+      "end_ms": 45124
+    },
+    {
+      "text": "了",
+      "start_ms": 45504,
+      "end_ms": 45584
+    },
+    {
+      "text": "父",
+      "start_ms": 45584,
+      "end_ms": 45814
+    },
+    {
+      "text": "母",
+      "start_ms": 45814,
+      "end_ms": 45984
+    },
+    {
+      "text": "的",
+      "start_ms": 45984,
+      "end_ms": 46084
+    },
+    {
+      "text": "钱",
+      "start_ms": 46084,
+      "end_ms": 46434
+    },
+    {
+      "text": "—",
+      "start_ms": 46464,
+      "end_ms": 46494
+    },
+    {
+      "text": "—",
+      "start_ms": 46524,
+      "end_ms": 46554
+    },
+    {
+      "text": "全",
+      "start_ms": 46584,
+      "end_ms": 46944
+    },
+    {
+      "text": "押",
+      "start_ms": 46944,
+      "end_ms": 47174
+    },
+    {
+      "text": "了",
+      "start_ms": 47174,
+      "end_ms": 47354
+    },
+    {
+      "text": "SK",
+      "start_ms": 47774,
+      "end_ms": 47804
+    },
+    {
+      "text": "海",
+      "start_ms": 47804,
+      "end_ms": 48054
+    },
+    {
+      "text": "力",
+      "start_ms": 48054,
+      "end_ms": 48224
+    },
+    {
+      "text": "士。",
+      "start_ms": 48224,
+      "end_ms": 48584
+    },
+    {
+      "text": "他",
+      "start_ms": 48924,
+      "end_ms": 49114
+    },
+    {
+      "text": "不",
+      "start_ms": 49114,
+      "end_ms": 49344
+    },
+    {
+      "text": "是",
+      "start_ms": 49344,
+      "end_ms": 49524
+    },
+    {
+      "text": "个",
+      "start_ms": 49524,
+      "end_ms": 49794
+    },
+    {
+      "text": "例。",
+      "start_ms": 49794,
+      "end_ms": 50044
+    },
+    {
+      "text": "韩",
+      "start_ms": 50729,
+      "end_ms": 50804
+    },
+    {
+      "text": "国",
+      "start_ms": 50804,
+      "end_ms": 50864
+    },
+    {
+      "text": "年",
+      "start_ms": 50864,
+      "end_ms": 50964
+    },
+    {
+      "text": "轻",
+      "start_ms": 50964,
+      "end_ms": 51134
+    },
+    {
+      "text": "人",
+      "start_ms": 51134,
+      "end_ms": 51454
+    },
+    {
+      "text": "管",
+      "start_ms": 51484,
+      "end_ms": 51664
+    },
+    {
+      "text": "自",
+      "start_ms": 51664,
+      "end_ms": 51824
+    },
+    {
+      "text": "己",
+      "start_ms": 51824,
+      "end_ms": 51974
+    },
+    {
+      "text": "叫'",
+      "start_ms": 51974,
+      "end_ms": 52114
+    },
+    {
+      "text": "青",
+      "start_ms": 52114,
+      "end_ms": 52334
+    },
+    {
+      "text": "年",
+      "start_ms": 52334,
+      "end_ms": 52474
+    },
+    {
+      "text": "蚂",
+      "start_ms": 52474,
+      "end_ms": 52764
+    },
+    {
+      "text": "蚁'，",
+      "start_ms": 52764,
+      "end_ms": 53084
+    },
+    {
+      "text": "他",
+      "start_ms": 53394,
+      "end_ms": 53524
+    },
+    {
+      "text": "们",
+      "start_ms": 53524,
+      "end_ms": 53624
+    },
+    {
+      "text": "把",
+      "start_ms": 53624,
+      "end_ms": 53794
+    },
+    {
+      "text": "股",
+      "start_ms": 53794,
+      "end_ms": 53994
+    },
+    {
+      "text": "市",
+      "start_ms": 53994,
+      "end_ms": 54294
+    },
+    {
+      "text": "当",
+      "start_ms": 54374,
+      "end_ms": 54564
+    },
+    {
+      "text": "作",
+      "start_ms": 54564,
+      "end_ms": 54674
+    },
+    {
+      "text": "最",
+      "start_ms": 54674,
+      "end_ms": 54944
+    },
+    {
+      "text": "后",
+      "start_ms": 54944,
+      "end_ms": 55244
+    },
+    {
+      "text": "一",
+      "start_ms": 55244,
+      "end_ms": 55324
+    },
+    {
+      "text": "次",
+      "start_ms": 55324,
+      "end_ms": 55464
+    },
+    {
+      "text": "翻",
+      "start_ms": 55464,
+      "end_ms": 55674
+    },
+    {
+      "text": "身",
+      "start_ms": 55674,
+      "end_ms": 55824
+    },
+    {
+      "text": "的",
+      "start_ms": 55824,
+      "end_ms": 55914
+    },
+    {
+      "text": "机",
+      "start_ms": 55914,
+      "end_ms": 56104
+    },
+    {
+      "text": "会。",
+      "start_ms": 56104,
+      "end_ms": 56434
+    },
+    {
+      "text": "因",
+      "start_ms": 56729,
+      "end_ms": 56884
+    },
+    {
+      "text": "为",
+      "start_ms": 56884,
+      "end_ms": 56974
+    },
+    {
+      "text": "除",
+      "start_ms": 56974,
+      "end_ms": 57174
+    },
+    {
+      "text": "了",
+      "start_ms": 57174,
+      "end_ms": 57274
+    },
+    {
+      "text": "这",
+      "start_ms": 57274,
+      "end_ms": 57584
+    },
+    {
+      "text": "个，",
+      "start_ms": 57584,
+      "end_ms": 57824
+    },
+    {
+      "text": "他",
+      "start_ms": 58054,
+      "end_ms": 58204
+    },
+    {
+      "text": "们",
+      "start_ms": 58204,
+      "end_ms": 58294
+    },
+    {
+      "text": "看",
+      "start_ms": 58294,
+      "end_ms": 58454
+    },
+    {
+      "text": "不",
+      "start_ms": 58454,
+      "end_ms": 58564
+    },
+    {
+      "text": "到",
+      "start_ms": 58564,
+      "end_ms": 58704
+    },
+    {
+      "text": "任",
+      "start_ms": 58704,
+      "end_ms": 58924
+    },
+    {
+      "text": "何",
+      "start_ms": 58924,
+      "end_ms": 59104
+    },
+    {
+      "text": "希",
+      "start_ms": 59104,
+      "end_ms": 59324
+    },
+    {
+      "text": "望。",
+      "start_ms": 59324,
+      "end_ms": 59394
+    },
+    {
+      "text": "。",
+      "start_ms": 59394,
+      "end_ms": 59564
+    },
+    {
+      "text": "而",
+      "start_ms": 61274,
+      "end_ms": 61304
+    },
+    {
+      "text": "另",
+      "start_ms": 61304,
+      "end_ms": 61364
+    },
+    {
+      "text": "一",
+      "start_ms": 61364,
+      "end_ms": 61394
+    },
+    {
+      "text": "边，",
+      "start_ms": 61394,
+      "end_ms": 61454
+    },
+    {
+      "text": "首",
+      "start_ms": 61454,
+      "end_ms": 61514
+    },
+    {
+      "text": "尔",
+      "start_ms": 61514,
+      "end_ms": 61544
+    },
+    {
+      "text": "塔",
+      "start_ms": 61544,
+      "end_ms": 61744
+    },
+    {
+      "text": "谷",
+      "start_ms": 61744,
+      "end_ms": 61914
+    },
+    {
+      "text": "公",
+      "start_ms": 61914,
+      "end_ms": 62124
+    },
+    {
+      "text": "园",
+      "start_ms": 62124,
+      "end_ms": 62374
+    },
+    {
+      "text": "里，",
+      "start_ms": 62374,
+      "end_ms": 62664
+    },
+    {
+      "text": "老",
+      "start_ms": 62874,
+      "end_ms": 63144
+    },
+    {
+      "text": "人",
+      "start_ms": 63144,
+      "end_ms": 63284
+    },
+    {
+      "text": "也",
+      "start_ms": 63284,
+      "end_ms": 63424
+    },
+    {
+      "text": "不",
+      "start_ms": 63424,
+      "end_ms": 63614
+    },
+    {
+      "text": "淡",
+      "start_ms": 63614,
+      "end_ms": 63864
+    },
+    {
+      "text": "定",
+      "start_ms": 63864,
+      "end_ms": 64094
+    },
+    {
+      "text": "了。",
+      "start_ms": 64094,
+      "end_ms": 64334
+    },
+    {
+      "text": "77",
+      "start_ms": 64799,
+      "end_ms": 64844
+    },
+    {
+      "text": "岁",
+      "start_ms": 65234,
+      "end_ms": 65364
+    },
+    {
+      "text": "的",
+      "start_ms": 65364,
+      "end_ms": 65454
+    },
+    {
+      "text": "朴",
+      "start_ms": 65454,
+      "end_ms": 65744
+    },
+    {
+      "text": "老",
+      "start_ms": 65744,
+      "end_ms": 65894
+    },
+    {
+      "text": "先",
+      "start_ms": 65894,
+      "end_ms": 66114
+    },
+    {
+      "text": "生",
+      "start_ms": 66114,
+      "end_ms": 66364
+    },
+    {
+      "text": "跟",
+      "start_ms": 66504,
+      "end_ms": 66634
+    },
+    {
+      "text": "老",
+      "start_ms": 66634,
+      "end_ms": 66834
+    },
+    {
+      "text": "同",
+      "start_ms": 66834,
+      "end_ms": 66974
+    },
+    {
+      "text": "学",
+      "start_ms": 66974,
+      "end_ms": 67134
+    },
+    {
+      "text": "聚",
+      "start_ms": 67134,
+      "end_ms": 67334
+    },
+    {
+      "text": "会",
+      "start_ms": 67334,
+      "end_ms": 67694
+    },
+    {
+      "text": "—",
+      "start_ms": 67724,
+      "end_ms": 67754
+    },
+    {
+      "text": "—",
+      "start_ms": 67784,
+      "end_ms": 67814
+    },
+    {
+      "text": "聊",
+      "start_ms": 67914,
+      "end_ms": 68194
+    },
+    {
+      "text": "的",
+      "start_ms": 68194,
+      "end_ms": 68494
+    },
+    {
+      "text": "不",
+      "start_ms": 68524,
+      "end_ms": 68664
+    },
+    {
+      "text": "是",
+      "start_ms": 68664,
+      "end_ms": 68794
+    },
+    {
+      "text": "孙",
+      "start_ms": 68794,
+      "end_ms": 69014
+    },
+    {
+      "text": "子",
+      "start_ms": 69014,
+      "end_ms": 69134
+    },
+    {
+      "text": "孙",
+      "start_ms": 69134,
+      "end_ms": 69434
+    },
+    {
+      "text": "女，",
+      "start_ms": 69434,
+      "end_ms": 69604
+    },
+    {
+      "text": "是",
+      "start_ms": 69794,
+      "end_ms": 69974
+    },
+    {
+      "text": "三",
+      "start_ms": 69974,
+      "end_ms": 70204
+    },
+    {
+      "text": "星",
+      "start_ms": 70204,
+      "end_ms": 70444
+    },
+    {
+      "text": "涨",
+      "start_ms": 70444,
+      "end_ms": 70644
+    },
+    {
+      "text": "了",
+      "start_ms": 70644,
+      "end_ms": 70734
+    },
+    {
+      "text": "多",
+      "start_ms": 70734,
+      "end_ms": 70954
+    },
+    {
+      "text": "少。",
+      "start_ms": 70954,
+      "end_ms": 71194
+    },
+    {
+      "text": "韩",
+      "start_ms": 71604,
+      "end_ms": 71884
+    },
+    {
+      "text": "国",
+      "start_ms": 71884,
+      "end_ms": 72054
+    },
+    {
+      "text": "60",
+      "start_ms": 72054,
+      "end_ms": 72084
+    },
+    {
+      "text": "岁",
+      "start_ms": 72334,
+      "end_ms": 72574
+    },
+    {
+      "text": "以",
+      "start_ms": 72574,
+      "end_ms": 72634
+    },
+    {
+      "text": "上",
+      "start_ms": 72634,
+      "end_ms": 72824
+    },
+    {
+      "text": "老",
+      "start_ms": 72824,
+      "end_ms": 73044
+    },
+    {
+      "text": "人",
+      "start_ms": 73044,
+      "end_ms": 73154
+    },
+    {
+      "text": "的",
+      "start_ms": 73154,
+      "end_ms": 73264
+    },
+    {
+      "text": "融",
+      "start_ms": 73264,
+      "end_ms": 73464
+    },
+    {
+      "text": "资",
+      "start_ms": 73464,
+      "end_ms": 73624
+    },
+    {
+      "text": "余",
+      "start_ms": 73624,
+      "end_ms": 73824
+    },
+    {
+      "text": "额，",
+      "start_ms": 73824,
+      "end_ms": 74124
+    },
+    {
+      "text": "一",
+      "start_ms": 74294,
+      "end_ms": 74454
+    },
+    {
+      "text": "年",
+      "start_ms": 74454,
+      "end_ms": 74644
+    },
+    {
+      "text": "之",
+      "start_ms": 74644,
+      "end_ms": 74804
+    },
+    {
+      "text": "内",
+      "start_ms": 74804,
+      "end_ms": 75024
+    },
+    {
+      "text": "翻",
+      "start_ms": 75184,
+      "end_ms": 75364
+    },
+    {
+      "text": "了",
+      "start_ms": 75364,
+      "end_ms": 75484
+    },
+    {
+      "text": "2.7",
+      "start_ms": 75554,
+      "end_ms": 75584
+    },
+    {
+      "text": "倍，",
+      "start_ms": 76224,
+      "end_ms": 76384
+    },
+    {
+      "text": "达",
+      "start_ms": 76724,
+      "end_ms": 76924
+    },
+    {
+      "text": "到",
+      "start_ms": 76924,
+      "end_ms": 77224
+    },
+    {
+      "text": "8",
+      "start_ms": 77454,
+      "end_ms": 77514
+    },
+    {
+      "text": "万",
+      "start_ms": 77514,
+      "end_ms": 77634
+    },
+    {
+      "text": "亿",
+      "start_ms": 77634,
+      "end_ms": 77784
+    },
+    {
+      "text": "韩",
+      "start_ms": 77784,
+      "end_ms": 78034
+    },
+    {
+      "text": "元。",
+      "start_ms": 78034,
+      "end_ms": 78324
+    },
+    {
+      "text": "有",
+      "start_ms": 78739,
+      "end_ms": 78784
+    },
+    {
+      "text": "人",
+      "start_ms": 78784,
+      "end_ms": 78914
+    },
+    {
+      "text": "退",
+      "start_ms": 78914,
+      "end_ms": 79194
+    },
+    {
+      "text": "掉",
+      "start_ms": 79194,
+      "end_ms": 79334
+    },
+    {
+      "text": "了",
+      "start_ms": 79334,
+      "end_ms": 79434
+    },
+    {
+      "text": "交",
+      "start_ms": 79434,
+      "end_ms": 79624
+    },
+    {
+      "text": "了",
+      "start_ms": 79624,
+      "end_ms": 79734
+    },
+    {
+      "text": "一",
+      "start_ms": 79734,
+      "end_ms": 79884
+    },
+    {
+      "text": "辈",
+      "start_ms": 79884,
+      "end_ms": 80164
+    },
+    {
+      "text": "子",
+      "start_ms": 80164,
+      "end_ms": 80284
+    },
+    {
+      "text": "的",
+      "start_ms": 80284,
+      "end_ms": 80374
+    },
+    {
+      "text": "保",
+      "start_ms": 80374,
+      "end_ms": 80584
+    },
+    {
+      "text": "险，",
+      "start_ms": 80584,
+      "end_ms": 80914
+    },
+    {
+      "text": "把",
+      "start_ms": 81134,
+      "end_ms": 81284
+    },
+    {
+      "text": "钱",
+      "start_ms": 81284,
+      "end_ms": 81474
+    },
+    {
+      "text": "取",
+      "start_ms": 81474,
+      "end_ms": 81714
+    },
+    {
+      "text": "出",
+      "start_ms": 81714,
+      "end_ms": 81834
+    },
+    {
+      "text": "来",
+      "start_ms": 81834,
+      "end_ms": 82094
+    },
+    {
+      "text": "买",
+      "start_ms": 82124,
+      "end_ms": 82414
+    },
+    {
+      "text": "股",
+      "start_ms": 82414,
+      "end_ms": 82624
+    },
+    {
+      "text": "票。",
+      "start_ms": 82664,
+      "end_ms": 83084
+    },
+    {
+      "text": "韩",
+      "start_ms": 83519,
+      "end_ms": 83594
+    },
+    {
+      "text": "国",
+      "start_ms": 83594,
+      "end_ms": 83884
+    },
+    {
+      "text": "65",
+      "start_ms": 83884,
+      "end_ms": 83914
+    },
+    {
+      "text": "岁",
+      "start_ms": 83914,
+      "end_ms": 84314
+    },
+    {
+      "text": "以",
+      "start_ms": 84314,
+      "end_ms": 84414
+    },
+    {
+      "text": "上",
+      "start_ms": 84414,
+      "end_ms": 84614
+    },
+    {
+      "text": "贫",
+      "start_ms": 84614,
+      "end_ms": 84894
+    },
+    {
+      "text": "困",
+      "start_ms": 84894,
+      "end_ms": 85064
+    },
+    {
+      "text": "率",
+      "start_ms": 85064,
+      "end_ms": 85204
+    },
+    {
+      "text": "40%",
+      "start_ms": 85204,
+      "end_ms": 85234
+    },
+    {
+      "text": "—",
+      "start_ms": 86374,
+      "end_ms": 86404
+    },
+    {
+      "text": "—",
+      "start_ms": 86524,
+      "end_ms": 86554
+    },
+    {
+      "text": "OECD",
+      "start_ms": 86604,
+      "end_ms": 87264
+    },
+    {
+      "text": "国",
+      "start_ms": 87264,
+      "end_ms": 87464
+    },
+    {
+      "text": "家",
+      "start_ms": 87464,
+      "end_ms": 87644
+    },
+    {
+      "text": "里",
+      "start_ms": 87644,
+      "end_ms": 87764
+    },
+    {
+      "text": "最",
+      "start_ms": 87764,
+      "end_ms": 88034
+    },
+    {
+      "text": "高。",
+      "start_ms": 88034,
+      "end_ms": 88094
+    },
+    {
+      "text": "这",
+      "start_ms": 88644,
+      "end_ms": 88774
+    },
+    {
+      "text": "不",
+      "start_ms": 88774,
+      "end_ms": 89034
+    },
+    {
+      "text": "是",
+      "start_ms": 89034,
+      "end_ms": 89174
+    },
+    {
+      "text": "贪",
+      "start_ms": 89174,
+      "end_ms": 89384
+    },
+    {
+      "text": "婪，",
+      "start_ms": 89384,
+      "end_ms": 89674
+    },
+    {
+      "text": "是",
+      "start_ms": 89824,
+      "end_ms": 90014
+    },
+    {
+      "text": "恐",
+      "start_ms": 90014,
+      "end_ms": 90354
+    },
+    {
+      "text": "惧。",
+      "start_ms": 90354,
+      "end_ms": 90734
+    },
+    {
+      "text": "退",
+      "start_ms": 91318,
+      "end_ms": 91393
+    },
+    {
+      "text": "休",
+      "start_ms": 91393,
+      "end_ms": 91453
+    },
+    {
+      "text": "金",
+      "start_ms": 91453,
+      "end_ms": 91713
+    },
+    {
+      "text": "不",
+      "start_ms": 91753,
+      "end_ms": 91923
+    },
+    {
+      "text": "够",
+      "start_ms": 91923,
+      "end_ms": 92063
+    },
+    {
+      "text": "吃",
+      "start_ms": 92063,
+      "end_ms": 92293
+    },
+    {
+      "text": "饭，",
+      "start_ms": 92293,
+      "end_ms": 92653
+    },
+    {
+      "text": "养",
+      "start_ms": 92903,
+      "end_ms": 93083
+    },
+    {
+      "text": "老",
+      "start_ms": 93083,
+      "end_ms": 93263
+    },
+    {
+      "text": "金",
+      "start_ms": 93263,
+      "end_ms": 93443
+    },
+    {
+      "text": "账",
+      "start_ms": 93443,
+      "end_ms": 93643
+    },
+    {
+      "text": "户",
+      "start_ms": 93643,
+      "end_ms": 93943
+    },
+    {
+      "text": "跑",
+      "start_ms": 94033,
+      "end_ms": 94323
+    },
+    {
+      "text": "不",
+      "start_ms": 94323,
+      "end_ms": 94473
+    },
+    {
+      "text": "赢",
+      "start_ms": 94473,
+      "end_ms": 94583
+    },
+    {
+      "text": "通",
+      "start_ms": 94583,
+      "end_ms": 94863
+    },
+    {
+      "text": "胀。",
+      "start_ms": 94863,
+      "end_ms": 95213
+    },
+    {
+      "text": "他",
+      "start_ms": 96153,
+      "end_ms": 96343
+    },
+    {
+      "text": "们",
+      "start_ms": 96343,
+      "end_ms": 96433
+    },
+    {
+      "text": "赌",
+      "start_ms": 96433,
+      "end_ms": 96633
+    },
+    {
+      "text": "的",
+      "start_ms": 96633,
+      "end_ms": 96743
+    },
+    {
+      "text": "不",
+      "start_ms": 96743,
+      "end_ms": 96913
+    },
+    {
+      "text": "是",
+      "start_ms": 96913,
+      "end_ms": 97053
+    },
+    {
+      "text": "法",
+      "start_ms": 97053,
+      "end_ms": 97283
+    },
+    {
+      "text": "拉",
+      "start_ms": 97283,
+      "end_ms": 97463
+    },
+    {
+      "text": "利，",
+      "start_ms": 97463,
+      "end_ms": 97773
+    },
+    {
+      "text": "是",
+      "start_ms": 97923,
+      "end_ms": 98113
+    },
+    {
+      "text": "最",
+      "start_ms": 98113,
+      "end_ms": 98383
+    },
+    {
+      "text": "后",
+      "start_ms": 98383,
+      "end_ms": 98683
+    },
+    {
+      "text": "一",
+      "start_ms": 98683,
+      "end_ms": 98793
+    },
+    {
+      "text": "顿",
+      "start_ms": 98793,
+      "end_ms": 98933
+    },
+    {
+      "text": "饭",
+      "start_ms": 98933,
+      "end_ms": 99163
+    },
+    {
+      "text": "钱。",
+      "start_ms": 99163,
+      "end_ms": 99543
+    },
+    {
+      "text": "。",
+      "start_ms": 100823,
+      "end_ms": 100853
+    },
+    {
+      "text": "这",
+      "start_ms": 100858,
+      "end_ms": 100933
+    },
+    {
+      "text": "个",
+      "start_ms": 100933,
+      "end_ms": 100993
+    },
+    {
+      "text": "国",
+      "start_ms": 100993,
+      "end_ms": 101053
+    },
+    {
+      "text": "家",
+      "start_ms": 101053,
+      "end_ms": 101113
+    },
+    {
+      "text": "的",
+      "start_ms": 101113,
+      "end_ms": 101173
+    },
+    {
+      "text": "每",
+      "start_ms": 101173,
+      "end_ms": 101233
+    },
+    {
+      "text": "一",
+      "start_ms": 101233,
+      "end_ms": 101263
+    },
+    {
+      "text": "个",
+      "start_ms": 101263,
+      "end_ms": 101323
+    },
+    {
+      "text": "人",
+      "start_ms": 101323,
+      "end_ms": 101383
+    },
+    {
+      "text": "都",
+      "start_ms": 101383,
+      "end_ms": 101633
+    },
+    {
+      "text": "在",
+      "start_ms": 101633,
+      "end_ms": 101853
+    },
+    {
+      "text": "赌。",
+      "start_ms": 101853,
+      "end_ms": 102173
+    },
+    {
+      "text": "年",
+      "start_ms": 102638,
+      "end_ms": 102713
+    },
+    {
+      "text": "轻",
+      "start_ms": 102713,
+      "end_ms": 102883
+    },
+    {
+      "text": "人",
+      "start_ms": 102883,
+      "end_ms": 103033
+    },
+    {
+      "text": "赌",
+      "start_ms": 103033,
+      "end_ms": 103253
+    },
+    {
+      "text": "未",
+      "start_ms": 103253,
+      "end_ms": 103433
+    },
+    {
+      "text": "来，",
+      "start_ms": 103433,
+      "end_ms": 103743
+    },
+    {
+      "text": "中",
+      "start_ms": 103933,
+      "end_ms": 104183
+    },
+    {
+      "text": "年",
+      "start_ms": 104183,
+      "end_ms": 104323
+    },
+    {
+      "text": "人",
+      "start_ms": 104323,
+      "end_ms": 104453
+    },
+    {
+      "text": "赌",
+      "start_ms": 104453,
+      "end_ms": 104623
+    },
+    {
+      "text": "翻",
+      "start_ms": 104623,
+      "end_ms": 104833
+    },
+    {
+      "text": "身，",
+      "start_ms": 104833,
+      "end_ms": 105153
+    },
+    {
+      "text": "老",
+      "start_ms": 105383,
+      "end_ms": 105633
+    },
+    {
+      "text": "年",
+      "start_ms": 105633,
+      "end_ms": 105783
+    },
+    {
+      "text": "人",
+      "start_ms": 105783,
+      "end_ms": 106103
+    },
+    {
+      "text": "赌",
+      "start_ms": 106173,
+      "end_ms": 106393
+    },
+    {
+      "text": "棺",
+      "start_ms": 106423,
+      "end_ms": 106623
+    },
+    {
+      "text": "材",
+      "start_ms": 106623,
+      "end_ms": 106813
+    },
+    {
+      "text": "本。",
+      "start_ms": 106813,
+      "end_ms": 106943
+    },
+    {
+      "text": "而",
+      "start_ms": 107783,
+      "end_ms": 107933
+    },
+    {
+      "text": "与",
+      "start_ms": 107933,
+      "end_ms": 108103
+    },
+    {
+      "text": "此",
+      "start_ms": 108103,
+      "end_ms": 108243
+    },
+    {
+      "text": "同",
+      "start_ms": 108243,
+      "end_ms": 108443
+    },
+    {
+      "text": "时，",
+      "start_ms": 108443,
+      "end_ms": 108933
+    },
+    {
+      "text": "外",
+      "start_ms": 109113,
+      "end_ms": 109273
+    },
+    {
+      "text": "资",
+      "start_ms": 109273,
+      "end_ms": 109423
+    },
+    {
+      "text": "正",
+      "start_ms": 109423,
+      "end_ms": 109563
+    },
+    {
+      "text": "在",
+      "start_ms": 109563,
+      "end_ms": 109683
+    },
+    {
+      "text": "悄",
+      "start_ms": 109683,
+      "end_ms": 110023
+    },
+    {
+      "text": "悄",
+      "start_ms": 110023,
+      "end_ms": 110303
+    },
+    {
+      "text": "离",
+      "start_ms": 110303,
+      "end_ms": 110463
+    },
+    {
+      "text": "场",
+      "start_ms": 110463,
+      "end_ms": 110773
+    },
+    {
+      "text": "—",
+      "start_ms": 110773,
+      "end_ms": 110813
+    },
+    {
+      "text": "—",
+      "start_ms": 110873,
+      "end_ms": 110903
+    },
+    {
+      "text": "一",
+      "start_ms": 111153,
+      "end_ms": 111363
+    },
+    {
+      "text": "个",
+      "start_ms": 111363,
+      "end_ms": 111463
+    },
+    {
+      "text": "月",
+      "start_ms": 111463,
+      "end_ms": 111773
+    },
+    {
+      "text": "卖",
+      "start_ms": 111843,
+      "end_ms": 112093
+    },
+    {
+      "text": "出",
+      "start_ms": 112093,
+      "end_ms": 112243
+    },
+    {
+      "text": "了",
+      "start_ms": 112243,
+      "end_ms": 112323
+    },
+    {
+      "text": "115",
+      "start_ms": 113283,
+      "end_ms": 113313
+    },
+    {
+      "text": "亿",
+      "start_ms": 113313,
+      "end_ms": 113473
+    },
+    {
+      "text": "美",
+      "start_ms": 113473,
+      "end_ms": 113633
+    },
+    {
+      "text": "元",
+      "start_ms": 113633,
+      "end_ms": 113793
+    },
+    {
+      "text": "的",
+      "start_ms": 113793,
+      "end_ms": 113903
+    },
+    {
+      "text": "韩",
+      "start_ms": 113903,
+      "end_ms": 114223
+    },
+    {
+      "text": "国",
+      "start_ms": 114223,
+      "end_ms": 114373
+    },
+    {
+      "text": "股",
+      "start_ms": 114373,
+      "end_ms": 114583
+    },
+    {
+      "text": "票。",
+      "start_ms": 114583,
+      "end_ms": 115013
+    },
+    {
+      "text": "KOSPI",
+      "start_ms": 115649,
+      "end_ms": 115694
+    },
+    {
+      "text": "8000",
+      "start_ms": 117024,
+      "end_ms": 117054
+    },
+    {
+      "text": "点，",
+      "start_ms": 117054,
+      "end_ms": 117324
+    },
+    {
+      "text": "36",
+      "start_ms": 118174,
+      "end_ms": 118204
+    },
+    {
+      "text": "万",
+      "start_ms": 118204,
+      "end_ms": 118394
+    },
+    {
+      "text": "亿",
+      "start_ms": 118394,
+      "end_ms": 118514
+    },
+    {
+      "text": "的",
+      "start_ms": 118514,
+      "end_ms": 118624
+    },
+    {
+      "text": "融",
+      "start_ms": 118624,
+      "end_ms": 118824
+    },
+    {
+      "text": "资",
+      "start_ms": 118824,
+      "end_ms": 118994
+    },
+    {
+      "text": "余",
+      "start_ms": 118994,
+      "end_ms": 119214
+    },
+    {
+      "text": "额。",
+      "start_ms": 119214,
+      "end_ms": 119494
+    },
+    {
+      "text": "当",
+      "start_ms": 120171,
+      "end_ms": 120246
+    },
+    {
+      "text": "潮",
+      "start_ms": 120246,
+      "end_ms": 120436
+    },
+    {
+      "text": "水",
+      "start_ms": 120436,
+      "end_ms": 120636
+    },
+    {
+      "text": "退",
+      "start_ms": 120636,
+      "end_ms": 120896
+    },
+    {
+      "text": "去",
+      "start_ms": 120896,
+      "end_ms": 121026
+    },
+    {
+      "text": "的",
+      "start_ms": 121026,
+      "end_ms": 121116
+    },
+    {
+      "text": "时",
+      "start_ms": 121116,
+      "end_ms": 121276
+    },
+    {
+      "text": "候，",
+      "start_ms": 121276,
+      "end_ms": 121576
+    },
+    {
+      "text": "你",
+      "start_ms": 121736,
+      "end_ms": 121886
+    },
+    {
+      "text": "会",
+      "start_ms": 121886,
+      "end_ms": 122026
+    },
+    {
+      "text": "发",
+      "start_ms": 122026,
+      "end_ms": 122236
+    },
+    {
+      "text": "现：",
+      "start_ms": 122236,
+      "end_ms": 122266
+    },
+    {
+      "text": "雨",
+      "start_ms": 122816,
+      "end_ms": 122946
+    },
+    {
+      "text": "会",
+      "start_ms": 122946,
+      "end_ms": 123116
+    },
+    {
+      "text": "落",
+      "start_ms": 123116,
+      "end_ms": 123306
+    },
+    {
+      "text": "在",
+      "start_ms": 123306,
+      "end_ms": 123426
+    },
+    {
+      "text": "所",
+      "start_ms": 123426,
+      "end_ms": 123746
+    },
+    {
+      "text": "有",
+      "start_ms": 123746,
+      "end_ms": 123846
+    },
+    {
+      "text": "人",
+      "start_ms": 123846,
+      "end_ms": 123976
+    },
+    {
+      "text": "身",
+      "start_ms": 123976,
+      "end_ms": 124206
+    },
+    {
+      "text": "上，",
+      "start_ms": 124206,
+      "end_ms": 124516
+    },
+    {
+      "text": "但",
+      "start_ms": 124766,
+      "end_ms": 124896
+    },
+    {
+      "text": "牛",
+      "start_ms": 124896,
+      "end_ms": 125236
+    },
+    {
+      "text": "市",
+      "start_ms": 125236,
+      "end_ms": 125396
+    },
+    {
+      "text": "不",
+      "start_ms": 125396,
+      "end_ms": 125656
+    },
+    {
+      "text": "是。",
+      "start_ms": 125656,
+      "end_ms": 126016
+    }
+  ],
+  "total_duration_ms": 126016,
+  "voice_type": "zh_male_yizhipiannan_uranus_bigtts"
+}

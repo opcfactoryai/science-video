@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "title": "SpaceX IPO：2万亿美金的传奇，一个时代的符号",
+    "topic": "SpaceX IPO 2万亿美金估值分析",
+    "style_category": "科技前沿",
+    "target_duration_seconds": 75,
+    "tone": "震撼大气 + 悬念叙事",
+    "target_audience": "对科技和财经感兴趣的普通大众，18-45岁",
+    "version": "2.0",
+    "generated_at": "2026-06-13T12:00:00Z"
+  },
+  "cover": {
+    "title": "SPACEX 2万亿传奇",
+    "subtitle": "史上最大IPO 750亿美金的背后",
+    "visual_concept": "深空背景，SpaceX火箭发射的剪影，金色数字2万亿从底部向上冲击，科技数据风",
+    "text_overlay_position": "center",
+    "text_style": "巨大粗体白色字，带科技蓝光边缘效果",
+    "image_prompt": "画面中央巨大粗体白色无衬线字 'SPACEX $2万亿'，文字带有科技蓝光边缘发光效果，立体金属质感。文字下方小号字 '史上最大IPO 750亿美金'。深空黑色背景，底部有火箭发射的剪影和金色粒子向上喷射。背景隐约可见纳斯达克K线图抽象轮廓。科幻数据可视化风格，冷蓝与暖金配色，戏剧性逆光，电影级质感。"
+  },
+  "hook": {
+    "text": "一家亏损490亿的公司，凭什么值2万亿？",
+    "type": "数据冲击",
+    "delivery_note": "语速缓慢、压低声音，'凭什么'加重音，留0.5秒停顿",
+    "visual_effect": "黑屏，巨大的 '$2T' 数字从黑暗中浮现，然后碎裂成星链卫星网络"
+  },
+  "scenes": [
+    {
+      "id": "scene-01",
+      "type": "cover",
+      "title": "开场：数字冲击",
+      "duration_seconds": 5,
+      "narration": "",
+      "narration_tone": "",
+      "visual_description": "深空背景，巨大的$2T金色数字占据画面中央，底部有火箭发射轨迹",
+      "video_prompt": "一片漆黑的深空中，一个巨大的金色 '$2T' 数字从底部缓缓升起，表面有流动的数据光线。数字完全显现后，背景爆发出火箭发射的强光，金色粒子向四周飞散。摄像机从正面缓慢推近（slow dolly in），让数字充满画面。戏剧性逆光，高对比度，深色背景衬托金色发光文字。科技数据可视化风格。",
+      "image_prompt": "深空黑色背景，中央巨大金色 '$2T' 字立体金属质感，表面有流动的数据光线纹理。文字底部有火箭发射的剪影和向上喷射的金色粒子。背景隐约可见纳斯达克K线图抽象轮廓。戏剧性逆光，高对比度，科技数据可视化风格，冷蓝与暖金配色。Cinematic composition, dramatic lighting, photorealistic style.",
+      "text_overlay": {
+        "text": "$2,000,000,000,000",
+        "position": "center",
+        "font_style": "巨大金色粗体无衬线字，数据流发光效果",
+        "priority": "primary"
+      },
+      "transition": "none",
+      "transition_out": "fade-in",
+      "bgm_suggestion": "低音电子脉冲渐强，火箭发射轰鸣声",
+      "sfx_suggestion": "深沉的低频轰鸣 + 数据流动声"
+    },
+    {
+      "id": "scene-02",
+      "type": "hook",
+      "title": "惊人的数字",
+      "duration_seconds": 15,
+      "narration": "一家亏损490亿的公司，凭什么值2万亿？2026年6月12日，SpaceX在纳斯达克上市，首日收盘市值突破2.1万亿美元——超越特斯拉，超越沙特阿美，成为人类历史上第七大上市公司。但你知道吗？就在一年前，这家公司还在亏钱——净亏损49亿美元。",
+      "narration_tone": "缓慢、神秘、逐步升级，'2.1万亿美元'加重音",
+      "visual_description": "数据面板在深色背景上逐行弹出关键数字：市值2.1T、募资750亿、首日涨19%",
+      "video_prompt": "静态机位（static shot）拍摄深色半透明数据面板（HUD风格）在黑暗背景中逐行弹出。第一行 '市值：$2.1T' 从左侧飞入，第二行 '募资：$750亿' 从右侧飞入，第三行 '首日涨幅：+19%' 从底部弹入。每行数据配有动态柱状图动画，数据流光扫描效果。画面右上角显示SpaceX的Logo。冷蓝与暖金色配色，戏剧性点光源。Bloomberg终端风格的数据可视化，信息逐层展开。",
+      "text_overlay": {
+        "text": "市值 $2.1T | 募资 $750亿 | +19%",
+        "position": "upper-third",
+        "font_style": "粗体白色无衬线字，科技蓝数据面板风格",
+        "priority": "primary"
+      },
+      "image_prompt": "深色背景上三个HUD风格数据面板并列排列。左侧面板显示 '$2.1T' 带上升箭头，中间面板显示 '$750亿' 带柱状图，右侧面板显示 '+19%' 带绿色上涨指标。三分法构图（rule of thirds），数据面板半透明材质，边缘有蓝色光晕。右上角有SpaceX风格Logo。戏剧性点光源从顶部照射，冷蓝色调为主，金色高亮关键数字。科技数据可视化风格，电影级渲染。",
+      "transition": "fade-in",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "低音电子脉冲，节奏逐渐加快",
+      "sfx_suggestion": "数据弹出音效（beep/woosh）"
+    },
+    {
+      "id": "scene-03",
+      "type": "data-viz",
+      "title": "三大业务拆解",
+      "duration_seconds": 25,
+      "narration": "很多人以为SpaceX就是造火箭的——其实真正的印钞机，是天上的星链。2025年，星链营收114亿美元，利润44亿，占了公司收入的61%。而火箭发射业务反而亏了6个亿。更烧钱的是Starship——累计投入超过150亿美元，至今还没赚一分钱。估值2万亿，95倍市盈率。Morningstar给它的公允价值是7800亿——不到现在的一半。大空头原型Michael Burry说得更直白：'不值一万亿，更别说两万亿。'",
+      "narration_tone": "快速、信息密集，'印钞机'用调侃语气，'Michael Burry'放慢模仿对方语气",
+      "visual_description": "三栏数据对比：Starlink(绿) vs 发射(蓝) vs xAI(红)，底部有估值对比条",
+      "video_prompt": "固定机位（static wide shot）拍摄三栏柱状图在深色背景中从左到右依次升起。左栏绿色标注 'Starlink $114亿' 最高，中栏蓝色标注 '发射 $41亿' 居中，右栏红色标注 'xAI 亏损$64亿' 最低。摄像机轻微下摇（tilt down）跟随柱子升起，每根柱子顶部弹出精确数字。底部出现对比条：'市值$2.1T ←→ 公允价值$0.78T'。数据面板有流光扫描效果，冷蓝背景色。信息图表风格，数据精确，视觉简洁有力。",
+      "text_overlay": {
+        "text": "Starlink $11.4B ✅ | 发射 $4.1B ❌ | xAI -$6.4B ❌",
+        "position": "bottom",
+        "font_style": "粗体白色无衬线字，绿蓝红三色对应业务",
+        "priority": "primary"
+      },
+      "image_prompt": "深色科技背景，三根对比柱状图。左柱最高为绿色，标注 'Starlink $114亿 +44亿利润'；中柱为蓝色 '火箭发射 $41亿 亏损$6.6亿'；右柱为红色 'xAI/AI 亏损$64亿'。底部有估值对比条 '市价$2.1T vs 公允价值$0.78T'。对称构图，背景有网格线和数据流效果。冷色顶光照射，柔和阴影。科技数据可视化风格，深蓝主色，电影级渲染。Cinematic composition, dramatic lighting, photorealistic style.",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "持续的科技电子节拍，数据切换时有节奏变化",
+      "sfx_suggestion": "图表升起的轻声提示音"
+    },
+    {
+      "id": "scene-04",
+      "type": "summary",
+      "title": "时代的注脚",
+      "duration_seconds": 20,
+      "narration": "说到底，2万亿买的不是财报，是一个信仰——人类会成为多行星物种。Starship的终极意义不是送卫星，是送人去火星。而星链每年十几亿的利润，正在为这个梦想买单。4000多名员工一夜成为百万富豪，马斯克成为人类历史上第一个万亿富翁。这不仅仅是一个IPO——这是一个时代的注脚：当疯狂成为理性，当想象力成为估值。",
+      "narration_tone": "逐渐激昂，'当疯狂成为理性'放慢一字一顿，结尾升华感",
+      "visual_description": "从星空俯瞰地球，星链卫星网络覆盖全球，然后视角拉远飞向火星",
+      "video_prompt": "摄像机从地球轨道缓缓拉远（dolly out），地球表面被星链卫星的蓝色光点网络覆盖。视角继续拉远，显示出火星的轮廓。地球和火星之间有一条金色的轨迹线连接，象征SpaceX的终极目标。星空背景深邃，银河清晰可见。缓慢而宏大的运镜，从近到远展现SpaceX的愿景。电影级太空摄影风格，温暖的金色与深蓝色调对比。",
+      "text_overlay": {
+        "text": "当疯狂成为理性，当想象力成为估值",
+        "position": "center",
+        "font_style": "白色粗体衬线字，逐渐淡入，金边发光效果",
+        "priority": "primary"
+      },
+      "image_prompt": "从太空中俯瞰地球的广角构图（wide composition），星链卫星的蓝色光点如神经网络般覆盖地球表面。地球边缘有金色大气光晕。背景深邃的星空中可以看到火星的轮廓。地球与火星之间一条金色虚线连接。逆光拍摄，地球边缘金色辉光，深蓝色太空背景。电影级太空摄影风格，温暖的金色与深蓝色对比，宏大叙事感，浅景深。",
+      "transition": "dissolve",
+      "transition_out": "dissolve",
+      "bgm_suggestion": "弦乐渐强，史诗感背景音乐，Hans Zimmer风格",
+      "sfx_suggestion": "太空环境音，低沉的宇宙轰鸣"
+    },
+    {
+      "id": "scene-05",
+      "type": "outro",
+      "title": "结尾与CTA",
+      "duration_seconds": 10,
+      "narration": "从PayPal到火箭，从星链到火星——Elon Musk用20年把一个疯狂的想法变成了2万亿美元。下一个万亿级公司会是谁？OpenAI？Anthropic？关注我，我们一个一个拆解。",
+      "narration_tone": "沉稳、总结性，最后'关注我'语气亲切",
+      "visual_description": "深色背景，出现SPCX股票代码，底部CTA按钮",
+      "video_prompt": "摄像机缓慢推进（slow dolly in）一个深色科技风格结尾卡（end card）。画面中央大号白色字 'SPCX' 出现，下方小号字 '$2,000,000,000,000' 从0开始数到2万亿。底部有红色 '关注' 按钮脉冲发光。背景是缓缓流动的数据流和星链网络抽象纹理。科技数据可视化风格，品牌色蓝+红色CTA。",
+      "text_overlay": {
+        "text": "SPCX | 关注 → 拆解下一个万亿故事",
+        "position": "center",
+        "font_style": "粗体白色字，股票代码用金色，CTA用红色发光",
+        "priority": "primary"
+      },
+      "image_prompt": "深色科技背景结尾卡。中央大号金色字 'SPCX'，下方白色数字滚动显示 '$2,000,000,000,000'。底部有红色发光按钮 '关注我们'。背景有星链卫星网络的抽象线条和数据流。对称构图，冷色顶光照射。冷蓝与金色配色，品牌感强。科技数据可视化风格，电影级渲染，干净简洁。Cinematic composition, dramatic lighting, photorealistic style.",
+      "transition": "dissolve",
+      "transition_out": "none",
+      "bgm_suggestion": "史诗感音乐渐弱，结尾一个温暖的收束音",
+      "sfx_suggestion": "股票代码出现的电子音效，最后一声清脆的确认音"
+    }
+  ],
+  "outro": {
+    "text": "从PayPal到火箭，从星链到火星——Elon Musk用20年把一个疯狂的想法变成了2万亿美元。下一个万亿级公司会是谁？OpenAI？Anthropic？关注我，我们一个一个拆解。",
+    "duration_seconds": 10,
+    "cta_type": "关注",
+    "cta_text": "关注我，拆解下一个万亿故事",
+    "visual_description": "深色背景结尾卡，SPCX代码+关注按钮",
+    "image_prompt": "深色科技风格结尾卡。中央大号金色字 'SPCX'，下方 '关注 → 下一个万亿故事' 红色发光按钮。背景有星链卫星网络抽象线条和数据流动。冷蓝与金色配色，科技数据可视化风格。"
+  },
+  "production_notes": {
+    "recommended_bgm": "开场的低音电子脉冲→数据切换时的科技节拍→总结段弦乐史诗感(Hans Zimmer风格)→结尾温暖收束",
+    "total_duration_check": 75,
+    "narration_word_count": 340,
+    "aspect_ratio": "16:9",
+    "quality": "1K",
+    "fps": 30,
+    "special_notes": "全片为科技数据可视化风格，深色背景为主，冷蓝+暖金配色。封面字和关键数据字是视觉焦点。不出现真人出镜。所有提示词末尾不再写aspect_ratio和quality，由脚本自动处理。"
+  }
+}

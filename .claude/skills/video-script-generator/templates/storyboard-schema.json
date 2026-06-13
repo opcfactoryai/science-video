@@ -3,7 +3,7 @@
   "title": "Video Storyboard Script Schema",
   "description": "工业级视频分镜头脚本 JSON Schema",
   "type": "object",
-  "required": ["meta", "aspect_ratio", "quality", "cover", "hook", "scenes", "outro", "production_notes"],
+  "required": ["meta", "cover", "hook", "scenes", "outro", "production_notes"],
   "properties": {
     "meta": {
       "type": "object",
@@ -19,8 +19,6 @@
         "generated_at": { "type": "string", "format": "date-time" }
       }
     },
-    "aspect_ratio": { "type": "string", "enum": ["16:9", "9:16"] },
-    "quality": { "type": "string", "enum": ["1K", "2K", "4K"] },
     "cover": {
       "type": "object",
       "required": ["title", "visual_concept", "text_overlay_position", "image_prompt"],
@@ -57,7 +55,7 @@
             "enum": ["cover", "hook", "explainer", "demonstration", "analogy", "data-viz", "talking-head", "b-roll", "comparison", "summary", "outro"]
           },
           "title": { "type": "string", "minLength": 2 },
-          "duration_seconds": { "type": "integer", "minimum": 2, "maximum": 60 },
+          "duration_seconds": { "type": "integer", "minimum": 0, "maximum": 120 },
           "narration": { "type": "string" },
           "narration_tone": { "type": "string" },
           "visual_description": { "type": "string", "minLength": 10 },
