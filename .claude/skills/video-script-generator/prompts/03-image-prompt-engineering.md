@@ -127,7 +127,9 @@ professional photography, extreme detail
 
 ### 8. 注意：画幅与画质由脚本自动处理
 
-`aspect_ratio` 和 `quality` 是工程参数，由 Python 脚本通过 API `size` 参数统一传入。**不要在 `image_prompt` 中写这些**。
+`aspect_ratio` 和 `quality` 是工程参数，由 Python 脚本通过 API `size` 参数统一传入。**绝对不要在 `image_prompt` 中写这些**。
+
+> 🔴 **禁令：`image_prompt` 中不得出现：** `9:16`、`16:9`、`竖屏`、`横屏`、`aspect ratio`、`vertical composition`、`1K`、`2K`、`4K`、`quality`。这些由工程参数自动处理，出现在提示词中会造成 API 冲突。
 
 提示词应锁死的是视觉风格、光影调性、构图逻辑、叙事氛围这些影响画面审美的要素。
 

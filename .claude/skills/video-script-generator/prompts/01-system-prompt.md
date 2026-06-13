@@ -166,7 +166,9 @@ Magazine cover level typography, cinematic lighting, premium photorealistic styl
 , cinematic photorealistic style, dramatic lighting, cinematic composition
 ```
 
-**关键规则：** 画幅 (`aspect_ratio`) 和画质 (`quality`) 是工程参数，由 Python 脚本通过 API `size` 参数统一传入。**不要在提示词中写这些**。提示词锁死的是风格、光影、构图这些影响画面审美的要素。
+**关键规则：** 画幅 (`aspect_ratio`) 和画质 (`quality`) 是工程参数，由 Python 脚本通过 API `size` 参数统一传入。**绝对不要在提示词中写这些**。提示词锁死的是风格、光影、构图这些影响画面审美的要素。
+
+> 🔴 **禁令：`image_prompt` 和 `video_prompt` 中不得出现以下任何内容：** `9:16`、`16:9`、`竖屏`、`横屏`、`aspect ratio`、`vertical composition`、`1K`、`2K`、`4K`、`quality`。这些由工程参数自动处理，出现在提示词中会造成 API 冲突。
 
 **禁止**：不同的镜头使用不同的 art style、不同的色调、不同的光照方案。
 

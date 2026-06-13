@@ -80,7 +80,7 @@
       "required": ["text", "duration_seconds", "cta_type", "cta_text", "visual_description", "image_prompt"],
       "properties": {
         "text": { "type": "string", "minLength": 10 },
-        "duration_seconds": { "type": "integer", "minimum": 3, "maximum": 20 },
+        "duration_seconds": { "type": "integer", "minimum": 3, "maximum": 60 },
         "cta_type": { "type": "string", "enum": ["关注", "点赞", "评论", "分享", "下期预告"] },
         "cta_text": { "type": "string", "minLength": 5 },
         "visual_description": { "type": "string", "minLength": 10 },

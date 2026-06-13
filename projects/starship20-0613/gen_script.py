@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+import json, sys
+script = {
+    "meta": {
+        "title": "星舰20年：从废墟到星辰",
+        "topic": "星舰20年的传奇发展史，SpaceX从濒临破产到人类最强火箭的史诗旅程",
+        "style_category": "科技前沿",
+        "target_duration_seconds": 180,
+        "tone": "震撼大气、热血催泪",
+        "target_audience": "对科技和梦想感兴趣的普通大众，18-45岁，抖音/Shorts用户",
+        "version": "2.0",
+        "generated_at": "2026-06-13T12:00:00Z"
+    },
+    "cover": {
+        "title": "星舰20年",
+        "subtitle": "一个疯子用150亿美元买下的星辰大海",
+        "visual_concept": "星舰V3在发射塔架旁的壮丽画面，金色晨光，不锈钢箭体反射光芒",
+        "text_overlay_position": "center",
+        "text_style": "巨大粗体白色衬线字，金色金属描边发光",
+        "image_prompt": "画面中央上方巨大粗体白色衬线文字 星舰20年，金色描边发光，副标题 一个疯子用150亿美元买下的星辰大海 小号白字在下方。背景博卡奇卡发射场晨光中V3星舰全貌，low angle仰拍，不锈钢箭体反射金色阳光。画面上方40%暗色渐变预留文字空间。cinematic photorealistic style，dramatic backlighting，9:16竖屏，史诗庄严。"
+    },
+    "hook": {
+        "text": "20年前没人相信他能造火箭。",
+        "type": "故事开场",
+        "delivery_note": "缓慢、深沉、句尾停顿2秒",
+        "visual_effect": "黑屏中白字逐字出现，切到2002年SpaceX旧照片"
+    },
+    "scenes": [
+        {
+            "id": "scene-01", "type": "cover",
+            "title": "封面：星舰20年", "duration_seconds": 1,
+            "narration": "", "narration_tone": "庄严、史诗",
+            "visual_description": "星舰V3全貌，晨光，字幕叠加",
+            "video_prompt": "画面从全黑开始，地平线金色晨光出现。camera从low angle缓缓tilt up，沿星舰V3不锈钢箭体向上移动，箭体反射金色晨光由暗变亮。最终定格在火箭顶端，背景深蓝天穹。文字 星舰20年 金色渐变从中心浮现。暖橙+深蓝对比色调。cinematic epic composition，9:16竖屏。",
+            "text_overlay": {"text": "星舰20年\n一个疯子用150亿美元买下的星辰大海", "position": "center", "font_style": "巨大粗体白色衬线字，金色金属描边发光", "priority": "primary"},
+            "image_prompt": "画面中央上方巨大粗体白色衬线文字 星舰20年 金色描边发光，副标题在下方。背景发射场日出中V3星舰全貌low angle仰拍，不锈钢箭体反射金色阳光。画面上方40%暗色渐变。cinematic photorealistic style,dramatic backlighting,9:16竖屏，史诗庄严。",
+            "transition": "none", "transition_out": "dissolve",
+            "bgm_suggestion": "Hans Zimmer式史诗交响乐前奏，低音弦乐渐强",
+            "sfx_suggestion": "低频隆隆声渐起，风声"
+        },
+        {
+            "id": "scene-02", "type": "hook",
+            "title": "开篇：没人相信他能造火箭", "duration_seconds": 40,
+            "narration": "20年前没人相信他能造火箭。2008年，SpaceX第三次发射失败，公司账上的钱只够最后一次尝试。伊隆·马斯克站在太平洋的荒岛上，看着猎鹰1号的残骸，面临一个选择：承认失败，或者把最后一颗子弹打出去。他选择了后者。72天后，猎鹰1号第4次发射，成功入轨。那是人类历史上第一枚私营企业制造的入轨火箭。但你没有听过这个故事。你听过的是星舰爆炸的新闻标题，你听过的是马斯克吹牛的火星梦，你听过的是失败、失败、再失败。今天，我要告诉你另一面——为什么那些爆炸，恰恰是他成功的全部理由。",
+            "narration_tone": "深沉、叙述性、从低谷到热血，语速由慢到快",
+            "visual_description": "2008年猎鹰1号发射画面，对比2026年星舰V3的震撼画面",
+            "video_prompt": "开场：2008年新闻胶片质感画面，猎鹰1号在太平洋发射，火箭爆炸残骸坠落，画面褪色发黄有胶片颗粒感。第8秒：突然切到2026年V3星舰升空震撼wide shot，蓝白色火焰照亮画面，camera从地面仰拍火箭加速上升，暖金火焰对比冷蓝不锈钢。第20秒：切到马斯克年轻照片。色调从褪色旧胶片渐变到高饱和cinematic。9:16竖屏，纪录片叙事style。",
+            "text_overlay": {"text": "2008 · 最后一张支票", "position": "bottom", "font_style": "小号白色无衬线等宽字体半透明", "priority": "secondary"},
+            "image_prompt": "split画面：左半褪色旧胶片质感2008年猎鹰1号发射老照片，颗粒感和划痕。右半2026年V3星舰发射台点火瞬间，33台发动机喷出蓝金色火焰，不锈钢箭体反射火焰光芒。中间金色光线分割。下方白色等宽文字 2008 · 最后一张支票。cinematic documentary style,dramatic lighting,9:16竖屏。",
+            "transition": "dissolve", "transition_out": "dissolve",
+            "bgm_suggestion": "低沉钢琴单音引入逐渐加弦乐，火箭成功时爆发交响乐",
+            "sfx_suggestion": "老胶片放映机咔嗒声，火箭发动机轰鸣，心跳声"
+        },
+        {
+            "id": "scene-03", "type": "demonstration",
+            "title": "至暗时刻：连环爆炸", "duration_seconds": 50,
+            "narration": "2019年，星虫飞了20米高，像一枚生锈的水塔。全世界都在笑。然后SN8从12.5公里高空做腹部翻转——炸了。SN9——炸了。SN10——成功着陆，然后炸了。SN11——在空中解体。四次高空测试，四次爆炸。社交媒体上铺天盖地的嘲笑：SpaceX只会造烟花，马斯克是个骗子，火星梦就是个笑话。但他们不知道的是，每一次爆炸，都让SpaceX的工程师们离答案更近一步。SN15起飞的时候，整个控制室安静得能听见心跳。10公里高空，腹部翻转，引擎重新点火——稳稳地着陆了。没有爆炸。那一刻，控制室里所有人跳起来拥抱。不是因为一次成功，而是因为他们证明了：炸了不可怕，放弃才可怕。",
+            "narration_tone": "从沉重压抑到爆发式释放，中间停顿制造悬念",
+            "visual_description": "SN8-SN11爆炸集锦到SN15成功着陆控制室欢呼",
+            "video_prompt": "开场快速蒙太奇：SN8/SN9/SN10/SN11爆炸快速闪切每段1秒，camera抖动纪录感。第6秒：慢动作碎片在橙色火球中飞散。第12秒：黑屏2秒字幕 SN15。第14秒：bird eye view俯视SN15从高空缓缓下降着陆腿展开稳稳落在混凝土平台。第22秒：SpaceX控制室工程师跳起来拥抱流泪特写。暖橙爆炸到冷蓝悬念到暖金胜利。9:16竖屏cinematic documentary style。",
+            "text_overlay": {"text": "SN8 · SN9 · SN10 · SN11\n四次爆炸", "position": "upper-third", "font_style": "白色粗体无衬线字冲击波效果渐变为灰色", "priority": "primary"},
+            "image_prompt": "SN15原型机稳稳着陆混凝土平台瞬间，火箭笔直站立，底部发动机余烬发光，地面烧焦痕迹。背景得克萨斯沙漠黄昏天空暖金色余晖。画面气势恢宏毁灭后重生感。上方白色粗体字 四次爆炸 一次着陆。暖金+冷蓝contrast。cinematic documentary style,epic composition,dramatic lighting,9:16竖屏。",
+            "transition": "dissolve", "transition_out": "dissolve",
+            "bgm_suggestion": "沉重弦乐渐强到黑屏完全静音到着陆瞬间爆发交响乐高潮",
+            "sfx_suggestion": "爆炸轰鸣声到死寂到着陆机械撞击声到控制室欢呼声浪"
+        },
+        {
+            "id": "scene-04", "type": "demonstration",
+            "title": "巅峰：筷子夹火箭", "duration_seconds": 50,
+            "narration": "然后，2024年10月13日。星舰第五次综合试飞。超重助推器完成分离后调头返回发射塔，121米高的不锈钢巨兽从天而降。发射塔伸出了一双机械臂——Mechazilla的筷子——在火箭只有几层楼高的时候，凌空夹住了它。人类航天史上从未有过的壮举。那一刻，SpaceX用十年时间证明了：可重复使用不是概念，是可以夹在筷子上的现实。从2020年SN8第一次高空测试到IFT-5筷子捕获只用了4年。从2002年SpaceX成立到2024年，22年。现在2026年V3星舰首飞，123米高，9240吨推力，人类史上最强的火箭。一家民间公司把它造出来了。",
+            "narration_tone": "惊叹敬畏，语速从紧张到爆发再到深情收尾",
+            "visual_description": "筷子捕获的震撼画面到时间线快速回顾到V3星舰",
+            "video_prompt": "开场wide shot：超重助推器从高空带着火焰降落，camera从地面仰拍火箭越来越大。第4秒：slow motion两根机械臂从发射塔横向伸出精准闭合夹住箭体，金属碰撞火花四溅。第8秒：垂直时间线animation从底部向上生长，2002到2026节点快速闪现。第16秒：V3星舰在太空中逆光wide shot，地球在下方弯曲，金色阳光照亮不锈钢箭体。cool blue太空+暖金阳光。9:16竖屏cinematic科幻写实style。",
+            "text_overlay": {"text": "人类首次火箭塔捕获\n2024.10.13", "position": "upper-third", "font_style": "巨大粗体白色衬线字金色描边发光", "priority": "primary"},
+            "image_prompt": "超重助推器被发射塔机械臂凌空捕获侧拍画面，巨大不锈钢箭体被两根精密机械臂夹住，底部发动机有余温发光。background得克萨斯晨光金色天空。上方巨大白色衬线字 人类首次火箭塔捕获 金色描边。cinematic photorealistic style,epic composition,dramatic backlighting,9:16竖屏。",
+            "transition": "dissolve", "transition_out": "dissolve",
+            "bgm_suggestion": "紧张低音到捕获瞬间爆发史诗交响乐高潮转柔情弦乐",
+            "sfx_suggestion": "火箭发动机咆哮到机械臂液压声到捕获瞬间金属碰撞巨响到欢呼"
+        },
+        {
+            "id": "scene-05", "type": "outro",
+            "title": "结尾：星辰大海", "duration_seconds": 40,
+            "narration": "马斯克说过一句话：如果你没有失败过，说明你创新的速度还不够快。SpaceX用20年时间，150亿美元，几十次爆炸，把航天工程从国家垄断变成了民营企业可以做到的事。2026年底，第一艘星舰就要飞向火星了。不载人，但那是第一步。有人问他为什么要去火星？他说：地球是人类的摇篮，但你不能永远待在摇篮里。下一次星舰飞向火星的时候，我们会在现场。关注我，见证人类成为多行星物种的那一天。",
+            "narration_tone": "深情、坚定、充满力量，语速平稳缓慢收尾",
+            "visual_description": "星舰在星空远去，马斯克金句，CTA字幕",
+            "video_prompt": "开场：星舰在太空中extreme wide shot逆光镜头，金色阳光勾勒箭体轮廓，下方地球弧线。camera慢慢dolly out拉远。第10秒：星舰尾部点火向画面深处飞去，越来越小化为星空中一颗闪烁星星。第18秒：屏幕底部升起文字，最后定格在深空。温暖金色逆光+深蓝太空。9:16竖屏优雅cinematic结尾。",
+            "text_overlay": {"text": "如果你没有失败过\n说明你不够快", "position": "center", "font_style": "上句灰色粗体无衬线，下句大号金色衬线发光", "priority": "primary"},
+            "image_prompt": "星舰在黑暗太空wide shot逆光剪影，金色阳光从后方勾勒箭体轮廓，前方深邃星空，尾部微弱蓝色发动机光芒。画面简洁优雅电影海报感。中央白色优雅衬线文字 如果你没有失败过 说明你不够快 金色发光。底部 关注我们 见证历史。cinematic photorealistic style,centered composition,deep space perspective,9:16竖屏。",
+            "transition": "dissolve", "transition_out": "none",
+            "bgm_suggestion": "钢琴独奏温柔收尾，最后一个音符延长淡出留2秒静默",
+            "sfx_suggestion": "太空环境音缓缓消失，最后一声心跳"
+        }
+    ],
+    "outro": {
+        "text": "马斯克说过一句话：如果你没有失败过，说明你创新的速度还不够快。SpaceX用20年时间，150亿美元，几十次爆炸，把航天工程从国家垄断变成了民营企业可以做到的事。2026年底，第一艘星舰就要飞向火星了。不载人，但那是第一步。有人问他为什么要去火星？他说：地球是人类的摇篮，但你不能永远待在摇篮里。下一次星舰飞向火星的时候，我们会在现场。关注我，见证人类成为多行星物种的那一天。",
+        "duration_seconds": 40,
+        "cta_type": "关注",
+        "cta_text": "关注我，见证人类成为多行星物种的那一天",
+        "visual_description": "星舰在星空中远去融入银河，logo和CTA字幕升起",
+        "image_prompt": "星舰在太空金色逆光剪影远去融入星空。简洁优雅cinematic最后一个镜头。画面中央 如果你没有失败过 说明你不够快 金色衬线发光字，底部CTA。深蓝太空+金色边缘光。cinematic photorealistic style,centered composition,dramatic backlighting,9:16竖屏。"
+    },
+    "production_notes": {
+        "recommended_bgm": "史诗管弦乐+电子合成器混搭，参考星际穿越原声。开场低音弦乐到爆发交响乐到结尾钢琴独奏",
+        "total_duration_check": 181,
+        "narration_word_count": 820,
+        "aspect_ratio": "9:16",
+        "quality": "2K",
+        "fps": 30,
+        "special_notes": "全片竖屏构图。情绪弧线：压抑到苦难到悬念到爆发到升华。爆款视频方向前3秒强钩子抓人。"
+    }
+}
+with open("projects/starship20-0613/script.json", "w", encoding="utf-8") as f:
+    json.dump(script, f, ensure_ascii=False, indent=2)
+print("OK")
