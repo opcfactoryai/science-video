@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""Step 1+2: Save research + generate script for C语言教学视频"""
+import json
+
+proj = "projects/c-language-0613"
+
+# research.md
+research = """# C语言编程：指针到底难在哪？
+
+## 🔍 核心事实
+1. 指针是C语言公认最难的概念，也是大学生放弃C语言的第一道坎
+2. 指针本质是内存地址的变量，但初学者常混淆"指针变量"与"指向的数据"
+3. 操作符*和&的多义性是最大混淆来源：声明时*定义指针，非声明时*解引用
+4. 指针大小只取决于系统架构（32位=4字节，64位=8字节），与指向类型无关
+5. 野指针、内存泄漏、段错误是C语言初学者的三大噩梦
+
+## 📊 数据支撑
+- 指针大小：32位系统4字节，64位系统8字节
+- int*指针+1跳过4字节，char*指针+1跳过1字节，double*指针+1跳过8字节
+- const修饰指针三种情形：const int *p / int *const p / const int *const p
+- 数组名=数组首元素地址，sizeof(数组名)和&数组名是两个例外
+
+## 👥 受众痛点
+- 觉得指针"太抽象"——不知道学来干嘛
+- 分不清*p和p的区别——不知道什么时候加*
+- swap函数写不对——传值和传址分不清
+- 段错误(segmentation fault)不知道怎么回事
+- 觉得C语言过时了——不知道学了有什么用
+
+## 🏆 竞品角度
+- 大部分教程太理论，一上来就int *p = &a
+- 缺少生活化类比，学生记不住
+- 缺少"为什么学C"的驱动力
+
+## 💡 独特视角
+**"指针不是魔法，是内存的门牌号。你不需要成为计算机天才，只需要学会看地址。"**"""
+with open(f"{proj}/research.md", "w", encoding="utf-8") as f:
+    f.write(research)
+print("research.md saved")
+
+# script.json
+script = {
+    "meta": {
+        "title": "C语言指针：其实没你想的那么难",
+        "topic": "C语言指针教学，用生活化类比讲解内存地址与指针",
+        "style_category": "知识分享",
+        "target_duration_seconds": 180,
+        "tone": "亲切、教学式、循循善诱",
+        "target_audience": "大学一/二年级计算机专业学生，被C语言指针困扰的初学者",
+        "version": "2.0",
+        "generated_at": "2026-06-13T14:00:00Z"
+    },
+    "cover": {
+        "title": "C语言指针",
+        "subtitle": "其实没你想的那么难",
+        "visual_concept": "大学教室黑板风格，黑板上有手写的C语言指针代码，粉笔字效果",
+        "text_overlay_position": "center",
+        "text_style": "粗体白色手写感字体，粉笔质感，黑板背景",
+        "image_prompt": "大学教室黑板的close-up特写，黑板上有白色粉笔手写的C语言代码 'int a = 10; int *p = &a; printf(\"%d\", *p);' 字样，字体是不规则的手写粉笔风格。黑板角落有粉笔灰痕迹。教室的暖色灯光从侧面照亮黑板，背景略微虚化可以看到教室桌椅。画面中央上方有大号白色粉笔手写文字 'C语言指针' 下方小字 '其实没你想的那么难'。cinematic photorealistic style，soft classroom lighting，warm amber tones。"
+    },
+    "hook": {
+        "text": "为什么C语言的指针，让这么多大学生崩溃？",
+        "type": "设问互动",
+        "delivery_note": "像老师在课堂上突然提问，停顿2秒等待学生思考",
+        "visual_effect": "黑板上出现一个大大的问号，然后画面切入指针生活化类比"
+    },
+    "scenes": [
+        {
+            "id": "scene-01",
+            "type": "cover",
+            "title": "封面：C语言指针",
+            "duration_seconds": 1,
+            "narration": "",
+            "narration_tone": "亲切、开场",
+            "visual_description": "大学黑板风格封面，手写代码和标题",
+            "video_prompt": "camera从教室后方缓缓向前推进，穿过几排空桌椅，焦点落在黑板上。黑板上的粉笔字逐渐清晰。教室里有暖色的灯光，窗外是傍晚的微光。画面最终定格在黑板的close-up上。cinematic documentary style，warm classroom lighting，shallow depth of field。",
+            "text_overlay": {
+                "text": "C语言指针\n其实没你想的那么难",
+                "position": "center",
+                "font_style": "白色手写粉笔感字体，大号标题，黑板背景",
+                "priority": "primary"
+            },
+            "image_prompt": "大学教室黑板的close-up特写，黑板上有白色粉笔手写的C语言代码 'int a = 10; int *p = &a;' 字样，手写粉笔风格不规则。暖色教室灯光从侧面照亮黑板，背景略微虚化有教室桌椅轮廓。画面中央上方白色粉笔手写文字 'C语言指针' 下方小字 '其实没你想的那么难'。cinematic photorealistic style，soft classroom lighting，warm amber tones。",
+            "transition": "none",
+            "transition_out": "dissolve",
+            "bgm_suggestion": "轻快的校园风吉他前奏，像走进教室的感觉",
+            "sfx_suggestion": "粉笔在黑板上写字的声音，教室环境环境音"
+        },
+        {
+            "id": "scene-02",
+            "type": "hook",
+            "title": "开讲：指针就是门牌号",
+            "duration_seconds": 100,
+            "narration": "为什么C语言的指针让这么多大学生崩溃？不是因为指针本身难，而是因为教指针的人，一上来就写 int *p = &a。你根本不知道这行代码在说什么。来，我给你讲个故事。假设你们家在一个小区里，你家是3栋201。这个门牌号 '3栋201' 就是你的地址。现在，假设有个快递员，他手里拿着一张纸条，上面写着 '3栋201'。这张纸条就是指针，纸条上写的地址就是指针指向的位置。C语言里，int a = 10 相当于你在3栋201住了下来。&a 就是取你的门牌号——'3栋201'。int *p = &a 就是快递员在纸条上记下了这个门牌号。而 *p 的意思就是：按照纸条上的地址去找，找到那家人，看到里面的值——也就是10。明白了吗？指针不是魔法，就是一个存着别人地址的变量。但为什么懂了还是写不对？因为还有两种让你头皮发麻的情况。第一种：传值和传址。你写了个swap函数想交换两个数，结果外面死活没变——因为你传的是值，形参和实参是两个不同的房间。你要传递地址才能真的改到外面的变量。第二种：指针和数组。int arr[5] = {1,2,3,4,5}，arr本身就是一个指针——它指向数组的第一个元素。所以arr[2]和*(arr+2)是完全等价的。数组名就是首元素的地址，记住这件事。",
+            "narration_tone": "像大学老师在课堂上娓娓道来，声音亲切，偶尔提问互动，语速适中",
+            "visual_description": "手绘动画风格的门牌号类比，指针=纸条，地址=门牌号；然后切换到代码示例",
+            "video_prompt": "开场：手绘风格动画——一张白纸上画着一栋楼，标着 '3栋201'。一只动画手画出门牌号，然后画出一张写着地址的纸条。camera跟随画笔移动，线条感十足的手绘风格。第30秒：画面切到大学教室里的投影幕布，幕布上显示C语言代码。老师的影子在幕布前。camera缓慢推近到幕布上的代码。第60秒：再次切换到白纸手绘——画一个swap函数的示意图，两个房间，钥匙交换。手绘白纸+暖色教室背景交替。whiteboard animation style混合真人教室实拍感。warm classroom lighting。9:16竖屏中模拟横屏教学风格。",
+            "text_overlay": {
+                "text": "指针 = 存着别人地址的变量",
+                "position": "bottom",
+                "font_style": "白色手写粉笔字体，黄色高亮关键词",
+                "priority": "primary"
+            },
+            "image_prompt": "split composition：左半部分是手绘风格的房子示意图，3栋201门口有一个箭头标注 '地址 &a'，快递员手中的纸条上写着 '3栋201' 标注 '指针 p'。右半部分是对应的C语言代码 'int a = 10; int *p = &a;' 以粉笔字写在黑板背景上。手绘线条简洁清晰，标注文字用红色和蓝色区分指针和地址。教学风格，干净明亮的composition。",
+            "transition": "dissolve",
+            "transition_out": "dissolve",
+            "bgm_suggestion": "轻快的木吉他节奏，教学氛围感，到了代码部分换成干净的电子音",
+            "sfx_suggestion": "粉笔写字声，翻页声，轻微的教室环境音"
+        },
+        {
+            "id": "scene-03",
+            "type": "outro",
+            "title": "总结：C语言为什么值得学",
+            "duration_seconds": 80,
+            "narration": "最后，很多人问：现在Python、Java这么流行，为什么还要学C？因为C语言让你看到计算机的底层。Python的列表为什么可以装不同类型？因为底层就是指针数组。Java的垃圾回收在干什么？就是帮你管理你在C里手动malloc和free的那片内存。学完C，你学任何语言都会有一种底气——你知道它底层是怎么跑的。指针、内存、地址，这些东西听起来抽象，但它们是计算机科学的地基。回到那个门牌号的例子。你不需要记住每栋楼的门牌号，但你得知道怎么用门牌号找到那栋楼。这就是指针教给你的东西。今天的内容就到这里。如果你是新手，别怕，每个程序员都被指针虐过。关键是多画图、多写代码、多用printf打印地址看看。关注我，下次课我们讲——为什么数组越界会让程序崩溃。",
+            "narration_tone": "温暖、鼓励、像老师在课程结束时对学生的叮嘱",
+            "visual_description": "老师站在黑板前总结，最终画面变成C语言代码滚动的终端窗口",
+            "video_prompt": "开场：camera从侧面拍摄一位老师站在黑板前的剪影，窗外夕阳，暖色光线。第15秒：画面过渡到终端窗口风格的动画，绿色的代码在黑色背景上滚动。camera缓慢zoom out展示代码全貌。第40秒：画面最后定格在一个简洁的结束画面上——黑板上写着 '多画图、多写代码、多用printf'。camera慢慢拉远看到整个教室。warm nostalgic atmosphere，cinematic documentary style，golden hour lighting。",
+            "text_overlay": {
+                "text": "多画图 · 多写代码 · 多用printf",
+                "position": "center",
+                "font_style": "白色手写粉笔字风格，逐行出现",
+                "priority": "primary"
+            },
+            "image_prompt": "简洁的黑板close-up，黑板上有白色粉笔手写的三行字 '多画图' '多写代码' '多用printf'，每个词后面有一个手绘的check标记。黑板角落有粉笔灰痕迹，暖色教室灯光从侧面照亮。背景略微虚化可以看到教室的窗户和窗外黄昏天空。画面温暖而充满鼓励感。cinematic style，soft classroom lighting，warm amber tones，nostalgic atmosphere。",
+            "transition": "dissolve",
+            "transition_out": "none",
+            "bgm_suggestion": "温暖的吉他独奏收尾，有一个上扬的结尾音符",
+            "sfx_suggestion": "粉笔放下声，教室椅子移动声，脚步声渐远"
+        }
+    ],
+    "outro": {
+        "text": "最后，很多人问：现在Python、Java这么流行，为什么还要学C？因为C语言让你看到计算机的底层。Python的列表为什么可以装不同类型？因为底层就是指针数组。Java的垃圾回收在干什么？就是帮你管理你在C里手动malloc和free的那片内存。学完C，你学任何语言都会有一种底气——你知道它底层是怎么跑的。指针、内存、地址，这些东西听起来抽象，但它们是计算机科学的地基。回到那个门牌号的例子。你不需要记住每栋楼的门牌号，但你得知道怎么用门牌号找到那栋楼。这就是指针教给你的东西。今天的内容就到这里。如果你是新手，别怕，每个程序员都被指针虐过。关键是多画图、多写代码、多用printf打印地址看看。关注我，下次课我们讲——为什么数组越界会让程序崩溃。",
+        "duration_seconds": 80,
+        "cta_type": "关注",
+        "cta_text": "关注我，下次课讲数组越界",
+        "visual_description": "老师站在黑板前总结，最终画面变成C语言代码滚动的终端窗口",
+        "image_prompt": "黑色终端背景上绿色滚动的C语言代码，代码中有指针和数组的操作示例。画面简洁充满科技感。中央上方白色文字 '多画图 多写代码 多用printf'。底部有CTA '关注我 下次见'。终端风格字体，绿色代码字符，黑色背景。cinematic style，tech atmosphere。"
+    },
+    "production_notes": {
+        "recommended_bgm": "校园风格木吉他+轻电子混搭，参考《3Blue1Brown》数学课风格背景音乐",
+        "total_duration_check": 181,
+        "narration_word_count": 1050,
+        "aspect_ratio": "9:16",
+        "quality": "1K",
+        "fps": 30,
+        "special_notes": "教学风格视频，全片以教室黑板和手绘类比为主。提示词中不含画幅画质参数。"
+    }
+}
+
+with open(f"{proj}/script.json", "w", encoding="utf-8") as f:
+    json.dump(script, f, ensure_ascii=False, indent=2)
+print("script.json saved")
