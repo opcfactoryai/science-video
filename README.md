@@ -1,21 +1,59 @@
-我设计了一个SKILL，视频生成系统。需求如下：1. 我输入选题主题。架构,输出全体口播稿全量+分镜头的script。脚本必须能满足工程真实需求包括封面，hock，脚本里面要详细给出提示词，没一个镜头的提示词，（每个镜头，2个提示词，一个视频，一个图像）
-给我输出：
+# Science Video — AI 科普视频自动生成系统
 
-1.SKILL.md
-2.分镜头的script。脚本必须能满足工程真实需求包括封面，hock，脚本里面要详细给出提示词，每一个镜头的提示词，（每个镜头，2个提示词，一个视频，一个图像）。脚本里面包括全量口播稿。 脚本需要工业级可用，每个细节都要做好，封面是什么，钩子，分镜头的细节，提示词全部要100%符合工业级。
-3.生成script，要写好系统提示词，系统提示词你需要用一个单独文件描述，系统提示词关键点设计，如何让ai写一个好的视频分镜头脚本。
-4.分镜头脚本模版，需要单独保存。确保根据前面提示词输出的脚本，必须每次100%可用。
-4.根据分镜头脚本。1.输出tts 2.输出分镜头 。你用占位符我自己搞定。
+基于 **Claude + TTS + 文生图** 的自动化科普视频生产流水线，输入选题主题即可全自动输出口播稿、分镜头脚本、配音、配图，并合成完整视频。
 
-给我输出整个SKILL zip。skill必须完整包含所有模版，提示词，SKILL.MD
+---
 
+## 主要功能
 
+- **脚本自动生成** — 输入选题，AI 自动输出全量口播稿 + 工业级分镜头脚本
+- **TTS 配音** — 基于火山引擎双向 TTS V3 API，支持 120+ 音色
+- **文生图** — 基于 `gpt-image-2` 模型逐镜生成配图
+- **视频合成** — 自动对齐配音与画面，支持 dissolve 转场
+- **流水线自动化** — Issue → 分支 → 开发 → 测试 → 合并 → 日志 全自动
 
+---
+
+## 快速开始
+
+### 环境准备
+
+```bash
+# 克隆项目
+git clone git@github.com:opcfactoryai/science-video.git
+cd science-video
+
+# 配置环境变量
+cp .env.example .env
+# 编辑 .env 填入密钥
+```
+
+### 环境变量
+
+在 `.env` 中配置以下密钥：
+
+| 变量 | 说明 |
+|------|------|
+| `VOLC_APPID` | 火山引擎 App ID |
+| `VOLC_ACCESS_TOKEN` | 火山引擎访问令牌 |
+| `VOLC_SECRET_KEY` | 火山引擎密钥 |
+| `IMAGE_API_KEY` | 图片生成 API 密钥 |
+
+---
+
+## 工作流程
+
+### Step 1: 生成口播稿与分镜头脚本
 
 ```bash
 cd D:/labs/science-video
-PROJECT_DIR=projects/n1x-news-0610
+# 使用 video-script-generator skill 生成 script.json
+```
 
+### Step 2: 生成 TTS 配音
+
+```bash
+PROJECT_DIR=projects/your-project
 python -c "
 import json
 with open('$PROJECT_DIR/script.json', encoding='utf-8') as f:
@@ -34,10 +72,55 @@ python .claude/skills/video-script-generator/scripts/gen_tts.py \
   --output-dir "$PROJECT_DIR"
 ```
 
-### 🖼️ 生成图片
+### Step 3: 生成图片
 
 ```bash
-cd D:/labs/science-video
 python .claude/skills/video-script-generator/scripts/gen_scenes.py \
-  --project-dir projects/n1x-news-0610
+  --project-dir projects/your-project
 ```
+
+### Step 4: 合成视频
+
+```bash
+python .claude/skills/video-script-generator/scripts/compose_video.py \
+  --project-dir projects/your-project
+```
+
+---
+
+## 项目结构
+
+```
+├── .claude/
+│   └── skills/video-script-generator/  # 核心 SKILL
+│       ├── prompts/                    # 系统提示词
+│       ├── scripts/                    # 生成脚本
+│       │   ├── gen_tts.py             # TTS 配音生成
+│       │   ├── gen_scenes.py          # 图片生成
+│       │   ├── compose_video.py       # 视频合成
+│       │   └── align_scenes.py        # 场景对齐
+│       └── templates/                  # 分镜模板
+├── projects/                           # 项目输出目录
+├── .github/
+│   └── issue-log.md                   # 流水线执行日志
+└── CONTRIBUTING.md                    # 贡献指南
+```
+
+---
+
+## 流水线自动化
+
+项目配置了定时任务（每 20 分钟），自动执行以下流程：
+
+1. 检查 GitHub Issue
+2. 标记 In Progress
+3. 创建分支并开发
+4. 提交 PR 并合并到 main
+5. 记录执行日志
+6. 关闭 Issue
+
+---
+
+## License
+
+MIT
