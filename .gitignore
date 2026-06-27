@@ -1,1 +1,4 @@
 .env
+
+# Claude 本地设置
+.claude/settings.local.json
